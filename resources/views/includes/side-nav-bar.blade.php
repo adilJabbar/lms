@@ -14,7 +14,7 @@
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
             <li class=" nav-item">
-                <a href="{{ route('admin.dashboard') }}"><i class="la la-home"></i>
+                <a href="{{ route('admin.index') }}"><i class="la la-home"></i>
                     <span class="menu-title" data-i18n="">
                         Dashboard
                     </span>
