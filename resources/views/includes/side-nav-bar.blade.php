@@ -20,6 +20,31 @@
                     </span>
                 </a>
             </li>
+            <li class=" nav-item">
+                <a href="{{ route('subscription.list') }}"><i class="la la-plus"></i>
+                    <span class="menu-title" data-i18n="">
+                        Subscriptions
+                    </span>
+                </a>
+   <ul class="menu-content">
+                    <li class="navigation-divider"></li>
+                    <li>
+                        <a href="{{route('subscription.add')}}">
+                            <span class="menu-title" data-i18n="">
+                                Add New Plan
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('subscription.list')}}">
+                            <span class="menu-title" data-i18n="">
+                                All Plans
+                            </span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
             {{-- <li class=" nav-item"> --}}
             {{-- <a href="{{route('admin.boatTypes.index')}}"><i class="la la-bars"></i> --}}
             {{-- <span class="menu-title" data-i18n=""> --}}

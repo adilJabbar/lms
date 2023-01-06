@@ -4,17 +4,17 @@ use App\Http\Controllers\Admin\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
-|--------------------------------------------------------------------------
-| Admin Routes
-|--------------------------------------------------------------------------
-*/
+  |--------------------------------------------------------------------------
+  | Admin Routes
+  |--------------------------------------------------------------------------
+ */
 
 Route::prefix('admin')->group(static function () {
 
     // Guest routes
     Route::middleware('guest:admin')->group(static function () {
         // Auth routes
-      
+
         Route::get('login', [\App\Http\Controllers\Admin\Auth\AuthenticatedSessionController::class, 'create'])->name('admin.login');
         Route::post('login', [\App\Http\Controllers\Admin\Auth\AuthenticatedSessionController::class, 'store']);
         // Forgot password
@@ -26,7 +26,7 @@ Route::prefix('admin')->group(static function () {
 
         Route::get('/customer-detail', [CustomerController::class, 'detail'])->name('customer-detail');
         Route::get('/customer-status', [CustomerController::class, 'customerStatus'])->name('customer-status');
-     
+
         Route::get('/customers/{type?}', [CustomerController::class, 'index'])->name('customers.index');
         // Route::get('/customers/{type?}', [CustomerController::class, 'index'])->name('customers.index');
         Route::get('/customer/{uuid}/edit', [CustomerController::class, 'edit'])->name('customer.edit');
@@ -53,6 +53,11 @@ Route::prefix('admin')->group(static function () {
         Route::get('/', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin.index');
         Route::get('profile', [\App\Http\Controllers\Admin\HomeController::class, 'profile'])->middleware('password.confirm.admin')->name('admin.profile');
         Route::get('/students/', [\App\Http\Controllers\Admin\StudentController::class, 'index'])->name('students.index');
+        Route::get('/subscriptions/', [\App\Http\Controllers\Admin\SubscriptionController::class, 'getList'])->name('subscription.list');
+        Route::get('/add-subscription/', [\App\Http\Controllers\Admin\SubscriptionController::class, 'getSubscriptionView'])->name('subscription.add');
+        Route::post('/save-subscription/', [\App\Http\Controllers\Admin\SubscriptionController::class, 'saveSubscription'])->name('saveSubscription');
+        Route::get('/edit-subscription/{id}', [\App\Http\Controllers\Admin\SubscriptionController::class, 'editSubscription'])->name('subscription.edit');
+        Route::post('/updatesubscription/', [\App\Http\Controllers\Admin\SubscriptionController::class, 'updateSubscription'])->name('updateSubscription');
     });
 });
 
