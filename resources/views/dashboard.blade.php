@@ -12,6 +12,9 @@
                     You're logged in!
                     <a href="{{route('course')}}">Course</a>
                 </div>
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <a href="{{route('membershipPlans')}}">Membership Plans</a>
+                </div>
             </div>
         </div>
     </div>

@@ -18,6 +18,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- css link  -->
         <link rel="stylesheet" href="{{asset('/css/course.css')}}">
+        <link rel="stylesheet" href="{{asset('/css/membership2.css')}}">
 
     </head>
     <body>
