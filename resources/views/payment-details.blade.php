@@ -116,7 +116,7 @@ $(document).ready(function () {
                     <form id="msform">
                         <!-- progressbar -->
                         <ul id="progressbar" style="display: flex; justify-content: center;">
-                            <li class="active" id="account"><strong style="float: left; margin-left: -8%;">Select
+                            <li onclick="history.go(-1);" class="active" id="account"><strong style="float: left; margin-left: -8%;">Select
                                     membership</strong></li>
                             <li class ='active' id="confirm"><strong style="float: right;  margin-right: -8%;">Payment details</strong></li>
                         </ul>
@@ -172,7 +172,7 @@ $(document).ready(function () {
                                 </div>
                             </div>
 
-                            <!--<input type="button" name="previous" class="previous action-button-previous" value="Previous" />-->
+<!--                            <input type="button" name="previous" onclick="history.go(-1);" class="previous action-button-previous" value="Previous" />-->
                         </fieldset>
                     </form>
 

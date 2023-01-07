@@ -79,7 +79,7 @@ $(document).ready(function () {
 
     $(".submit").click(function () {
         return false;
-    })
+    });
 
 });
     </script>
@@ -115,10 +115,12 @@ $(document).ready(function () {
                 <div class="col-md-12 mx-0">
                     <form id="msform">
                         <!-- progressbar -->
+                        @if(isset($data) && !empty($data))
+
                         <ul id="progressbar" style="display: flex; justify-content: center;">
                             <li class="active" id="account"><strong style="float: left; margin-left: -8%;">Select
                                     membership</strong></li>
-                            <li id="confirm"><strong style="float: right;  margin-right: -8%;">Payment details</strong></li>
+                            <li onclick="paymentPlanFunction()"  id="confirm"><strong style="float: right; margin-right: -8%;">Payment details</strong></li>
                         </ul>
                         <!-- fieldsets -->
                         <fieldset>
@@ -145,8 +147,13 @@ $(document).ready(function () {
                                         @if($record['yoodli_access'] == '1')
                                         <p class="heading">✅Access to Yoodli</p>
                                         @endif
-                                        <button class="start-membership">Start membership</button>
+                                        @if(auth()->check())
+                                        <a href="{{route('paymentDetails',['user_id'=>auth()->user()->id,'subscription_id'=>$record['id']])}}" type ="button" class="btn start-membership" style="background-color:  #FDF8C8; color: black;">Start membership</a>
 
+                                        @else
+                                        <a href="#" type ="button" class="btn start-membership" style="background-color:  #FDF8C8; color: black;">Sign Up</a>
+
+                                        @endif
                                         @else
                                         <div class="membership-plan2" style="border: 1px solid;">
                                             <button class="start-membershipp"
@@ -217,7 +224,7 @@ $(document).ready(function () {
                                     @endif
                                 </div>
 
-                                <input type="button" name="next" class="next action-button" value="Next Step" />
+                                <!--<input type="button" name="next" class="next action-button" value="Next Step" />-->
                         </fieldset>
                         <fieldset>
                             <div class="form-card col-sm-12 col-md-6 col-lg-6">
@@ -305,6 +312,9 @@ $(document).ready(function () {
 
                             <!--<input type="button" name="previous" class="previous action-button-previous" value="Previous" />-->
                         </fieldset>
+                        @else
+                        <h1>No Plan Available</h1>
+                        @endif
                     </form>
 
 
@@ -377,6 +387,11 @@ $(document).ready(function () {
                 </div>
             </div>
         </footer>
+        <script>
+            function paymentPlanFunction() {
+                alert('Please select a membership plan first!');
+            }
+        </script>
     </body>
 
 </html>

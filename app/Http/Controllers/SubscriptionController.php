@@ -12,7 +12,7 @@ class SubscriptionController extends Controller {
     }
 
     public function paymentDetails($user_id, $subscription_id) {
-        
+
         return view('payment-details');
     }
 
