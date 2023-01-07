@@ -29,7 +29,7 @@
                 <button><img src="{{url('images/')}}/google.svg" alt=""> Log in with Google</button>
                 <button><img src="{{url('images/')}}/fb.svg" alt=""> Log in with Facebook</button>
             </div>
-            <form method="POST" action="{{ route('login') }}">
+            <form method="POST" action="{{ route('Signin') }}">
                 @csrf
             <div class="login-field">
             <label for="exampleInputEmail1" class="form-label">Email id</label>
