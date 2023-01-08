@@ -8,8 +8,8 @@ class SiteController extends Controller
 {
     public function index()
     {
-       
-        return view('welcome');
+    //   dd(auth()->user());
+        return view('landing');
     }
 
     public function profile()

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Speek2Impact</title>
     <!-- css link  -->.
     <link rel="stylesheet" href="{{url('css/')}}/login.css">
 </head>
@@ -26,8 +26,9 @@
             <h1>Log In</h1>
             <span>Get started by filling up details below</span>
             <div class="login-option">
-                <button><img src="{{url('images/')}}/google.svg" alt=""> Log in with Google</button>
+                <button type="button">   <a href="{{ url('login/google') }}"> <img src="{{url('images/')}}/google.svg" alt="" />  Log in with Google </a></button>
                 <button><img src="{{url('images/')}}/fb.svg" alt=""> Log in with Facebook</button>
+                {{-- <button><img src="{{url('images/')}}/fb.svg" alt=""> Log in with Facebook</button> --}}
             </div>
             <form method="POST" action="{{ route('Signin') }}">
                 @csrf
