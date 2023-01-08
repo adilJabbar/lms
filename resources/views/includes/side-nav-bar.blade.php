@@ -26,8 +26,8 @@
                         Subscriptions
                     </span>
                 </a>
-   <ul class="menu-content">
-                    <li class="navigation-divider"></li>
+             <ul class="menu-content">
+                <li class="navigation-divider"></li>
                     <li>
                         <a href="{{route('subscription.add')}}">
                             <span class="menu-title" data-i18n="">
@@ -45,65 +45,87 @@
 
                 </ul>
             </li>
-            {{-- <li class=" nav-item"> --}}
-            {{-- <a href="{{route('admin.boatTypes.index')}}"><i class="la la-bars"></i> --}}
-            {{-- <span class="menu-title" data-i18n=""> --}}
-            {{-- Boat Type --}}
-            {{-- </span> --}}
-            {{-- </a> --}}
-            {{-- </li> --}}
-            {{-- <li class=" nav-item">
+
+
+            {{-- <li class="site-menu-item {{ request()->is('instructor-course-*') ? 'active' : '' }}">
+                <a href="{{ route('instructor.course.list') }}">
+                    <i class="site-menu-icon fas fa-chalkboard" aria-hidden="true"></i>
+                    <span class="site-menu-title">Courses</span>
+                </a>
+            </li> --}}
+
+
+            
+
+            <li class=" nav-item">
                 <a href="#">
-                    <i class="la la-bars"></i>
+                    <i class="ft-users"></i>
                     <span class="menu-title" data-i18n="">
-                        Boat
+                        Courses
                     </span>
                 </a>
                 <ul class="menu-content">
                     <li class="navigation-divider"></li>
                     <li>
-                        <a href="{{ route('admin.boatTypes.index') }}">
-                            <span class="menu-title" data-i18n="">
-                                Boat Type
-                            </span>
-                        </a>
+                        <a class="menu-item" href="{{ route('instructor.course.list') }}">All</a>
                     </li>
 
                     <li>
-                        <a href="{{ route('admin.boatServices.index') }}">
-                            <span class="menu-title" data-i18n="">
-                                Boat Services
-                            </span>
-                        </a>
+                        <a class="menu-item" href="{{ route('instructor.course.info') }}">Add Course</a>
                     </li>
-
-                    <li>
-                        <a href="{{ route('admin.requiredDocuments.index') }}">
-                            <span class="menu-title" data-i18n="">
-                                Documents
-                            </span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="{{ route('admin.boats.reports.index', ['type' => 'reported']) }}">
-                            <span class="menu-title" data-i18n="">
-                                Reported
-                            </span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="{{ route('admin.boats.reports.index', ['type' => 'blocked']) }}">
-                            <span class="menu-title" data-i18n="">
-                                Blocked
-                            </span>
-                        </a>
-                    </li>
-
+                    
                 </ul>
-            </li> --}}
+            </li>
+            </li>
 
+
+            <li class=" nav-item">
+                <a href="#">
+                    <i class="ft-users"></i>
+                    <span class="menu-title" data-i18n="">
+                        Chapters
+                    </span>
+                </a>
+                <ul class="menu-content">
+                    <li class="navigation-divider"></li>
+                    <li>
+                        <a class="menu-item" href="{{ route('instructor.course.list') }}">All</a>
+                    </li>
+
+                    <li>
+                        <a class="menu-item" href="{{ route('instructor.course.info') }}">Add Chapter</a>
+                    </li>
+                    
+                </ul>
+            </li>
+            </li>
+
+
+
+            <li class=" nav-item">
+                <a href="#">
+                    <i class="ft-users"></i>
+                    <span class="menu-title" data-i18n="">
+                        Categories
+                    </span>
+                </a>
+                <ul class="menu-content">
+                    <li class="navigation-divider"></li>
+                    <li>
+                        <a class="menu-item" href="{{ route('admin.categories')}}">All</a>
+                    </li>
+
+                    <li>
+                        <a class="menu-item" href="{{ route('admin.categoryForm') }}">Add Course</a>
+                    </li>
+                    
+                </ul>
+            </li>
+            </li>
+
+
+
+            
 
 
             <li class=" nav-item">
@@ -118,25 +140,9 @@
                     <li>
                         <a class="menu-item" href="{{ route('students.index') }}">All</a>
                     </li>
-                    {{-- <li>
-                        <a class="menu-item"
-                           href="{{ route('customers.index', ['type' => 'active']) }}">Active</a>
-                    </li>
-                    <li>
-                        <a class="menu-item"
-                           href="{{ route('customers.index', ['type' => 'blocked']) }}">Blocked</a>
-                    </li>
-                    <li>
-                        <a class="menu-item"
-                           href="{{ route('customers.index', ['type' => 'deleted']) }}">Deleted</a>
-                    </li>
-                    <li>
-                        <a class="menu-item"
-                           href="{{ route('customers.index', ['type' => 'not_verified']) }}">Not Verified</a>
-                    </li> --}}
 
                 </ul>
-            </li>
+                </li>
             </li>
             {{-- <li class=" nav-item">
                 <a href="#">

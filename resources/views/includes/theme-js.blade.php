@@ -47,6 +47,7 @@ type="text/javascript"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
 <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+<script src="{{ asset('backend/vendor/croppie/croppie.min.js?v4.0.2') }}"></script>
 <!-- END: Theme JS-->
 
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>

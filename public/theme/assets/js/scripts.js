@@ -10,9 +10,9 @@
     $('[data-toggle="tooltip"]').tooltip({
         container: 'body'
     });
-    let multi_select_dropdown = new Choices('.multi_select_dropdown', {
-        removeItemButton: true,
-    });
+    // let multi_select_dropdown = new Choices('.multi_select_dropdown', {
+    //     removeItemButton: true,
+    // });
 
     function ajaxCall(url, type, data = {}) {
         $.ajax({
