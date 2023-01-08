@@ -11,6 +11,15 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
+    // Route::get('/login/{social}','Auth\LoginController@socialLogin')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
+
+    // Route::get('/login/{social}/callback','Auth\LoginController@handleProviderCallback')->where('social','twitter|facebook|linkedin|google|github|bitbucket');
+
+
+    Route::get('/login/{social}', [AuthenticatedSessionController::class, 'socialLogin'])->where('social','twitter|facebook|linkedin|google|github|bitbucket');
+
+Route::get('/login/{social}/callback', [AuthenticatedSessionController::class, 'handleProviderCallback']);
+
     Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
 
@@ -51,6 +60,6 @@ Route::middleware('auth')->group(function () {
 
     Route::post('confirm-password', [ConfirmablePasswordController::class, 'store']);
 
-    Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
+    Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 });

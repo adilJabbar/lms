@@ -19,9 +19,10 @@ class EnsureEmailIsVerified
      */
     public function handle($request, Closure $next, $redirectToRoute = null)
     {
+        
         // Routes for admin and user, based on middleware group name
         $default_redirect_route = in_array('auth:admin', $request->route()->middleware(), false) ? 'admin.verification.notice' : 'verification.notice';
-
+      
         if (! $request->user() ||
             ($request->user() instanceof MustVerifyEmail &&
                 ! $request->user()->hasVerifiedEmail())) {
