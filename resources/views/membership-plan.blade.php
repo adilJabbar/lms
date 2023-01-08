@@ -148,7 +148,7 @@ $(document).ready(function () {
                                         <p class="heading">✅Access to Yoodli</p>
                                         @endif
                                         @if(auth()->check())
-                                        <a href="{{route('paymentDetails',['user_id'=>auth()->user()->id,'subscription_id'=>$record['id']])}}" type ="button" class="btn start-membership" style="background-color:  #FDF8C8; color: black;">Start membership</a>
+                                        <a href="{{route('paymentDetails',['user_id'=>(Crypt::encrypt(auth()->user()->id)),'subscription_id'=>(Crypt::encrypt($record['id']))])}}" type ="button" class="btn start-membership" style="background-color:  #FDF8C8; color: black;">Start membership</a>
 
                                         @else
                                         <a href="#" type ="button" class="btn start-membership" style="background-color:  #FDF8C8; color: black;">Sign Up</a>
@@ -173,8 +173,12 @@ $(document).ready(function () {
                                             <p class="heading2">✅Access to Yoodli</p>
                                             @endif
                                             @if(auth()->check())
-                                            <a href="{{route('paymentDetails',['user_id'=>auth()->user()->id,'subscription_id'=>$record['id']])}}" type ="button" class="btn start-membership" style="background-color:  #1C1C1C; color: #fff;">Start membership</a>
+                                            <a href="{{route('paymentDetails',['user_id'=>(Crypt::encrypt(auth()->user()->id)),'subscription_id'=>(Crypt::encrypt($record['id']))])}}" type ="button" class="btn start-membership" style="background-color:  #1C1C1C; color: #fff;">Start membership</a>
 
+                                            <!--                                            <form action = 'post'>
+                                                                                            <button class="start-membership"
+                                                                                                    style="background-color:  #1C1C1C; color: #fff;">Start membership</button>
+                                                                                        </form>-->
                                             @else
                                             <a href="#" type ="button" class="btn start-membership" style="background-color:  #1C1C1C; color: #fff;">Sign Up</a>
 

@@ -113,7 +113,10 @@ $(document).ready(function () {
         <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
             <div class="row">
                 <div class="col-md-12 mx-0">
-                    <form id="msform">
+                    <form id="msform" method="post" enctype="multipart/form-data" action="{{route('savePaymentDetail')}}">
+                        @csrf
+                        <input type="hidden" name='user_id' value ='{{Crypt::encrypt($data['user_id'])}}'>
+                        <input type="hidden" name='subscription_id' value ='{{Crypt::encrypt($data['subscription_id'])}}'>
                         <!-- progressbar -->
                         <ul id="progressbar" style="display: flex; justify-content: center;">
                             <li onclick="history.go(-1);" class="active" id="account"><strong style="float: left; margin-left: -8%;">Select
@@ -125,11 +128,12 @@ $(document).ready(function () {
                             <div class="form-card col-sm-12 col-md-6 col-lg-6">
                                 <div class="membership-payment">
                                     <h1>Payment details</h1>
-                                    <form>
+                                    <form method="post" enctype="multipart/form-data" action="{{route('savePaymentDetail')}}">
+                                        @csrf
                                         <div class="membership-field">
                                             <label for="exampleInputEmail1" class="form-label">Card number</label>
                                             <input type="text" class="form-control f-img"
-                                                   placeholder="Enter credit card name">
+                                                   placeholder="Enter credit card name" name='card_number' required>
                                             <img src="./images/credit_card.svg" alt="">
                                             <div class="master-card">
                                                 <a href="#"><img src="./images//visa.svg" alt=""></a>
@@ -139,14 +143,13 @@ $(document).ready(function () {
                                         <div class="row">
                                             <div class="membership-field m-half">
                                                 <label for="exampleInputEmail1" class="form-label">Expiry date</label>
-                                                <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                                <input name='card_expiry' type="text" class="form-control" placeholder="DD/MM/YYYY" required>
                                             </div>
                                             <div class="membership-field m-half">
                                                 <label for="exampleInputEmail1" class="form-label">CVV</label>
                                                 <input type="text" class="form-control" placeholder="Enter CVV">
                                             </div>
                                         </div>
-
 
                                         <div class="devider-line"></div>
                                         <div class="row" style="margin-bottom: 5%;">
@@ -165,6 +168,7 @@ $(document).ready(function () {
 
                                         <button type="submit" class="m-payment"
                                                 style="background-color: #1C1C1C; color: #fff;"> Start membership</button>
+
                                         <button style="margin-top: 5%;" type="submit" class="m-payment"><img
                                                 src="./images/pp.svg" alt=""> Pay with
                                             Paypal</button>
