@@ -32,3 +32,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('payment-details/{user_id}/{subscription_id}', [App\Http\Controllers\SubscriptionController::class, 'paymentDetails'])->name('paymentDetails');
     Route::post('payment', [App\Http\Controllers\SubscriptionController::class, 'savePaymentDetails'])->name('savePaymentDetail');
 });
+
+Route::get('/deleteWebinar/{id}', [\App\Http\Controllers\Admin\WebinarController::class, 'deleteWebinar'])->name('deleteWebinar');
+

@@ -21,6 +21,9 @@
         <link rel="stylesheet" href="{{asset('/css/membership2.css')}}">
 
     </head>
+    <script>
+        siteUrl = '<?php echo URL::to('/'); ?>/';
+    </script>
     <body>
         <header class="main-site">
             <div class="container-main">

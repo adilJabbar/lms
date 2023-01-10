@@ -55,14 +55,12 @@ Route::prefix('admin')->group(static function () {
 
         Route::get('course-create', 'Admin\CourseController@createInfo')->name('instructor.course.create');
         // Route::get('instructor-course-list', '\App\Http\Controllers\Admin\@instructorCourseList')->name('instructor.course.list');
-
         // Route::get('instructor-course-list', [\App\Http\Controllers\Admin\CourseController::class, 'instructorCourseList'])->name('admin.index');
 
 
         Route::get('/instructor-course-list', [\App\Http\Controllers\Admin\CourseController::class, 'instructorCourseList'])->name('instructor.course.list');
 
         Route::get('/instructor-course-info', [\App\Http\Controllers\Admin\CourseController::class, 'instructorCourseInfo'])->name('instructor.course.info');
-
 
         // Route::get('instructor-course-info', 'Admin\CourseController@instructorCourseInfo')->name('instructor.course.info');
         // Route::get('instructor-course-info/{course_id}', 'Admin\CourseController@instructorCourseInfo')->name('instructor.course.info.edit');
@@ -86,13 +84,10 @@ Route::prefix('admin')->group(static function () {
 
         Route::post('iinstructor-course-video-save', [\App\Http\Controllers\Admin\CourseController::class, 'instructorCourseVideoSave'])->name('instructor.course.video.save');
 
-
         // Route::get('instructor-course-curriculum/{course_id}', 'Admin\CourseController@instructorCourseCurriculum')->name('instructor.course.curriculum.edit');
         Route::get('instructor-course-curriculum/{course_id}', [\App\Http\Controllers\Admin\CourseController::class, 'instructorCourseCurriculum'])->name('instructor.course.curriculum.edit');
 
-
         Route::post('instructor-course-curriculum-save', 'Admin\CourseController@instructorCourseCurriculumSave')->name('instructor.course.curriculum.save');
-
 
         Route::get('instructor-credits', 'Admin\InstructorController@credits')->name('instructor.credits');
 
@@ -132,30 +127,15 @@ Route::prefix('admin')->group(static function () {
         Route::post('courses/lecturelib/save', 'Admin\CourseController@postLectureLibrarySave');
         Route::post('courses/lecturelibres/save', 'Admin\CourseController@postLectureLibraryResourceSave');
         Route::post('courses/lectureexres/save', 'Admin\CourseController@postLectureExternalResourceSave');
-        
+
         // Sorting Curriculum
         Route::post('courses/curriculum/sort', 'CourseController@postCurriculumSort');
-
-
-
-
-
 
         Route::get('/categories', [\App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('admin.categories');
         Route::get('/category-form', [\App\Http\Controllers\Admin\CategoryController::class, 'getForm'])->name('admin.categoryForm');
         Route::get('/category-form/{Category_id}', [\App\Http\Controllers\Admin\CategoryController::class, 'getForm']);
         Route::post('/save-category', [\App\Http\Controllers\Admin\CategoryController::class, 'saveCategory'])->name('admin.saveCategory');
         Route::get('/delete-category/{Category_id}', [\App\Http\Controllers\Admin\CategoryController::class, 'deleteCategory']);
-
-
-
-
-
-
-
-
-
-
 
         // Confirm password routes
         Route::get('confirm-password', [\App\Http\Controllers\Admin\Auth\ConfirmablePasswordController::class, 'show'])->name('admin.password.confirm');
@@ -171,6 +151,13 @@ Route::prefix('admin')->group(static function () {
         Route::post('/save-subscription/', [\App\Http\Controllers\Admin\SubscriptionController::class, 'saveSubscription'])->name('saveSubscription');
         Route::get('/edit-subscription/{id}', [\App\Http\Controllers\Admin\SubscriptionController::class, 'editSubscription'])->name('subscription.edit');
         Route::post('/updatesubscription/', [\App\Http\Controllers\Admin\SubscriptionController::class, 'updateSubscription'])->name('updateSubscription');
+
+        Route::get('/add-webinar/', [\App\Http\Controllers\Admin\WebinarController::class, 'getWebinarView'])->name('webinar.add');
+        Route::get('/webinars/', [\App\Http\Controllers\Admin\WebinarController::class, 'getList'])->name('webinar.list');
+
+        Route::post('/save-webinar/', [\App\Http\Controllers\Admin\WebinarController::class, 'saveWebinar'])->name('saveWebinar');
+        Route::get('/edit-webinar/{id}', [\App\Http\Controllers\Admin\WebinarController::class, 'editWebinar'])->name('webinar.edit');
+        Route::post('/update-webinar/', [\App\Http\Controllers\Admin\WebinarController::class, 'updateWebinar'])->name('updateWebinar');
     });
 });
 

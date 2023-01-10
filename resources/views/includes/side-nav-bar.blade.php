@@ -44,6 +44,31 @@
                     </li>
 
                 </ul>
+            </li>  
+ <li class=" nav-item">
+                <a href="#"><i class="la la-mobile"></i>
+                    <span class="menu-title" data-i18n="">
+                        Webinars
+                    </span>
+                </a>
+             <ul class="menu-content">
+                <li class="navigation-divider"></li>
+                    <li>
+                        <a href="{{route('webinar.add')}}">
+                            <span class="menu-title" data-i18n="">
+                                Add Webinar
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('webinar.list')}}">
+                            <span class="menu-title" data-i18n="">
+                                Webinar Listing
+                            </span>
+                        </a>
+                    </li>
+
+                </ul>
             </li>
 
 
