@@ -28,6 +28,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
             ->name('profile');
 
     Route::get('course', [App\Http\Controllers\CourseController::class, 'couseView'])->name('course');
+    Route::get('home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
     Route::get('membership-plans', [App\Http\Controllers\SubscriptionController::class, 'membershipPlans'])->name('membershipPlans');
     Route::get('payment-details/{user_id}/{subscription_id}', [App\Http\Controllers\SubscriptionController::class, 'paymentDetails'])->name('paymentDetails');
     Route::post('payment', [App\Http\Controllers\SubscriptionController::class, 'savePaymentDetails'])->name('savePaymentDetail');
