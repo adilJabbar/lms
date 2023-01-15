@@ -29,9 +29,19 @@ class SubscriptionController extends Controller {
 
     public function savePaymentDetails(Request $request) {
         if (isset($request->user_id) && isset($request->subscription_id)) {
+            // check if customer already subscribed to any subscription
             $data['request_data'] = $request->toArray();
             $data['request_data']['user_id'] = Crypt::decrypt($request->user_id);
             $data['request_data']['subscription_id'] = Crypt::decrypt($request->subscription_id);
+            $currentDate = date('Y-m-d H:i:s');
+            $userSubscripitions = \App\Models\UserSubscribedPlan::where('user_id', '=', $data['request_data']['user_id'])
+                    ->where('is_active', 1)
+                    ->where('subscription_end_date', '>', $currentDate)
+                    ->first();
+            if (!empty($userSubscripitions)) {
+                Session::flash('error', 'You have already subscribed a subscription plan!!');
+                return redirect()->route('index')->with('You have already subscribed a subscription plan!');
+            }
             $data['subscription'] = \App\Models\Subscription::getSubscription($data['request_data']['subscription_id']);
             $paymentMthod = self::createPaymentMethod($data);
             \Log::info('payment method');
