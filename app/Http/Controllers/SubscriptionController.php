@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Stripe;
+use Illuminate\Support\Facades\Session;
 
 class SubscriptionController extends Controller {
 
@@ -27,17 +29,39 @@ class SubscriptionController extends Controller {
 
     public function savePaymentDetails(Request $request) {
         if (isset($request->user_id) && isset($request->subscription_id)) {
-            $data['user_id'] = Crypt::decrypt($request->user_id);
-            $data['subscription_id'] = Crypt::decrypt($request->subscription_id);
-            $data['subscription'] = \App\Models\Subscription::getSubscription($data['subscription_id']);
-
-            $prepareData = self::prepareData($data);
-            $save = \App\Models\UserSubscribedPlan::saveData($prepareData);
-            if ($save) {
-                return redirect()->route('dashboard')->with('Subscribed Successfully!');
-            } else {
+            $data['request_data'] = $request->toArray();
+            $data['request_data']['user_id'] = Crypt::decrypt($request->user_id);
+            $data['request_data']['subscription_id'] = Crypt::decrypt($request->subscription_id);
+            $data['subscription'] = \App\Models\Subscription::getSubscription($data['request_data']['subscription_id']);
+            $paymentMthod = self::createPaymentMethod($data);
+            \Log::info('payment method');
+            \Log::info($paymentMthod);
+            if ($paymentMthod['success'] == false) {
+                return redirect()->back()->with('Error occurred while adding payment method! please try again');
+            }
+            $data['payment_method_data'] = $paymentMthod['method_data'];
+            $createIntnet = self::createPaymentIntentMethod($data);
+            if ($createIntnet['success'] != true) {
+                return redirect()->route('membershipPlans')->with('Error occurred while creating payment plan');
+            }
+            $data['intent_data'] = $createIntnet['data'];
+            $capturePayment = self::capturePaymentIntentMethod($data);
+            if ($capturePayment['success'] != true) {
+                return redirect()->route('membershipPlans')->with('Error occurred while capturing payment');
+            }
+            $data['gateway_response'] = $capturePayment['capture_data'];
+            $prepareSubscription = self::prepareData($data);
+            $saveSubscription = \App\Models\UserSubscribedPlan::saveData($prepareSubscription);
+            if (!$saveSubscription) {
                 return redirect()->back()->with('Error occurred! please try again');
             }
+            $paymentData = self::preparePaymentData($data);
+            $savePayment = \App\Models\Payment::saveData($paymentData);
+            if (!$savePayment) {
+                return redirect()->back()->with('Error occurred! please try again');
+            }
+            Session::flash('success', 'Payment successful!');
+            return redirect()->route('index')->with('Subscribed Successfully!');
         } else {
             return redirect()->back()->with('Error occurred! please try again');
         }
@@ -46,7 +70,7 @@ class SubscriptionController extends Controller {
     public static function prepareData($subscriptionData) {
         $data['subscription_id'] = $subscriptionData['subscription']['id'];
         $data['price'] = $subscriptionData['subscription']['price'];
-        $data['user_id'] = $subscriptionData['user_id'];
+        $data['user_id'] = $subscriptionData['request_data']['user_id'];
         $data['subscription_start_date'] = date('Y-m-d H:i:s');
         if (strtolower($subscriptionData['subscription']['plans']) == 'yearly' || strtolower($subscriptionData['subscription']['plans']) == 'anually') {
             $data['subscription_end_date'] = date('Y-m-d H:i:s', strtotime($data['subscription_start_date'] . ' + 1 years'));
@@ -56,6 +80,93 @@ class SubscriptionController extends Controller {
             $data['subscription_end_date'] = date('Y-m-d H:i:s', strtotime($data['subscription_start_date'] . ' + 1 weeks'));
         }
         return $data;
+    }
+
+    public static function createPaymentIntentMethod($data = []) {
+        $key = Stripe\Stripe::setApiKey(config('paths.secret_key'));
+//        $stripe = new \Stripe\StripeClient(config('paths.secret_key'));
+        $intent = Stripe\PaymentIntent::create([
+                    "amount" => $data['subscription']['price'] * 100,
+                    "currency" => "usd",
+                    'payment_method' => $data['payment_method_data']->id,
+                    'payment_method_types' => ['card'],
+//                    "source" => $request->stripeToken,
+//                    "description" => "Test payment from itsolutionstuff.com."
+        ]);
+        if ($intent) {
+            return ['success' => true, 'data' => $intent];
+        } else {
+            return ['success' => false];
+        }
+
+//        Session::flash('success', 'Payment successful!');
+//        return redirect()->route('membershipPlans')->with('Subscribed Successfully!');
+    }
+
+    public static function capturePaymentIntentMethod($data = []) {
+
+//        $key = Stripe\Stripe::setApiKey(config('paths.secret_key'));
+        $stripe = new \Stripe\StripeClient(config('paths.secret_key'));
+        $capture = $stripe->paymentIntents->confirm(
+                $data['intent_data']->id,
+                [
+                    'payment_method_types' => ['card'],
+                ]
+        );
+//        Stripe\PaymentIntent::capture(
+//                $data['data']->id,
+//                [
+//                    "amount" => 100 * 100,
+//                    "currency" => "usd",
+//                    'payment_method_types' => ['card'],
+//                    "source" => $request->stripeToken,
+//                    "description" => "Test payment from itsolutionstuff.com."
+//        ]);
+        if ($capture) {
+            return ['success' => true, 'capture_data' => $capture];
+        } else {
+            return ['success' => false];
+        }
+
+//        Session::flash('success', 'Payment successful!');
+//        return redirect()->route('membershipPlans')->with('Subscribed Successfully!');
+    }
+
+    public static function createPaymentMethod($data = []) {
+
+        $stripe = new \Stripe\StripeClient(config('paths.secret_key'));
+
+        $method = $stripe->paymentMethods->create([
+            'type' => 'card',
+            'card' => [
+                'number' => $data['request_data']['card_number'],
+                'exp_month' => $data['request_data']['expiry_month'],
+                'exp_year' => $data['request_data']['expiry_year'],
+                'cvc' => $data['request_data']['cvc'],
+            ],
+        ]);
+        if ($method) {
+            return ['success' => true, 'method_data' => $method];
+        } else {
+            return ['success' => false];
+        }
+    }
+
+    public static function preparePaymentData($data) {
+        $paymentData['subscription_id'] = $data['subscription']['id'];
+        $paymentData['price'] = $data['subscription']['price'];
+        $paymentData['user_id'] = $data['request_data']['user_id'];
+        $paymentData['exp_month'] = $data['request_data']['expiry_month'];
+        $paymentData['exp_year'] = $data['request_data']['expiry_year'];
+        $paymentData['card_name'] = $data['request_data']['card_name'];
+        $paymentData['card_number'] = substr($data['request_data']['card_number'], 12, 16);
+        $paymentData['card_type'] = !empty($data['payment_method_data']->card->brand) ? $data['payment_method_data']->card->brand : null;
+        $paymentData['receipt_url'] = !isset($data['intent_data']->receipt_url) ? $data['intent_data']->receipt_url : null;
+        $paymentData['payment_method_id'] = $data['payment_method_data']->id;
+        $paymentData['intent_id'] = $data['intent_data']->id;
+        $paymentData['gateway_response'] = !empty($data['gateway_response']) ? serialize($data['gateway_response']) : null;
+
+        return $paymentData;
     }
 
 }

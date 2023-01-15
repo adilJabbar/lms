@@ -112,6 +112,11 @@ $(document).ready(function () {
 
         <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
             <div class="row">
+                @if (Session::has('success'))
+                <div class="alert alert-success text-center">
+                    <p>{{ Session::get('success') }}</p>
+                </div>
+                @endif
                 <div class="col-md-12 mx-0">
                     <form id="msform">
                         <!-- progressbar -->
