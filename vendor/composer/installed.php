@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'f923df7ec205c2802a599274b7a2f91f55b21027',
+        'reference' => '24c7df793bf064ecee4bd03751a7742f795d2f49',
         'name' => 'rubensrocha/laravel-breeze-multi-auth-admin',
         'dev' => true,
     ),
@@ -911,7 +911,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'f923df7ec205c2802a599274b7a2f91f55b21027',
+            'reference' => '24c7df793bf064ecee4bd03751a7742f795d2f49',
             'dev_requirement' => false,
         ),
         'sebastian/cli-parser' => array(
@@ -1093,6 +1093,15 @@
             'aliases' => array(),
             'reference' => '1a2b4bd3d48c72526c0ba417687e5c56b5cf49bc',
             'dev_requirement' => true,
+        ),
+        'stripe/stripe-php' => array(
+            'pretty_version' => 'v10.3.0',
+            'version' => '10.3.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../stripe/stripe-php',
+            'aliases' => array(),
+            'reference' => '417d66a5b27a5ec53a706a346b05bfe170043d52',
+            'dev_requirement' => false,
         ),
         'symfony/console' => array(
             'pretty_version' => 'v6.0.17',
