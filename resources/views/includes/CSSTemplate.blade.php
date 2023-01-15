@@ -19,6 +19,7 @@
         <!-- css link  -->
         <link rel="stylesheet" href="{{asset('/css/course.css')}}">
         <link rel="stylesheet" href="{{asset('/css/membership2.css')}}">
+        <link rel="stylesheet" href="{{asset('/css/webinar.css')}}">
 
     </head>
     <script>
