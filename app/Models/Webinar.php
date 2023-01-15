@@ -52,6 +52,11 @@ class Webinar extends Model {
         return !empty($results) ? $results->toArray() : [];
     }
 
+    public static function getWebinarsAgainstType($col, $val) {
+        $results = Webinar::where($col, $val)->where('is_active', 1)->get();
+        return !empty($results) ? $results->toArray() : [];
+    }
+
     public static function getWebinar($id) {
         $results = Webinar::where('id', $id)
                 ->first();
