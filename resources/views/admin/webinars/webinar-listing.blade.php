@@ -67,6 +67,7 @@ Webinar Listing
                                                     <th class="p-1 text-center" style="vertical-align: middle">Type</th>
                                                     <th class="p-1 text-center" style="vertical-align: middle">Date</th>
                                                     <th class="p-1 text-center" style="vertical-align: middle"> Instructor Name</th>
+                                                    <th class="p-1 text-center" style="vertical-align: middle"> Image</th>
                                                     <th class="p-1 text-center" style="vertical-align: middle"> Actions</th>
                                                 </tr>
                                             </thead>
@@ -88,6 +89,11 @@ Webinar Listing
                                                     </td>
                                                     <td class="p-1 text-center" style="vertical-align: middle">
                                                         {{ $record['instructor'] }}
+                                                    </td>
+                                                    <td class="p-1 text-center" style="vertical-align: middle">
+                                                        @if(!empty($record['image']))
+                                                        <img style="max-height: 150px;max-width: 150px" src="{{ asset('assets/img/'.$record['image']) }}">
+                                                        @endif
                                                     </td>
                                                     <td>
                                                         <a href="{{route('webinar.edit',['id'=>$record['id']])}}" type="button" class="btn btn-bg-gradient-x-purple-red" style="float: right" title="Edit Webinar">

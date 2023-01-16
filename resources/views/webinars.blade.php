@@ -13,7 +13,11 @@
                 <div class="webinar-heading">{{$record['title']}}</div>
                 <div class="webinar-description">{{$record['instructor']}}, Instructor</div>
                 <div class="webinar-image">
+                    @if(!empty($record['image']))
+                    <img style="max-height: 220px;max-width: 310px" src="{{ asset('assets/img/'.$record['image']) }}">
+                    @else
                     <img src="./images/f1.png" alt="">
+                    @endif
                 </div>
                 <div class="webinar-button">
                     <button>Book a slot</button>
@@ -36,7 +40,11 @@
                 <div class="webinar-heading">{{$record['title']}}</div>
                 <div class="webinar-description">{{$record['instructor']}}, Instructor</div>
                 <div class="webinar-image">
+                    @if(!empty($record['image']))
+                    <img style="max-height: 220px;max-width: 310px" src="{{ asset('assets/img/'.$record['image']) }}">
+                    @else
                     <img src="./images/f1.png" alt="">
+                    @endif
                 </div>
                 <div class="webinar-button">
                     <button>Book a slot</button>

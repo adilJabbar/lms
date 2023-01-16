@@ -138,7 +138,25 @@ Edit Webinar Detail
                                                 </div>
                                             </div>
                                         </fieldset>
+                                        <fieldset>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="image">Change Image</label>
+                                                        @if(!empty($data['image']))
+                                                        <div class="image-clean">
+                                                            <img style="max-height: 250px;max-width: 250px" src="{{ asset('assets/img/'.$data['image']) }}">
 
+                                                        </div>
+                                                        @endif
+                                                        <input step="any"
+                                                               name="image"
+                                                               type="file" class="form-control" required>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
                                         <fieldset>
                                             <br>
                                             <div class="row">
