@@ -26,6 +26,45 @@ class SubscriptionController extends Controller {
 //        exit;
         return view('payment-details', compact('data'));
     }
+    
+    //stripe own page payment
+//        public function paymentDetails($user_id, $subscription_id) {
+//        $data['user_id'] = Crypt::decrypt($user_id);
+//        $data['subscription_id'] = Crypt::decrypt($subscription_id);
+//        $subscription = \App\Models\Subscription::getSubscription($data['subscription_id']);
+//        $data['price'] = !empty($subscription['price']) ? $subscription['price'] : null;
+//
+//        $stripe = new \Stripe\StripeClient(config('paths.secret_key'));
+//        $checkout_session = $stripe->checkout->sessions->create([
+//            'line_items' => [[
+//            'price_data' => [
+//                'currency' => 'usd',
+//                'product_data' => [
+//                    'name' => 'T-shirt',
+//                ],
+//                'unit_amount' => 2000,
+//            ],
+//            'quantity' => 1,
+//                ]],
+//            'mode' => 'payment',
+//            'success_url' => 'http://127.0.0.1:8000',
+//            'cancel_url' => 'http://127.0.0.1:8000/membershipPlans',
+//        ]);
+//
+//        header("HTTP/1.1 303 See Other");
+//        header("Location: " . $checkout_session->url);
+//
+//        echo "<pre>";
+//        print_r($checkout_session);
+//        exit;
+//
+////        echo "<pre>";
+////        print_r($decrypted_user_id);
+////        echo "<pre>";
+////        print_r($decrypted_subscription_id);
+////        exit;
+////        return view('payment-details', compact('data'));
+//    }
 
     public function savePaymentDetails(Request $request) {
         if (isset($request->user_id) && isset($request->subscription_id)) {
