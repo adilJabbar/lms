@@ -134,6 +134,18 @@ Add Webinar
                                             </div>
                                         </fieldset>
                                         <fieldset>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="image">Add Image</label>
+                                                        <input step="any"
+                                                               name="image"
+                                                               type="file" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset>
                                             <br>
                                             <div class="row">
                                                 <div class="col-lg-6 offset-6 text-right">

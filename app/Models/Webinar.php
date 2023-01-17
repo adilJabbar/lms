@@ -23,7 +23,8 @@ class Webinar extends Model {
         'date',
         'instructor',
         'type',
-        'is_active'
+        'is_active',
+        'image'
     ];
 
     /**
@@ -43,6 +44,7 @@ class Webinar extends Model {
             'date' => $data['date'],
             'instructor' => $data['instructor'],
             'type' => $data['type'],
+            'image' => !empty($data['image']) ? $data['image'] : null,
         ]);
         return ($update) ? true : false;
     }
