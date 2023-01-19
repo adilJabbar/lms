@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->foreignId('subscription_id')->constrained('subscriptions');
             $table->double('price')->comment('price of the subscription paid by customer');
             $table->timestamp('subscription_start_date')->comment('datetime when customer subscribes');
-            $table->timestamp('subscription_end_date')->comment('datetime when customer subscription ends');
+            $table->timestamp('subscription_end_date')->comment('datetime when customer subscription ends')->nullable();
             $table->enum('paid_with', ['credit_card', 'paypal'])->default('credit_card');
             $table->boolean('is_active')->default(true);
             $table->timestamps();

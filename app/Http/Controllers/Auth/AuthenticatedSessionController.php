@@ -79,7 +79,7 @@ class AuthenticatedSessionController extends Controller
        if($user){
  
             Auth::login($user);
-            return redirect()->route('index');
+            return redirect()->route('home');
  
        }else{
         $user = User::create([
@@ -94,7 +94,7 @@ class AuthenticatedSessionController extends Controller
         //    dd($a,$user );
         // User::insert($data);
         Auth::login($user);
-        return redirect()->route('index');
+        return redirect()->route('home');
             return view('auth.studentregister',['name' => $userSocial->getName(), 'email' => $userSocial->getEmail()]);
         }
  

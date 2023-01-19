@@ -119,7 +119,7 @@
     <div class="container-main">
       <h2>Newly launched courses</h2>
 
-
+ 
      
       <div class="webinar-cards">
         @foreach ($courses as $course)

@@ -33,6 +33,7 @@ class HomeController extends Controller
                         ->select('courses.*','course_videos.*')
                         ->leftJoin('categories', 'categories.id', '=', 'courses.category_id')
                         ->leftJoin('course_videos', 'course_videos.course_id', '=', 'courses.id')
+                        // ->groupBy('courses.id')
                         // ->where('courses.instructor_id', $instructor_id)
                         ->paginate($paginate_count);
         }

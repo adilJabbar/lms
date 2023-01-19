@@ -103,7 +103,7 @@
             </li>
             </li>
 
-
+<!-- 
             <li class=" nav-item">
                 <a href="#">
                     <i class="ft-users"></i>
@@ -123,7 +123,7 @@
                     
                 </ul>
             </li>
-            </li>
+            </li> -->
 
 
 
