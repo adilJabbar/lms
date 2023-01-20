@@ -492,7 +492,10 @@ h1 {
     color: #383838!important;
     padding: 5px 10px!important;
 }
-
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+   
+    font-weight: bold;
+}
 a.user-option img {
     width: 42px;
     height: 42px;

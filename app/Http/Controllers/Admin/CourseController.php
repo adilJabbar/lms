@@ -405,6 +405,7 @@ class CourseController extends Controller
         $this->data['lecturesquiz'] = $coursecurriculum['lecturesquiz'];
         $this->data['lecturesquizquestions'] = $coursecurriculum['lecturesquizquestions'];
         $this->data['lecturesmedia'] = $coursecurriculum['lecturesmedia'];
+      
         $this->data['lecturesresources'] = $coursecurriculum['lecturesresources'];
         $this->data['uservideos'] = $coursecurriculum['uservideos'];
         $this->data['useraudios'] = $coursecurriculum['useraudios'];

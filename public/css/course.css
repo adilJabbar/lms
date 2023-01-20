@@ -358,6 +358,16 @@ button.accordion-button {padding: 20px;background: none;border: 1px solid #E0E0E
     font-weight: 500;
     margin-bottom: 12px;
 }
+.membership-plan-pop i {
+    color: #fff;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
 
 .membership-plan-pop h6 {
     color: #FFFFC8;
@@ -369,7 +379,9 @@ button.accordion-button {padding: 20px;background: none;border: 1px solid #E0E0E
     
     margin-bottom: 20px;
 }
-
+.active-video1{
+    background-color: #E0E0E0;
+}
 .membership-plan-pop h6 span {
     font-size: 16px;
     line-height: 19px;
