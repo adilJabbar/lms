@@ -11,12 +11,16 @@
             <div class="webinar-card">
                 <div class="date">{{$record['date']}}</div>
                 <div class="webinar-heading">{{$record['title']}}</div>
-                <div class="webinar-description">{{$record['instructor']}}, Instructor</div>
+                <!-- <div class="webinar-description">{{$record['instructor']}}, Instructor</div> -->
                 <div class="webinar-image">
-                    @if(!empty($record['image']))
-                    <img style="max-height: 220px;max-width: 310px" src="{{ asset('assets/img/'.$record['image']) }}">
+                  
+                    @if(!empty($record['video_url']))
+
+                    <iframe style="max-height: 220px;max-width: 310px" src="{{$record['video_url']}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                    <!-- <img style="max-height: 220px;max-width: 310px" src="{{ asset('assets/img/'.$record['image']) }}"> -->
                     @else
-                    <img src="./images/f1.png" alt="">
+                    <img src="{{url('images/f1.png')}}" alt="">
                     @endif
                 </div>
                 <div class="webinar-button">
@@ -41,14 +45,15 @@
                 <div class="webinar-description">{{$record['instructor']}}, Instructor</div>
                 <div class="webinar-image">
                     @if(!empty($record['image']))
-                    <img style="max-height: 220px;max-width: 310px" src="{{ asset('assets/img/'.$record['image']) }}">
+                    <iframe style="max-height: 220px;max-width: 310px" src="{{$record['video_url']}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
                     @else
-                    <img src="./images/f1.png" alt="">
+                    <img src="{{url('images/f1.png')}}" alt="">
                     @endif
                 </div>
-                <div class="webinar-button">
+                <!-- <div class="webinar-button">
                     <button>Book a slot</button>
-                </div>
+                </div> -->
             </div>
             @endforeach
 

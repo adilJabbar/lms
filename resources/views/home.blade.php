@@ -29,8 +29,8 @@
     <div class="container-main">
       <div class="chapter-detail-content"style="background-color: black; color: white;">
         <div class="chapter-header">
-          <h6>Continue learning</h6>
-          <h1>Introduction to the public speaking</h1>
+          <h6>Continue learning</h6> 
+          <h1>{{$courses[0]->course_title}}</h1>
         </div>
         <div class="chapter-playlist">
           <div class="chapter-video">
@@ -47,7 +47,7 @@
           <div class="chapter-list" style="word-break: break-all; width: 68%;">
             <div class="count"id="accordionExample">
                 <h5 class="accordion-header" id="headingOne">
-                  The right way to express yourself
+                {{$courses[0]->course_title}}
                 </h5>
                 <p>{{$courses[0]->overview}}
                 </p>

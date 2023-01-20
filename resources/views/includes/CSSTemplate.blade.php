@@ -35,7 +35,8 @@
             <div class="container-main">
                 <div class="main-header">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="#">Speak2Impact Academy</a>
+                    <img src="{{url('logo/logo.jpg')}}" height="70px" width="200px" class="css-class" alt="alt text">
+                        <!-- <a class="navbar-brand" href="#">Speak2Impact Academy</a> -->
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -58,9 +59,23 @@
                             </li>
                             </ul>
                         </div>
-                        <a href="#" class="user-option">
-                            <img src="./images/user1.png" alt="">
-                        </a>
+
+                        <div class="dropdown">
+  <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button> -->
+  <img data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" id="dropdownMenuButton" src="{{url('images/user1.png')}}" alt="">
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <a href="{{ route('logout') }}">logout</a>
+  
+  </div>
+</div>
+
+
+              
+         
+     
+                       
                     </nav>
                 </div>
             </div>

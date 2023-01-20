@@ -152,7 +152,7 @@ class Course extends Model
 			$data['title'] = 'Start Here';
 			$data['sort_order'] = '1';
 			
-			$sectionId = $this->insertSectionRow($data , '');
+			$sectionId = Course::insertSectionRow($data , '');
 			
 			$ldata['section_id'] = $sectionId;
 			$ldata['title'] = 'Introduction';
@@ -229,7 +229,7 @@ class Course extends Model
     }
 	
 	
-	public  function insertSectionRow($data,$id){
+	public static function insertSectionRow($data,$id){
 	
        
        $table = 'curriculum_sections';

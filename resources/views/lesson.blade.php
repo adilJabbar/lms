@@ -66,7 +66,7 @@
                    @foreach($lecturesquiz[$section->section_id] as $lecturequiz)
                     <div  class="play-list video-done {{ Request::segment(3) == '' ? 'active-video'.$lecturequiz->lecture_quiz_id : null }}">
                       <img src="{{url('images/Play button.svg')}}" alt="">
-                     <a href="{{route('course-lesson-number',[$course->id,$lecturequiz->lecture_quiz_id])}}"> <span>{!! $lecturequiz->title !!}<small>2:01 mins</small></span> </a>
+                     <a href="{{route('course-lesson-number',[$course->id,$lecturequiz->lecture_quiz_id])}}"> <span>{!! $lecturequiz->title !!}<small style= "float:right"> 2:01 mins</small></span> </a>
                     </div>
                     @php
                     @endphp

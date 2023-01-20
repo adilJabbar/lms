@@ -1451,6 +1451,7 @@ $(document).ready(function(){
 
   $(document).on('click','.su_course_add_lecture_desc_submit',function(){
     var lid = $(this).data('lid');
+    // alert(lid);
     var text = $.trim(tinyClean(tinyMCE.get('lecturedesc-'+lid).getContent()));
     if(text != '') {
       var courselecturedesc =$('[name="courselecturedesc"]').val();
