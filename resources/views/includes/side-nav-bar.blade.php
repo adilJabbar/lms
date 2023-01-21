@@ -141,7 +141,7 @@
                     </li>
 
                     <li>
-                        <a class="menu-item" href="{{ route('admin.categoryForm') }}">Add Course</a>
+                        <a class="menu-item" href="{{ route('admin.categoryForm') }}">Add Category</a>
                     </li>
                     
                 </ul>
