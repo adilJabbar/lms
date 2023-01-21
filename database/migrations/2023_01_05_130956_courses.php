@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('courses', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->string('instructor');
-            $table->string('video_url');
-            $table->timestamps();
-         });
+        // Schema::create('courses', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('title');
+        //     $table->string('instructor');
+        //     $table->string('video_url');
+        //     $table->timestamps();
+        //  });
     }
 
     /**

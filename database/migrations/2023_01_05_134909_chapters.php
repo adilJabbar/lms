@@ -19,8 +19,9 @@ return new class extends Migration
             $table->string('video_url');
             $table->string('description');
             $table->string('notes');
-            $table->unsignedBigInteger('course_id')->index();
-            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->integer('course_id');
+            // $table->unsignedBigInteger('course_id')->index();
+            // $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
             $table->timestamps();
          });
     }
@@ -32,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('chapters');
     }
 };

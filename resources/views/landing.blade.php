@@ -13,7 +13,11 @@
         <header>
             <div class="container">
                 <div class="header">
-                    <div class="logo"><h1>Speak2Impact Academy</h1></div>
+                    <div class="logo">
+                    <img src="{{url('logo/logo.jpg')}}" height="70px" width="200px" class="css-class" alt="alt text">    
+                    <!-- <h1>Speak2Impact Academy</h1> -->
+                
+                </div>
                     <div class="login-action">
                         @if (Auth::check())
                         <a href="{{ route('logout') }}"><button class="login">Logout</button></a>

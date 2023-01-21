@@ -29,6 +29,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('course', [App\Http\Controllers\CourseController::class, 'couseView'])->name('course');
     Route::get('home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
+    Route::get('course-lesson/{id}', [App\Http\Controllers\HomeController::class, 'courseLesson'])->name('course-lesson');
+    Route::get('course-lesson-number/{id}/{lesson_id}', [App\Http\Controllers\HomeController::class, 'courseLesson'])->name('course-lesson-number');
+    Route::get('calendly', [App\Http\Controllers\HomeController::class, 'calendly'])->name('calendly');
+    Route::get('calendly', [App\Http\Controllers\HomeController::class, 'calendly'])->name('calendly');
+
     Route::get('membership-plans', [App\Http\Controllers\SubscriptionController::class, 'membershipPlans'])->name('membershipPlans');
     Route::get('payment-details/{user_id}/{subscription_id}', [App\Http\Controllers\SubscriptionController::class, 'paymentDetails'])->name('paymentDetails');
     Route::post('payment', [App\Http\Controllers\SubscriptionController::class, 'savePaymentDetails'])->name('savePaymentDetail');

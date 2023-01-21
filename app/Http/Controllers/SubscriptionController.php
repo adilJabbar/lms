@@ -5,12 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Stripe;
+use App\Models\{UserSubscribedPlan};
 use Illuminate\Support\Facades\Session;
 
 class SubscriptionController extends Controller {
 
     public function membershipPlans() {
         $data = \App\Models\Subscription::getSubscriptions();
+        $userSubscriptionPlan = UserSubscribedPlan::where('user_id',auth()->user()->id)->first();
+        if(isset($userSubscriptionPlan->id))
+        {
+            return redirect()->route('home');
+        }
         return view('membership-plan', compact('data'));
     }
 
@@ -110,7 +116,7 @@ class SubscriptionController extends Controller {
                 return redirect()->back()->with('Error occurred! please try again');
             }
             Session::flash('success', 'Payment successful!');
-            return redirect()->route('index')->with('Subscribed Successfully!');
+            return redirect()->route('home')->with('Subscribed Successfully!');
         } else {
             return redirect()->back()->with('Error occurred! please try again');
         }

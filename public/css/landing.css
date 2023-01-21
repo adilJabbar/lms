@@ -5,7 +5,10 @@ h2,
 h3 {
     font-family: 'Space Grotesk', sans-serif;
 }
-
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+   
+    font-weight: bold;
+}
 .container {
     width: 100%;
     max-width: 1440px;

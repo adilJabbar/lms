@@ -132,7 +132,7 @@ class Course extends Model
         return $return;
     }
 
-    public function getcurriculuminfo($id='',$user_id)
+    public static function getcurriculuminfo($id='',$user_id)
     {
 		$result = array();
 		$sections = array();
@@ -152,14 +152,14 @@ class Course extends Model
 			$data['title'] = 'Start Here';
 			$data['sort_order'] = '1';
 			
-			$sectionId = $this->insertSectionRow($data , '');
+			$sectionId = Course::insertSectionRow($data , '');
 			
 			$ldata['section_id'] = $sectionId;
 			$ldata['title'] = 'Introduction';
 			$ldata['sort_order'] = '1';
 			$ldata['type'] = '0';
 			
-			$lectureId = $this->insertLectureQuizRow($ldata , '');
+			$lectureId = Course::insertLectureQuizRow($ldata , '');
 			
 			$sections = \DB::table('curriculum_sections')->where('course_id', '=', $id)->orderBy('sort_order', 'asc')->get();
 			
@@ -176,7 +176,7 @@ class Course extends Model
 				$ldata['sort_order'] = '1';
 				$ldata['type'] = '0';
 				
-				$lectureId = $this->insertLectureQuizRow($ldata , '');
+				$lectureId = Course::insertLectureQuizRow($ldata , '');
 				$lecturesquiz[$sectionid] = \DB::table('curriculum_lectures_quiz')->where('section_id', '=', $sectionid)->orderBy('sort_order', 'asc')->get();
 			}
 			
@@ -229,7 +229,7 @@ class Course extends Model
     }
 	
 	
-	public  function insertSectionRow($data,$id){
+	public static function insertSectionRow($data,$id){
 	
        
        $table = 'curriculum_sections';
@@ -250,8 +250,8 @@ class Course extends Model
         return $id;    
 	}	
 	
-	public  function insertLectureQuizRow($data,$id){
-	
+	public static  function insertLectureQuizRow($data,$id){
+
        $table = 'curriculum_lectures_quiz';
 	   $key = 'lecture_quiz_id';
 	    if($id == NULL )
@@ -293,7 +293,7 @@ class Course extends Model
 			$resources = array($data['resources']);
 		}
 		$data['resources'] = json_encode($resources);
-		$this->insertLectureQuizRow($data,$id);
+		Course::insertLectureQuizRow($data,$id);
 	}
 	
 	public function postLectureResourceDelete($lid,$rid){
@@ -313,7 +313,7 @@ class Course extends Model
 				}
 			}
 			$data['resources'] = json_encode($resources);
-			$this->insertLectureQuizRow($data,$lid);
+			Course::insertLectureQuizRow($data,$lid);
 		}
 	}
 	
@@ -484,6 +484,16 @@ class Course extends Model
 	{
 	   return \DB::table('course_videos')->where('id', '=', $id)->get(); 
 	}
+  public function course_videos()
+	{
+	  return $this->hasMany(CourseVideos::class,'course_id','id'); 
+	}
+  public function categories()
+	{
+    return $this->belongsTo(Category::class, 'category_id');
+	}
+  
+
 
 	public function getvideoinfoFirst($id='')
 	{
