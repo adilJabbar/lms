@@ -12,7 +12,7 @@ class StudentController extends Controller {
         // dd('aa');
 
         $students = User::where('is_active', '1')->get()->toArray();
-        $update = User::where('is_active', '1')->update(['is_verified' => 1]);
+        $update = User::where('is_active', '1')->update(['is_verified' => 1, 'email_verified_at'=>date('Y-m-d H:i:s')]);
         return view('admin.student.index', compact('students'));
     }
 
