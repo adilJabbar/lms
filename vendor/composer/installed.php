@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'ffad92858b7b84fb42e78518d631d88c6ad861ac',
+        'reference' => '2b319bce1ac4fca630afe0a6ebd2d180dff5f728',
         'name' => 'rubensrocha/laravel-breeze-multi-auth-admin',
         'dev' => true,
     ),
@@ -853,8 +853,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0.0 || 2.0.0 || 3.0.0',
-                1 => '1.0|2.0|3.0',
+                0 => '1.0|2.0|3.0',
+                1 => '1.0.0 || 2.0.0 || 3.0.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -920,7 +920,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'ffad92858b7b84fb42e78518d631d88c6ad861ac',
+            'reference' => '2b319bce1ac4fca630afe0a6ebd2d180dff5f728',
             'dev_requirement' => false,
         ),
         'sebastian/cli-parser' => array(
