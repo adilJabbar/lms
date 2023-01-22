@@ -220,7 +220,7 @@ $(document).ready(function () {
                                                                                             style="background-color:  #1C1C1C; color: #fff;">Start membership</button>
                                                                                 </div>-->
                                     </div>
-                                    @if(auth()->check())
+                                    @if(!auth()->check())
                                     <div class="Sign" style="border: 1px solid;">
                                         <h5 style="color: #1C1C1C; margin-bottom: 4%; margin-top: 0%;">Sign up for Free</h5>
                                         <p class="heading2"><img src="./images/check.svg" alt=""
@@ -228,7 +228,7 @@ $(document).ready(function () {
                                         <p class="heading2      "><img src="./images/check.svg" alt=""
                                                                        style="margin-right: 1%;">Access to Yoodli</p>
                                         <a href="{{route('home')}}"><button type="button" class="start-membershiIp" style="background-color:  #1C1C1C; color: #fff;">Sign
-                                            for Free</button> </a>
+                                                for Free</button> </a>
                                     </div>
                                     @endif
                                 </div>
@@ -295,7 +295,7 @@ $(document).ready(function () {
                                     </form>
                                 </div>
                             </div>
-                            
+
                             <!-- <div class="form-card col-sm-12 col-md-6 col-lg-6">
                                             <form>
                                                 <div class="membership-field">
@@ -327,11 +327,11 @@ $(document).ready(function () {
                         @endif
                     </form>
 
-                    
+
                 </div>
-                
+
             </div>
-            
+
         </div>
 
 

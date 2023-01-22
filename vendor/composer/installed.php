@@ -1,13 +1,11 @@
-<?php
-
-return array(
+<?php return array(
     'root' => array(
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '24c7df793bf064ecee4bd03751a7742f795d2f49',
+        'reference' => 'ffad92858b7b84fb42e78518d631d88c6ad861ac',
         'name' => 'rubensrocha/laravel-breeze-multi-auth-admin',
         'dev' => true,
     ),
@@ -651,6 +649,15 @@ return array(
             'reference' => '594ab862396c16ead000de0c3c38f4a5cbe1938d',
             'dev_requirement' => false,
         ),
+        'paypal/rest-api-sdk-php' => array(
+            'pretty_version' => '1.14.0',
+            'version' => '1.14.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../paypal/rest-api-sdk-php',
+            'aliases' => array(),
+            'reference' => '72e2f2466975bf128a31e02b15110180f059fc04',
+            'dev_requirement' => false,
+        ),
         'phar-io/manifest' => array(
             'pretty_version' => '2.0.3',
             'version' => '2.0.3.0',
@@ -835,12 +842,12 @@ return array(
             ),
         ),
         'psr/log' => array(
-            'pretty_version' => '3.0.0',
-            'version' => '3.0.0.0',
+            'pretty_version' => '1.1.4',
+            'version' => '1.1.4.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../psr/log',
             'aliases' => array(),
-            'reference' => 'fe5ea303b0887d5caefd3d431c3e61ad47037001',
+            'reference' => 'd49695b909c3b7628b6289db5479a1c204601f11',
             'dev_requirement' => false,
         ),
         'psr/log-implementation' => array(
@@ -913,7 +920,7 @@ return array(
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '24c7df793bf064ecee4bd03751a7742f795d2f49',
+            'reference' => 'ffad92858b7b84fb42e78518d631d88c6ad861ac',
             'dev_requirement' => false,
         ),
         'sebastian/cli-parser' => array(
@@ -1097,12 +1104,12 @@ return array(
             'dev_requirement' => true,
         ),
         'stripe/stripe-php' => array(
-            'pretty_version' => 'v10.3.0',
-            'version' => '10.3.0.0',
+            'pretty_version' => 'v10.4.0',
+            'version' => '10.4.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../stripe/stripe-php',
             'aliases' => array(),
-            'reference' => '417d66a5b27a5ec53a706a346b05bfe170043d52',
+            'reference' => '87def896d9a2e2914871408277d67432cb112f71',
             'dev_requirement' => false,
         ),
         'symfony/console' => array(

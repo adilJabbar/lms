@@ -194,9 +194,7 @@ $(document).ready(function () {
                                         <button type="submit" class="m-payment"
                                                 style="background-color: #1C1C1C; color: #fff;"> Start membership</button>
 
-                                        <button style="margin-top: 5%;" type="submit" class="m-payment"><img
-                                                src="{{asset('/images/pp.svg')}}" alt=""> Pay with
-                                            Paypal</button>
+
                                     </form>
                                 </div>
                             </div>
@@ -204,11 +202,33 @@ $(document).ready(function () {
 <!--                            <input type="button" name="previous" onclick="history.go(-1);" class="previous action-button-previous" value="Previous" />-->
                         </fieldset>
                     </form>
+                    <form method="post" action ="{{route('postPaymentWithpaypal')}}" 
+                          enctype="multipart/form-data" id="msform" >
+                        @csrf
+                        <input type="hidden" name='user_id' value ='{{Crypt::encrypt($data['user_id'])}}'>
+                        <input type="hidden" name='subscription_id' value ='{{Crypt::encrypt($data['subscription_id'])}}'>
+
+                        <button style="margin-top: 5%;" type="submit" class="m-payment"><img
+                                src="{{asset('/images/pp.svg')}}" alt=""> Pay with
+                            Paypal</button>
+                    </form>
 
 
                 </div>
             </div>
         </div>
+        <!--        <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                    <div class="row">
+                        <div class="col-md-12 mx-0">
+                            <form method="post" action ="{{route('postPaymentWithpaypal')}}"  id="msform" 
+                                  enctype="multipart/form-data" >
+                                <button style="margin-top: 5%;" type="submit" class="m-payment"><img
+                                        src="{{asset('/images/pp.svg')}}" alt=""> Pay with
+                                    Paypal</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>-->
 
 
 
