@@ -22,7 +22,7 @@
                         @if (Auth::check())
                         <a href="{{ route('logout') }}"><button class="login">Logout</button></a>
                         @else
-                        <a href="{{url('login')}}"><button class="login">login</button></a>
+                        <a href="{{url('login')}}"><button class="login">Login</button></a>
                         @endif
 
                         <a href="{{route('membershipPlans')}}"><button class="start-learning">start learning</button></a>
@@ -65,11 +65,13 @@
             <div class="container">
                 <h2>As featured in</h2>
                 <ul>
+                <div class="arrows prev"></div>
                     <li><img src="{{url('images/')}}/c1.png" alt=""></li>
                     <li><img src="{{url('images/')}}/c2.png" alt=""></li>
                     <li><img src="{{url('images/')}}/c3.png" alt=""></li>
                     <li><img src="{{url('images/')}}/c4.png" alt=""></li>
                     <li><img src="{{url('images/')}}/c5.png" alt=""></li>
+                    <div class="arrows next"></div>
                 </ul>
             </div>
         </div>
@@ -113,6 +115,7 @@
                         </div>
                         <p>“ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.“</p>
                     </div>
+
                     <div class="review">
                         <div class="client">
                             <img src="./images/r2.png" alt="">
@@ -124,31 +127,64 @@
             </div>
         </div>
 
-
-
-
-
-        <div class="membership-plan">
+        
+        <div class="happy-client">
             <div class="container">
-                <h2>Membership Plans</h2>
-                <div class="plans">
-                    <div class="plan-a">
-                        <h3><span>monthly</span>$299.00</h3>
-                        <p>Get monthly membership for the whole course</p>
-                        <button>sign up</button>
-                    </div>
-                    <div class="plan-b">
-                        <label>Save 12%</label>
-                        <h3><span>yearly</span>$1299.00</h3>
-                        <p>Get yearly membership for the whole course</p>
-                        <button>sign up</button>
-                    </div>
-                </div>
+                <h2>Trusted by</h2>
+                <ul>
+                <div class="arrows prev"></div>
+                    <li><img src="{{url('images/')}}/c1.png" alt=""></li>
+                    <li><img src="{{url('images/')}}/c2.png" alt=""></li>
+                    <li><img src="{{url('images/')}}/c3.png" alt=""></li>
+                    <li><img src="{{url('images/')}}/c4.png" alt=""></li>
+                    <li><img src="{{url('images/')}}/c5.png" alt=""></li>
+                    <div class="arrows next"></div>
+                </ul>
             </div>
         </div>
 
 
+        <h1
+                                style="display: flex; justify-content: center; color: #1C1C1C; font-weight: bold; font-size: 35px;">
+                                Membership Plans</h1>
+        <div class="membership-area">
+                                <div class="membership-plan" style="border: 1px solid;">
+                                    <button class="start-membershipp">Annually membership</button>
+                                    <h3 style="margin-top: 15%;">£1200 per year</h3>
+                                    <p class="saave">(Save 30% on annually)</p>
+                                    <p class="heading">✅Access to all courses</p>
+                                    <p class="heading">✅40 mins of 1-to-1 with a coach per month</p>
+                                    <p class="heading">✅30% discount on further 1-to-1 coaching sessions</p>
+                                    <p class="heading">✅Coach feedback on 2 videos on Yoodli per month</p>
+                                    <p class="heading">✅Access to webinars and other pre-recorded content</p>
+                                    <p class="heading">✅Access to Yoodli</p>
+                                    <button class="start-membership">Start membership</button>
+                                </div>
+                                <div class="membership-plan2" style="border: 1px solid;">
+                                    <button class="start-membershipp"
+                                        style="background-color: #1C1C1C; color: #fff;">Monthly membership</button>
+                                    <h3 style="margin-top: 15%;">£1200 per year</h3>
+                                    <p class="saave2">(Save 30% on annually)</p>
+                                    <p class="heading2">✅Access to all courses</p>
+                                    <p class="heading2">✅40 mins of 1-to-1 with a coach per month</p>
+                                    <p class="heading2">✅30% discount on further 1-to-1 coaching sessions</p>
+                                    <p class="heading2">✅Coach feedback on 2 videos on Yoodli per month</p>
+                                    <p class="heading2">✅Access to webinars and other pre-recorded content</p>
+                                    <p class="heading2">✅Access to Yoodli</p>
+                                    <button class="start-membership"
+                                        style="background-color:  #1C1C1C; color: #fff;">Start membership</button>
+                                </div>
+                            </div>
 
+                            <div class="Sign" style="border: 1px solid;">
+                                <h5 style="color: #1C1C1C; margin-bottom: 4%; margin-top: 0%;">Sign up for Free</h5>
+                                <p class="heading2"><img src="./images/check.svg" alt=""
+                                        style="margin-right: 1%;">Access to webinars and other pre-recorded content</p>
+                                <p class="heading2      "><img src="./images/check.svg" alt=""
+                                        style="margin-right: 1%;">Access to Yoodli</p>
+                                <button class="start-membershiIp" style="background-color:  #1C1C1C; color: #fff;">Sign
+                                    for Free</button>
+                            </div>
 
         <footer>
             <div class="container">
@@ -165,6 +201,7 @@
                     <div class="social-icon">
                         <a href="#"><img src="{{url('images/')}}/icons8-instagram.svg" alt=""></a>
                         <a href="#"><img src="{{url('images/')}}/icons8-facebook.svg" alt=""></a>
+                        <a href="#"><img src="{{url('images/')}}/icons8-instagram.svg" alt=""></a>
                     </div>
                 </div>
             </div>

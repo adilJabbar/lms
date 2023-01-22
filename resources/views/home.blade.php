@@ -68,7 +68,7 @@
   <!-- ===============   Chapter End   ============== -->
   <div class="upcoming-webinar">
     <div class="container-main">
-      <h2>Newly launched courses</h2>
+      <h2 class="head-heding">Newly launched courses</h2>
 
  
      
@@ -103,7 +103,7 @@
     <div class="container-main">
       
     </div>
-    <div class="action">
+    <div class="action oneee">
         <button type="button"data-bs-target="#exampleModal">
           Load more
         </button>
@@ -119,7 +119,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
-          <div class="membership-plan-pop">
+        <div class="membership-plan-pop">
             <div class="toggle-membership">
               Monthly
               <div class="form-check form-switch">
