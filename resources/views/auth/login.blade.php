@@ -11,22 +11,22 @@
     <link rel="stylesheet" href="{{url('css/')}}/login.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header">
+            <div class="container">
+                <nav class="navbar">
                 <div class="logo"><h1>Speak2Impact Academy</h1></div>
                 <div class="login-action">
-                    <a href="{{route('register')}}"><button class="start-learning">Sign Up</button></a>
+                                <a href="{{route('register')}}"><button class="start-learning">Sign Up</button></a>
                 </div>
+            </nav>
             </div>
-
-        </div>
-    </header>
-    <div class="login-area">
+    <div class="container">
+   <div class="row">
+   <div class="h-100 d-flex align-items-center justify-content-center mt-5 mb-login">
+   <div class="login-area">
             <h1>Log In</h1>
             <span>Get started by filling up details below</span>
             <div class="login-option">
-                <button type="button">   <a href="{{ url('login/google') }}"> <img src="{{url('images/')}}/google.svg" alt="" />  Log in with Google </a></button>
+                <button type="button"> <img src="{{url('images/')}}/google.svg" alt="" />  Log in with Google </button>
                 <button><img src="{{url('images/')}}/fb.svg" alt=""> Log in with Facebook</button>
                 {{-- <button><img src="{{url('images/')}}/fb.svg" alt=""> Log in with Facebook</button> --}}
             </div>
@@ -44,6 +44,11 @@
             <button type="submit" class="login-m">Log In</button>
           </form>
     </div>
+</div>
+   </div>
+</div>
+
+  
 
 
     <footer>
@@ -58,9 +63,10 @@
                  <a href="#">Login</a>
              </div>
          </div>
-         <div class="social-icon">
-             <a href="#"><img src="{{url('images/')}}/icons8-instagram.svg" alt=""></a>
-             <a href="#"><img src="{{url('images/')}}/icons8-facebook.svg" alt=""></a>
+         <div class="social-icon mt-3">
+             <a href="#"><img src="{{url('images/')}}/Instagram.svg" alt=""></a>
+             <a href="#"><img src="{{url('images/')}}/facebook.svg" alt=""></a>
+             <a href="#"><img src="{{url('images/')}}/Vector.svg" alt=""></a>
          </div>
          </div>
         </div>
