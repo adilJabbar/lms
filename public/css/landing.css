@@ -13,6 +13,7 @@ h3 {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
+    font-family: 'Space Grotesk', sans-serif !important;
 }
 
 .header {
@@ -50,7 +51,11 @@ footer {
     background: #1c1c1c;
     padding: 40px 0;
 }
-
+.login-action
+{
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-weight: 400;
+}
 .footer span {
     color: #FFFFC8;
     font-weight: 500;
@@ -62,6 +67,7 @@ footer {
 .footer-top {
     display: flex;
     align-items: center;
+    font-family: 'Space Grotesk', sans-serif !important;
 }
 
 .footer-link {
@@ -218,6 +224,7 @@ footer {
 .review {
     max-width: 360px;
     padding: 0 20px;
+    font-family: 'Inter', sans-serif !important;
 }
 
 .reviews {
@@ -237,6 +244,7 @@ footer {
     font-style: italic;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
+    font-family: 'Inter', sans-serif !important;
 }
 
 .client img {
@@ -250,8 +258,8 @@ footer {
     font-size: 16px;
     line-height: 24px;
     font-style: italic;
-    font-weight: 300;
-    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif !important;
 }
 
 .testimonial {
@@ -282,6 +290,7 @@ footer {
     align-items: center;
     margin-top: 120px;
     margin-bottom: 70px;
+    font-family: 'Inter', sans-serif !important;
 }
 
 .fun-facts p {
@@ -300,7 +309,9 @@ footer {
     align-items: center;
     font-size: 16px;
     line-height: 20px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500;
+    color: #252525 !important;
 }
 
 .facts {
@@ -374,9 +385,11 @@ ul.checks li img {
     padding-top: 250px;
     position: relative;
 }
-
+.hero-top button{
+    font-family: 'Space Grotesk', sans-serif !important;
+}
 .hero-heading h1 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', sans-serif !important;
     font-size: 70px;
     line-height: 115px;
     font-weight: 700;
@@ -392,6 +405,8 @@ ul.features {
     display: flex;
     list-style: none;
     justify-content: center;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 400;
 }
 
 ul.features li {
@@ -419,7 +434,8 @@ ul.features li:first-child {
 .hero-heading span {
     font-size: 20px;
     line-height: 25px;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-weight: 600;
 }
 
 .hero-heading span img {
@@ -432,6 +448,7 @@ ul.features li:first-child {
 .hero-heading {
     text-align: center;
     margin-bottom: 23px;
+    font-family: 'Space Grotesk', sans-serif !important;
 }
 
 img.h-patteren {
@@ -443,11 +460,62 @@ img.h-patteren {
 
 @media only screen and (max-width: 667px) and (min-width: 280px) {
     body  {
-        width: 230%;
+        width: 210%;
     }
     .h-patteren{
         width: 100%;
     }
+    .features{
+        width: 100%;
+    }
+    .features li{
+        font-size: 14px;
+        width: 30%;
+        justify-content: center;
+        display: flex;
+    }
+    .happy-client{
+        width: 100%;
+    }
+    .arrows{
+        margin-top: 8% !important;
+    }
+    .next{
+        margin-left: 0% !important;
+        z-index: 2 !important;
+    }
+    .membership-plan2{
+        width: 90% !important;
+        font-size: 12px;
+        margin-right: -5%;
+    }
+    .membership-plan2 p{
+        width: 120% !important;
+        font-size: 12px;
+        margin-left: -1%;
+    }
+    .start-membershipp{
+        width: 100% !important;
+        margin-left: -0% !important;
+        height: 70px;
+        color: #FFFFC8 !important;
+    }
+    .start-membership{
+        height: 70px;
+        margin-top: -2%;
+    }
+    .membership-plan{
+        width: 90% !important;
+        font-size: 12px;
+        margin-left: -5%;
+    }
+    .membership-plan p{
+        width: 120% !important;
+        font-size: 12px;
+        margin-left: -5%;
+        margin-top: -0.5%;
+    }
+    
 }
 @media only screen and (max-width: 1180px) and (min-width: 768px) {
     body  {
@@ -456,4 +524,206 @@ img.h-patteren {
     .h-patteren{
         width: 100%;
     }
+    .start-membershipp{
+        width: 100% !important;
+        margin-left: -0% !important;
+        height: 70px;
+        color: #FFFFC8 !important;
+    }
+    .membership-plan2 p{
+        width: 120% !important;
+        font-size: 12px;
+        margin-left: -1%;
+    }
+    .membership-plan p{
+        width: 120% !important;
+        font-size: 12px;
+        margin-left: -5%;
+        margin-top: -0.5%;
+    }
+    .features li{
+        font-size: 14px;
+        width: 30%;
+        /* justify-content: center; */
+        display: flex;
+    }
+}
+
+
+.arrows{
+    width: 10px;
+    height: 10px;
+    margin-top: 5%;
+    /* border-color: #000; */
+    /* position: absolute; */
+}
+.prev{
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    transform: rotate(45deg);
+    /* left: 5px; */
+    margin-left: 2%;
+}
+.next{
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    transform: rotate(-135deg);
+    /* right: 5px; */
+    margin-right: 2%;
+}
+
+
+.membership-area {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 60px 20px !important;
+    max-width: 1064px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+}
+.membership-plan {
+    background: #1C1C1C !important;
+    border-radius: 12px !important;
+    padding: 60px !important;
+    max-width: 460px !important;
+    width: 100% !important;
+}
+.membership-plan h3 {
+    color: #fff !important;
+    font-size: 32px !important;
+    line-height: 40px !important;
+    text-align: center !important;
+    font-weight: 500 !important;
+    margin-bottom: 12px !important;
+}
+.membership-plan h6 {
+    color: #FFFFC8 !important;
+    font-size: 22px !important;
+    line-height: 28px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    margin-bottom: 20px !important;
+}
+.membership-plan h6 span {
+    font-size: 16px !important;
+    line-height: 19px !important;
+    font-weight: 500 !important;
+    font-family: 'Inter', sans-serif !important;
+    margin-top: 12px !important;
+    color: #fff !important;
+}
+.membership-plan a {
+    font-size: 18px !important;
+    line-height: 27px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    color: #F2F2F2 !important;
+    display: block !important;
+    text-align: center !important;
+}
+button.start-membershipp {
+    font-size: 18px;
+    line-height: 27px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    background: #FFFFC8;
+    border-radius: 6px;
+    padding: 15px 20px;
+    display: block;
+    width: 70%;
+    margin-bottom: 16px;
+    margin-left: 15%;
+}
+.saave {
+    color: #FFFFC8;
+    text-align: center;
+    font-weight: 200;
+    margin-bottom: 15%;
+}
+.heading {
+    color: rgb(221, 216, 216);
+    font-size: 14px;
+    /* font-family: 'Inter', sans-serif !important; */
+}
+button.start-membership {
+    font-size: 18px;
+    line-height: 27px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 15px 20px;
+    display: block;
+    width: 100%;
+    /* margin-bottom: 5px; */
+    background-color: #FFFFC8;
+    margin-top: 13%;
+}
+.membership-plan2 {
+    background: #FFFFC8;
+    border-radius: 12px;
+    padding: 60px;
+    max-width: 460px;
+    width: 100%;
+}
+.membership-plan2 h3 {
+    color: #1C1C1C;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+.membership-plan2 h6 {
+    color: #1C1C1C;
+    font-size: 22px;
+    line-height: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+.membership-plan2 h6 span {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    margin-top: 12px;
+    color: #1C1C1C;
+}
+.saave2 {
+    color: #1C1C1C ;
+    text-align: center;
+    font-weight: 200;
+    margin-bottom: 15%;
+}
+.heading2 {
+    color: #1C1C1C;
+    font-size: 14px;
+}
+.Sign {
+    border-radius: 12px;
+    padding: 60px;
+    max-width: 68%;
+    margin-left: 16%;
+    width: 100%;
+    margin-bottom: 10%;
+    font-family: 'Space Grotesk', sans-serif !important;
+}
+.Sign p{
+    font-family: 'Inter', sans-serif !important;
+}
+button.start-membershiIp {
+    font-size: 18px;
+    line-height: 27px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    background: #FFFFC8;
+    border-radius: 6px;
+    padding: 15px 20px;
+    display: block;
+    width: 100%;
 }

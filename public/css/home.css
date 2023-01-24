@@ -1,16 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
     font-family: 'Space Grotesk', sans-serif;
 }
+
 .container-main {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 15px;
+    font-family: 'Space Grotesk', sans-serif !important;
 }
-.container-main h2{
-   font-weight: bolder;
+
+.container-main h2 {
+    font-weight: bolder;
+    font-family: 'Space Grotesk', sans-serif !important;
 }
 
 .header {
@@ -19,6 +25,7 @@ h1,h2,h3 {
     justify-content: space-between;
     height: 123px;
 }
+
 h1 {
     font-weight: 500;
     line-height: 36px;
@@ -38,8 +45,8 @@ h1 {
     line-height: 24px;
     letter-spacing: 0.5px;
     font-family: 'Inter', sans-serif;
-    color: #383838!important;
-    padding: 5px 10px!important;
+    color: #383838 !important;
+    padding: 5px 10px !important;
 }
 
 a.user-option img {
@@ -224,7 +231,13 @@ footer {
     border: none;
 }
 
-button.accordion-button {padding: 20px;background: none;border: 1px solid #E0E0E0;border-radius: 12px!important;overflow: hidden;}
+button.accordion-button {
+    padding: 20px;
+    background: none;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px !important;
+    overflow: hidden;
+}
 
 .accordion-item {
     border: none;
@@ -233,9 +246,9 @@ button.accordion-button {padding: 20px;background: none;border: 1px solid #E0E0E
 
 .accordion-button:focus {
     border: none;
-    border-color: transparent!important;
+    border-color: transparent !important;
     outline: 0;
-    box-shadow: none!important;
+    box-shadow: none !important;
 }
 
 .chapter-header h6 {
@@ -252,6 +265,7 @@ button.accordion-button {padding: 20px;background: none;border: 1px solid #E0E0E
     font-weight: 500;
     margin-bottom: 6px;
 }
+
 .chapter-list .accordion-item {
     margin-bottom: 16px;
 }
@@ -284,25 +298,25 @@ button.accordion-button {padding: 20px;background: none;border: 1px solid #E0E0E
 /* width */
 ::-webkit-scrollbar {
     width: 4px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey; 
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgb(0 0 0 / 10%); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(0 0 0 / 10%);
     border-radius: 4px;
     height: 180px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #D9D9D933; 
-  }
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #D9D9D933;
+}
 
 
 .chapter-tabs .tab-content {
@@ -351,6 +365,7 @@ button.accordion-button {padding: 20px;background: none;border: 1px solid #E0E0E
 
 .toggle-membership h3 {
     color: #fff;
+    font-family: 'Space Grotesk', sans-serif !important;
 }
 
 .membership-plan-pop h3 {
@@ -360,6 +375,7 @@ button.accordion-button {padding: 20px;background: none;border: 1px solid #E0E0E
     text-align: center;
     font-weight: 500;
     margin-bottom: 12px;
+    font-family: 'Space Grotesk', sans-serif !important;
 }
 
 .membership-plan-pop h6 {
@@ -369,7 +385,7 @@ button.accordion-button {padding: 20px;background: none;border: 1px solid #E0E0E
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    font-family: 'Space Grotesk', sans-serif !important;
     margin-bottom: 20px;
 }
 
@@ -391,11 +407,13 @@ button.accordion-button {padding: 20px;background: none;border: 1px solid #E0E0E
     justify-content: center;
     align-items: center;
     margin-bottom: 16px;
+    font-family: 'Inter', sans-serif !important;
 }
 
 .toggle-membership .form-check.form-switch {
     margin: 0 10px 0 0;
     padding-left: 45px;
+    font-family: 'Space Grotesk', sans-serif !important;
 }
 
 .form-switch .form-check-input {
@@ -416,7 +434,7 @@ button.start-membership {
     margin-bottom: 16px;
 }
 
-.membership-plan-pop a{
+.membership-plan-pop a {
     font-size: 18px;
     line-height: 27px;
     font-family: 'Inter', sans-serif;
@@ -435,33 +453,40 @@ button.start-membership {
     max-width: 460px;
     border-radius: 16px;
     overflow: hidden;
-    background: none!important;
+    background: none !important;
 }
 
 /* my changes */
-.item{
+.item {
     width: 40%;
     margin-top: 5%;
     background-color: white;
     color: #000;
     border-radius: 10px;
 }
-.item span{
+
+.item span {
     margin-left: 5%;
 }
-.count p{
+
+.count p {
     margin-top: 5%;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
     font-family: 'Space Grotesk', sans-serif;
 }
+
 .container-main {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 15px;
+    font-family: 'Space Grotesk', sans-serif !important;
 }
 
 .header {
@@ -470,6 +495,7 @@ h1,h2,h3 {
     justify-content: space-between;
     height: 123px;
 }
+
 h1 {
     font-weight: 500;
     line-height: 36px;
@@ -489,13 +515,15 @@ h1 {
     line-height: 24px;
     letter-spacing: 0.5px;
     font-family: 'Inter', sans-serif;
-    color: #383838!important;
-    padding: 5px 10px!important;
+    color: #383838 !important;
+    padding: 5px 10px !important;
 }
-.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
-   
+
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show>.nav-link {
     font-weight: bold;
 }
+
 a.user-option img {
     width: 42px;
     height: 42px;
@@ -574,13 +602,16 @@ footer {
     font-size: 32px;
     line-height: 48px;
     margin-bottom: 32px;
+    font-family: 'Space Grotesk', sans-serif !important;
 }
 
-.upcoming-webinar h2, .current-webinar h2 {
+.upcoming-webinar h2,
+.current-webinar h2 {
     margin: 0;
     font-size: 32px;
     line-height: 48px;
     margin-bottom: 32px;
+    font-family: 'Space Grotesk', sans-serif !important;
 }
 
 .date {
@@ -607,6 +638,7 @@ footer {
     font-family: 'Inter', sans-serif;
     color: #686868;
     margin-bottom: 32px;
+    font-family: 'Inter', sans-serif !important;
 }
 
 .webinar-image {
@@ -631,21 +663,227 @@ footer {
 
 .upcoming-webinar {
     padding: 80px 0 45px 0px;
+    font-family: 'Space Grotesk', sans-serif !important;
 }
 
 .current-webinar {
     padding: 45px 0 80px 0px;
 }
-.action{
+
+.action {
     margin-top: 4%;
     display: flex;
     justify-content: center;
+    font-family: 'Space Grotesk', sans-serif !important;
     /* margin-left: 40%; */
 }
-.action button{
+
+.action button {
     background: transparent;
+    font-family: 'Space Grotesk', sans-serif !important;
     width: 15%;
     height: 57px;
     border-radius: 5px;
     font-weight: bold;
+}
+
+@media only screen and (max-width: 667px) and (min-width: 280px) {
+    body {
+        width: 100%;
+    }
+
+    .main-header {
+        width: 100%;
+    }
+
+    .css-class {
+        width: 20%;
+        height: 0%;
+    }
+
+    /* .main-header button{
+        height: 20%;
+        width: 20%;
+        float: right;
+        margin-right: -50%;
+    } */
+    .navbar-toggler {
+        padding-bottom: 32%;
+    }
+
+    .dropdown-toggle {
+        height: 10% !important;
+        float: right !important;
+        margin-right: -10%;
+        width: 80%
+    }
+
+    .chapter-header h1 {
+        font-size: 30px;
+    }
+    .chapter-list{
+        width: 100%;
+    }
+    .play-list {
+        font-size: 8px;
+        width: 100%;
+    }
+    .play-list img{
+        width: 20%;
+        margin-left: -5%;
+    }
+    .count h5{
+        font-size: 15px;
+    }
+    .count p{
+        font-size: 12px;
+    }
+    .item{
+        width: 100%;
+    }
+    .chapter-video{
+        height: 120px;
+    }
+    .head-heding{
+        font-size: 25px !important;
+        margin-top: -20% !important; 
+    }
+    .webinar-card{
+        width: 100%;
+    }
+    .oneee button{
+        width: 50%;
+    }
+    .trophy img{
+        width: 100%;
+    }
+    .daily-progress h3{
+        font-size: 18px;
+    }
+
+     /* Lesson Css */
+
+     .chapter-header h1{
+        font-size: 15px;
+        font-weight: bold;
+     }
+     .accordion-button{
+        font-size: 11px !important;
+     }
+     .tab-pane textarea{
+        width: 100% !important;
+     }
+     .footer-logo span{
+       font-size: 15px;
+
+     }
+     .footer-link{
+        float: left;
+      margin-left: -10%;
+      justify-content: space-between;
+     }
+  .footer-link a{
+    font-size: 12px;
+    margin-left: 3%;
+  }
+}
+@media only screen and (max-width: 1180px) and (min-width: 768px)  {
+    body {
+        width: 100%;
+    }
+
+    .main-header {
+        width: 100%;
+    }
+
+    .css-class {
+        width: 20%;
+        height: 0%;
+    }
+
+    /* .main-header button{
+        height: 20%;
+        width: 20%;
+        float: right;
+        margin-right: -50%;
+    } */
+    .navbar-toggler {
+        padding-bottom: 32%;
+    }
+
+    .dropdown-toggle {
+        height: 10% !important;
+        float: right !important;
+        margin-right: -10%;
+        width: 80%
+    }
+
+    .chapter-header h1 {
+        font-size: 30px;
+    }
+    .chapter-list{
+        width: 100%;
+    }
+    .play-list {
+        font-size: 8px;
+        width: 100%;
+    }
+    .play-list img{
+        width: 20%;
+        margin-left: -5%;
+    }
+    .count h5{
+        font-size: 15px;
+    }
+    .count p{
+        font-size: 12px;
+    }
+    .item{
+        width: 100%;
+    }
+    .chapter-video{
+        height: 120px;
+    }
+    .head-heding{
+        font-size: 25px !important;
+        margin-top: -20% !important; 
+    }
+    .webinar-card{
+        width: 100%;
+    }
+    .oneee button{
+        width: 50%;
+    }
+    .trophy img{
+        width: 100%;
+    }
+    .daily-progress h3{
+        font-size: 11px !important;
+    }
+
+     /* Lesson Css */
+
+     .chapter-header h1{
+        font-size: 15px;
+        font-weight: bold;
+     }
+     .accordion-button{
+        font-size: 11px !important;
+     }
+     .tab-pane textarea{
+        width: 100% !important;
+     }
+     .footer-logo span{
+       font-size: 15px;
+
+     }
+     .footer-link{
+        float: left;
+      margin-left: -10%;
+      justify-content: space-between;
+     }
+  .footer-link a{
+    font-size: 12px;
+    margin-left: 3%;
+  }
 }

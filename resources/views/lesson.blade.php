@@ -143,6 +143,9 @@
             <a href="{{route('membershipPlans')}}"> <button class="start-membership">Start membership</button></a>
             <a href="#">Sign up for free</a>
           </div>
+
+
+          
         </div>
       </div>
     </div>
