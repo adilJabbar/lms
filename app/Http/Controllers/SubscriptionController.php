@@ -276,7 +276,7 @@ class SubscriptionController extends Controller {
                 ->setCurrency('USD')
                 ->setQuantity(1)
                 ->setPrice($data['subscription']['price']);
-
+    
         $item_list = new \PayPal\Api\ItemList();
         $item_list->setItems(array($item_1));
 
@@ -351,7 +351,8 @@ class SubscriptionController extends Controller {
 
         $payment_id = Session::get('paypal_payment_id');
         Session::forget('paypal_payment_id');
-
+        $payment_id = $request->get('paymentId');
+        
         if (empty($request->input('PayerID')) || empty($request->input('token'))) {
             \Session::put('error', 'Payment failed!!!');
             return Redirect::route('membershipPlans');
