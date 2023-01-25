@@ -45,6 +45,7 @@ class HomeController extends Controller {
             //             ->paginate($paginate_count);
         }
 
+//        $courses = $courses->toArray();
         return view('home', compact('courses'));
     }
 
