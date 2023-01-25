@@ -40,6 +40,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 //    Route::get('paywithpaypal', [App\Http\Controllers\SubscriptionController::class, 'paywithpaypal'])->name('paywithpaypal');
     Route::post('paypal', [App\Http\Controllers\SubscriptionController::class, 'postPaymentWithpaypal'])->name('postPaymentWithpaypal');
     Route::get('paypal', [App\Http\Controllers\SubscriptionController::class, 'getPaymentStatus'])->name('status');
+    Route::get('book-slot', [App\Http\Controllers\BookingController::class, 'bookSlot'])->name('bookSlot');
 });
 Route::get('webinars', [App\Http\Controllers\WebinarController::class, 'getWebinars'])->name('getWebinars');
 

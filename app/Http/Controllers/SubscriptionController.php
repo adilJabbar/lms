@@ -47,30 +47,27 @@ class SubscriptionController extends Controller {
         $data['subscription_id'] = Crypt::decrypt($subscription_id);
         $subscription = \App\Models\Subscription::getSubscription($data['subscription_id']);
         $data['price'] = !empty($subscription['price']) ? $subscription['price'] : null;
-//        echo "<pre>";
-//        print_r($decrypted_user_id);
-//        echo "<pre>";
-//        print_r($decrypted_subscription_id);
-//        exit;
         return view('payment-details', compact('data'));
     }
 
     //stripe own page payment
-//        public function paymentDetails($user_id, $subscription_id) {
+//    public function paymentDetails($user_id, $subscription_id) {
 //        $data['user_id'] = Crypt::decrypt($user_id);
 //        $data['subscription_id'] = Crypt::decrypt($subscription_id);
 //        $subscription = \App\Models\Subscription::getSubscription($data['subscription_id']);
 //        $data['price'] = !empty($subscription['price']) ? $subscription['price'] : null;
 //
 //        $stripe = new \Stripe\StripeClient(config('paths.secret_key'));
+//        //create customer
+//        //pass customer in session
 //        $checkout_session = $stripe->checkout->sessions->create([
 //            'line_items' => [[
 //            'price_data' => [
 //                'currency' => 'usd',
 //                'product_data' => [
-//                    'name' => 'T-shirt',
+//                    'name' => $subscription['plans'] . ' Subscription Plan',
 //                ],
-//                'unit_amount' => 2000,
+//                'unit_amount' => $data['price'] * 100,
 //            ],
 //            'quantity' => 1,
 //                ]],
@@ -276,7 +273,7 @@ class SubscriptionController extends Controller {
                 ->setCurrency('USD')
                 ->setQuantity(1)
                 ->setPrice($data['subscription']['price']);
-    
+
         $item_list = new \PayPal\Api\ItemList();
         $item_list->setItems(array($item_1));
 
@@ -352,7 +349,7 @@ class SubscriptionController extends Controller {
         $payment_id = Session::get('paypal_payment_id');
         Session::forget('paypal_payment_id');
         $payment_id = $request->get('paymentId');
-        
+
         if (empty($request->input('PayerID')) || empty($request->input('token'))) {
             \Session::put('error', 'Payment failed!!!');
             return Redirect::route('membershipPlans');
