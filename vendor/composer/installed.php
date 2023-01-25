@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '984360d2245c95890809cb7f5ca9e0cf37b3c635',
+        'reference' => '7dd469a9c7f245559f51effed8ea17a01ac6bf75',
         'name' => 'rubensrocha/laravel-breeze-multi-auth-admin',
         'dev' => true,
     ),
@@ -920,7 +920,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '984360d2245c95890809cb7f5ca9e0cf37b3c635',
+            'reference' => '7dd469a9c7f245559f51effed8ea17a01ac6bf75',
             'dev_requirement' => false,
         ),
         'sebastian/cli-parser' => array(
