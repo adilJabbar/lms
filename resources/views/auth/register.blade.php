@@ -18,11 +18,11 @@
 <body>
     <div class="container  mt-4">
                 <nav class="navbar">
-                <div class="logo"><h1>Speak2Impact Academy</h1></div>
-                <div class="login-action">
-                <a href="{{route('login')}}"><button class="start-learning">Login</button></a>                </div>
-            </nav>
-            </div>
+                    <div class="logo"><h1>Speak2Impact Academy</h1></div>
+                    <div class="login-action">
+                    <a href="{{route('login')}}"><button class="start-learning">Login</button></a>                </div>
+                </nav>
+    </div>
  
     <div class="container">
    <div class="row">

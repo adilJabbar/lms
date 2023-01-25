@@ -51,7 +51,7 @@
             <div class="container">
                 <div class="hero-top">
                     <div class="hero-heading">
-                        <img src="./images/heading-bg2.svg" alt="" class="h-patteren">
+                        <img src="./images/heading-bg2.svg" alt="" style="background: #ffffc81f;" class="h-patteren">
                         <h1>The Art of </br>Public Speaking </h1>    
                         <span>by<img src="./images/r1.png" alt="">Susie Ashfield</span>                
                     </div>
@@ -97,9 +97,9 @@
                     <h2><span>Learn the art of public speaking</span> with Susie Ashfield</h2>
                     <p>Join with yearly or monthly membership and get access to a our free webinars and schedule a meeting with coach</p>
                     <div class="facts">
-                        <span><b>9</b>Chapters</span>
-                        <span><b>62</b>Lessons</span>
-                        <span><b>80</b>Hours of videos</span>
+                        <span><b class="counter">9</b>Chapters</span>
+                        <span><b class="counter">62</b>Lessons</span>
+                        <span><b class="counter">80</b>Hours of videos</span>
                     </div>
                     <ul class="checks">
                         <li><img src="{{url('images/')}}/check.svg" alt="">Learn at your own pace</li>
@@ -141,7 +141,7 @@
         <div class="happy-client">
             <div class="container">
                 <h2 class="mb-5">Trusted by</h2>
-                <div class="owl-carousel owl-theme">
+                <div class="owl-carousel trusted owl-theme">
                    <div class="item"> <img src="{{url('images/')}}/image-1.png" alt=""></div>
                     <div class="item"><img src="{{url('images/')}}/image-2.png" alt=""></div>
                     <div class="item"><img src="{{url('images/')}}/image-3.png" alt=""></div>
@@ -208,7 +208,6 @@
                                 <button class="start-membershiIp" style="background-color:  #1C1C1C; color: #fff;">Sign
                                     for Free</button>
                             </div>
-
         <footer>
             <div class="container">
                 <div class="footer">
@@ -249,6 +248,18 @@
                                 }
                             }
                         });
+
+                        $('.counter').each(function () {
+                        $(this).prop('Counter',0).animate({
+                            Counter: $(this).text()
+                        }, {
+                            duration: 4000,
+                            easing: 'swing',
+                            step: function (now) {
+                                $(this).text(Math.ceil(now));
+                            }
+                        });
+                    });
                        
                      });
         </script>
