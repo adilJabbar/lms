@@ -22,7 +22,9 @@ h3 {
     justify-content: space-between;
     height: 123px;
 }
-
+.css-class{
+    object-fit: cover;
+}
 h1 {
     font-weight: 500;
     line-height: 36px;
@@ -31,20 +33,46 @@ h1 {
 }
 
 header button {
-    height: 60px;
-    width: 180px;
+    /* height: 60px;
+    width: 180px; */
+    /* padding: 16px 40px 16px 40px; */
     border-radius: 6px;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 500;
     background: #fff;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.12);
     border: 1px solid #000;
+    font-size:1.2rem;
 }
 
+.login{
+     padding: 16px 50px 16px 50px;
+}
+.login:hover{
+    background:#000;
+    color:#fff;
+    border:1px solid #000;
+    transition: 0.3s;
+}
 button.start-learning {
     background: #000;
     color: #FFFFC8;
     text-transform: capitalize;
-    margin-left: 26px;
+    padding: 16px 40px 16px 40px;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.12);
+
+}
+button.start-learning:hover {
+    background: #fff;
+    border:1px solid #000;
+    color:#000;
+    transition: 0.3s;
+
+}
+.wavy{
+    text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: black;
 }
 
 footer {

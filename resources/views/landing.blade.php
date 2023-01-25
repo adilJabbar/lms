@@ -26,10 +26,9 @@
                         @if (Auth::check())
                         <a href="{{ route('logout') }}"><button class="login">Logout</button></a>
                         @else
-                        <a href="{{url('login')}}"><button class="login">Login</button></a>
+                        <a href="{{url('login')}}"><button class="login mx-4">Login</button></a>
                         @endif
-
-                        <a href="{{route('membershipPlans')}}"><button class="start-learning">start learning</button></a>
+                        <a href="{{route('membershipPlans')}}"><button class="start-learning">Start Learning</button></a>   
                         {{-- <button class="start-learning">start learning</button> --}}
                     </div>
                 </div>
@@ -51,9 +50,9 @@
             <div class="container">
                 <div class="hero-top">
                     <div class="hero-heading">
-                        <img src="./images/heading-bg2.svg" alt="" style="background: #ffffc81f;" class="h-patteren">
+                        <img src="./images/heading-bg2.svg" alt="" style="--top-right:10px;--bottom-right:50px;background:radial-gradient(#ffffc88a,#fff); z-index:-1;" class="h-patteren">
                         <h1>The Art of </br>Public Speaking </h1>    
-                        <span>by<img src="./images/r1.png" alt="">Susie Ashfield</span>                
+                        <span>by<img src="./images/r1.png" alt=""><span class="wavy">Susie Ashfield</span></span>                
                     </div>
                     <ul class="features">
                         <li>✦ Learn at your pace</li>
@@ -88,7 +87,7 @@
 
         <div class="fun-facts">
             <div class="container">
-                <video width="800" height="500" controls>
+                <video width="800" height="500" controls poster="{{url('images/')}}/Frame_29.png">
                     <source src="movie.mp4" type="video/mp4">
                     <source src="movie.ogg" type="video/ogg">
                     Your browser does not support the video tag.
@@ -142,13 +141,11 @@
             <div class="container">
                 <h2 class="mb-5">Trusted by</h2>
                 <div class="owl-carousel trusted owl-theme">
-                   <div class="item"> <img src="{{url('images/')}}/image-1.png" alt=""></div>
-                    <div class="item"><img src="{{url('images/')}}/image-2.png" alt=""></div>
-                    <div class="item"><img src="{{url('images/')}}/image-3.png" alt=""></div>
-                    <div class="item"><img src="{{url('images/')}}/image-4.png" alt=""></div>
-                    <div class="item"><img src="{{url('images/')}}/image-5.png" alt=""></div>
-                    <div class="item"><img src="{{url('images/')}}/image-6.png" alt=""></div>
-                    <div class="item"><img src="{{url('images/')}}/image-7.png" alt=""></div>
+                    <div class="item"><img src="{{url('images/')}}/c1.png" alt=""></div>
+                    <div class="item"><img src="{{url('images/')}}/c2.png" alt=""></div>
+                    <div class="item"><img src="{{url('images/')}}/c3.png" alt=""></div>
+                    <div class="item"><img src="{{url('images/')}}/c4.png" alt=""></div>
+                    <div class="item"><img src="{{url('images/')}}/c5.png" alt=""></div>
                     <div class="item"><img src="{{url('images/')}}/c1.png" alt=""></div>
                     <div class="item"><img src="{{url('images/')}}/c2.png" alt=""></div>
                     <div class="item"><img src="{{url('images/')}}/c3.png" alt=""></div>
