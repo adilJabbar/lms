@@ -134,7 +134,7 @@
                     <h3>$3588.00</h3>
                     <h6>Annual membership<span>$299.00/month</span></h6>
                     <button class="start-membership">Start membership</button>
-                    <a href="#">Sign up for free</a>
+                    <a href="{{route('register')}}">Sign up for free</a>
                 </div>
             </div>
         </div>

@@ -156,7 +156,7 @@ $(document).ready(function () {
                                         <a href="{{route('paymentDetails',['user_id'=>(Crypt::encrypt(auth()->user()->id)),'subscription_id'=>(Crypt::encrypt($record['id']))])}}" type ="button" class="btn start-membership" style="background-color:  #FDF8C8; color: black;">Start membership</a>
 
                                         @else
-                                        <a href="#" type ="button" class="btn start-membership" style="background-color:  #FDF8C8; color: black;">Sign Up</a>
+                                        <a href="{{route('home')}}" type ="button" class="btn start-membership" style="background-color:  #FDF8C8; color: black;">Sign Up</a>
 
                                         @endif
                                         @else
@@ -185,7 +185,7 @@ $(document).ready(function () {
                                                                                                     style="background-color:  #1C1C1C; color: #fff;">Start membership</button>
                                                                                         </form>-->
                                             @else
-                                            <a href="#" type ="button" class="btn start-membership" style="background-color:  #1C1C1C; color: #fff;">Sign Up</a>
+                                            <a href="{{route('home')}}" type ="button" class="btn start-membership" style="background-color:  #1C1C1C; color: #fff;">Sign Up</a>
 
                                             @endif
                                             @endif
@@ -228,7 +228,7 @@ $(document).ready(function () {
                                         <p class="heading2      "><img src="./images/check.svg" alt=""
                                                                        style="margin-right: 1%;">Access to Yoodli</p>
                                         <a href="{{route('home')}}"><button type="button" class="start-membershiIp" style="background-color:  #1C1C1C; color: #fff;">Sign
-                                            for Free</button> </a>
+                                                for Free</button> </a>
                                     </div>
                                     @endif
                                 </div>
@@ -295,7 +295,7 @@ $(document).ready(function () {
                                     </form>
                                 </div>
                             </div>
-                            
+
                             <!-- <div class="form-card col-sm-12 col-md-6 col-lg-6">
                                             <form>
                                                 <div class="membership-field">
@@ -327,11 +327,11 @@ $(document).ready(function () {
                         @endif
                     </form>
 
-                    
+
                 </div>
-                
+
             </div>
-            
+
         </div>
 
 
@@ -388,7 +388,7 @@ $(document).ready(function () {
                         <div class="footer-link">
                             <a href="#">Contact US</a>
                             <a href="#">Speak2impact</a>
-                            <a href="#">Sign up</a>
+                            <a href="{{route('home')}}">Sign up</a>
                             <a href="#">Login</a>
                         </div>
                     </div>

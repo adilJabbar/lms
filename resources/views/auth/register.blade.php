@@ -108,8 +108,8 @@
              <div class="footer-link">
                  <a href="#">Contact US</a>
                  <a href="#">Speak2impact</a>
-                 <a href="#">Sign up</a>
-                 <a href="#">Login</a>
+                 <a href="{{route('register')}}">Sign up</a>
+                 <a href="{{route('login')}}">Login</a>
              </div>
          </div>
          <div class="social-icon mt-3">

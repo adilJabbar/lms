@@ -7,9 +7,9 @@
                 </div>
                 <div class="footer-link">
                     <a href="#">Contact US</a>
-                    <a href="#">Speak2impact</a>
-                    <a href="#">Sign up</a>
-                    <a href="#">Login</a>
+                    <a href="{{route('home')}}">Speak2impact</a>
+                    <a href="{{route('register')}}">Sign up</a>
+                    <a href="{{route('login')}}">Login</a>
                 </div>
             </div>
             <div class="social-icon">
@@ -30,6 +30,6 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'></script>
 <script>
 
-    </script>
+</script>
 </body>
 </html>
