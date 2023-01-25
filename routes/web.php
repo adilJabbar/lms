@@ -33,6 +33,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('course-lesson-number/{id}/{lesson_id}', [App\Http\Controllers\HomeController::class, 'courseLesson'])->name('course-lesson-number');
     Route::get('calendly', [App\Http\Controllers\HomeController::class, 'calendly'])->name('calendly');
     Route::get('calendly', [App\Http\Controllers\HomeController::class, 'calendly'])->name('calendly');
+    Route::get('practise', [App\Http\Controllers\HomeController::class, 'yoodli'])->name('yoodli');
 
     Route::get('membership-plans', [App\Http\Controllers\SubscriptionController::class, 'membershipPlans'])->name('membershipPlans');
     Route::get('payment-details/{user_id}/{subscription_id}', [App\Http\Controllers\SubscriptionController::class, 'paymentDetails'])->name('paymentDetails');
@@ -43,6 +44,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('book-slot', [App\Http\Controllers\BookingController::class, 'bookSlot'])->name('bookSlot');
 });
 Route::get('webinars', [App\Http\Controllers\WebinarController::class, 'getWebinars'])->name('getWebinars');
+Route::get('calendly_info', [App\Http\Controllers\WebinarController::class, 'calendly'])->name('calendly');
 
 Route::get('/deleteWebinar/{id}', [\App\Http\Controllers\Admin\WebinarController::class, 'deleteWebinar'])->name('deleteWebinar');
 

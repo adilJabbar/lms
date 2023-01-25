@@ -87,6 +87,19 @@ Edit Webinar Detail
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
+                                                        <label for="url">Zoom Booking Url</label>
+                                                        <input step="any"
+                                                               name="zoom_booking_url"
+                                                              value="{{$data['zoom_booking_url']}}"  type="text" class="form-control" required>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </fieldset>
+                                        <fieldset>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
                                                         <label for="url">Introduction (Max 200 Words)</label>
                                                         <textarea step="any"
                                                                   name="title"

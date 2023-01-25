@@ -103,5 +103,9 @@ class HomeController extends Controller {
     public function calendly() {
         return view('calendly');
     }
+    public function yoodli() {
+        return view('yoodli');
+    }
+    
 
 }

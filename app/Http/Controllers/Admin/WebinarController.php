@@ -66,6 +66,7 @@ class WebinarController extends Controller {
         $request = $data->toArray();
         $inputs['title'] = $request['title'];
         $inputs['video_url'] = $request['url'];
+        $inputs['zoom_booking_url'] = $request['zoom_booking_url'];
         $inputs['date'] = $request['date'];
         $inputs['instructor'] = $request['instructor_name'];
         $inputs['type'] = $request['type'];

@@ -86,10 +86,23 @@ Add Webinar
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="date">Select Date of Webinar</label>
+                                                        <label for="url">Zoom Booking Url</label>
+                                                        <input step="any"
+                                                               name="zoom_booking_url"
+                                                               type="text" class="form-control" required>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </fieldset>
+                                        <fieldset>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="date">Select Date of Webinar In UTC</label>
                                                         <input step="any"
                                                                name="date"
-                                                               type="date" class="form-control" required>
+                                                               type="datetime-local" class="form-control" required>
                                                     </div>
                                                 </div>
 

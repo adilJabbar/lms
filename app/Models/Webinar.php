@@ -24,7 +24,8 @@ class Webinar extends Model {
         'instructor',
         'type',
         'is_active',
-        'image'
+        'image',
+        'zoom_booking_url'
     ];
 
     /**

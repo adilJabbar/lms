@@ -11,5 +11,9 @@ class WebinarController extends Controller {
         $data['upcoming'] = \App\Models\Webinar::getWebinarsAgainstType('type', 'upcoming');
         return view('webinars', compact('data'));
     }
+    public function calendly(Request $request)
+    {
+        
+    }
 
 }

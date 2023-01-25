@@ -24,7 +24,7 @@
                     @endif
                 </div>
                 <div class="webinar-button">
-                    <button>Book a slot</button>
+                    <a target="_blank" href="{{$record['zoom_booking_url']}}"><button>Book a slot</button></a>
                 </div>
             </div>
             @endforeach
