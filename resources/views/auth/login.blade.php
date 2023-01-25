@@ -15,7 +15,7 @@
                 <nav class="navbar">
                 <div class="logo"><h1>Speak2Impact Academy</h1></div>
                 <div class="login-action">
-                                <a href="{{route('register')}}"><button class="start-learning">Sign Up</button></a>
+                <a href="{{route('register')}}"><button class="start-learning">Sign Up</button></a>
                 </div>
             </nav>
             </div>

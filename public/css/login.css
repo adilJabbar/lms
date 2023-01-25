@@ -201,3 +201,7 @@ button.login-m:hover{
     display: flex;
     gap:30px;
 }
+.form-control:focus{
+    border:1px solid var(--secondary-color);
+    box-shadow: none;
+}
