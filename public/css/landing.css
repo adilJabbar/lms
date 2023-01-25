@@ -82,7 +82,7 @@ footer {
     font-size: 16px;
     line-height: 26px;
     font-weight: 500;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .membership-plan h2 {
@@ -158,9 +158,7 @@ footer {
     position: relative;
 }
 
-.membership-plan {
-    padding: 60px 0 120px 0;
-}
+
 
 .plans {
     display: flex;
@@ -217,7 +215,7 @@ footer {
 .testimonial h2 span {
     background: #FFFFC8;
     border-radius: 8px;
-    padding: 5px 0px 5px 15px;
+    padding: 5px 10px 5px 15px;
     margin: 0 0 0 -15px;
 }
 
@@ -625,7 +623,7 @@ img.h-patteren {
     text-align: center !important;
 }
 button.start-membershipp {
-    font-size: 18px;
+    font-size: 22px;
     line-height: 27px;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 500;
@@ -633,20 +631,21 @@ button.start-membershipp {
     border-radius: 6px;
     padding: 15px 20px;
     display: block;
-    width: 70%;
     margin-bottom: 16px;
-    margin-left: 15%;
+    margin: 0 8%;
 }
 .saave {
     color: #FFFFC8;
     text-align: center;
-    font-weight: 200;
+    font-weight: 500;
     margin-bottom: 15%;
+    font-family: 'Inter', sans-serif !important;
 }
 .heading {
     color: rgb(221, 216, 216);
-    font-size: 14px;
-    /* font-family: 'Inter', sans-serif !important; */
+    font-size: 15px;
+    font-family: 'Inter', sans-serif !important;
+    padding:0px 5px;
 }
 button.start-membership {
     font-size: 18px;
@@ -683,7 +682,6 @@ button.start-membership {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     margin-bottom: 20px;
 }
 .membership-plan2 h6 span {
@@ -697,12 +695,15 @@ button.start-membership {
 .saave2 {
     color: #1C1C1C ;
     text-align: center;
-    font-weight: 200;
     margin-bottom: 15%;
+    font-weight: 500;
+    margin-bottom: 15%;
+    font-family: 'Inter', sans-serif !important;
 }
 .heading2 {
     color: #1C1C1C;
-    font-size: 14px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
 }
 .Sign {
     border-radius: 12px;
@@ -726,4 +727,12 @@ button.start-membershiIp {
     padding: 15px 20px;
     display: block;
     width: 100%;
+}
+.social-icon{
+    display: flex;
+    gap:30px;
+}
+.form-control:focus{
+    border:1px solid var(--secondary-color);
+    box-shadow: none;
 }

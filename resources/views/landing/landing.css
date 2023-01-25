@@ -6,17 +6,16 @@ h3 {
     font-family: 'Space Grotesk', sans-serif;
 }
 
-.container {
+/* .container {
     width: 100%;
-    max-width: 1440px;
+    max-width: 1240px;
     margin: 0 auto;
-}
+} */
 
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 123px;
 }
 
 h1 {
@@ -208,7 +207,7 @@ footer {
 .testimonial h2 span {
     background: #FFFFC8;
     border-radius: 8px;
-    padding: 5px 0px 5px 15px;
+    padding: 5px 10px 5px 15px;
     margin: 0 0 0 -15px;
 }
 
@@ -453,4 +452,10 @@ img.h-patteren {
     .h-patteren{
         width: 100%;
     }
+}
+.owl-carousel .owl-nav button.owl-prev{
+    position: absolute !important;
+    top:50% !important;
+    right:-20px !important;
+    font-size: 40px !important;
 }
