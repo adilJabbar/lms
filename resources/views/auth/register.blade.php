@@ -11,66 +11,94 @@
     <title>Speek2Impact</title>
     <!-- css link  -->
     <link rel="stylesheet" href="{{url('css/')}}/signup.css">
+
+    <link rel="stylesheet" href="{{url('css/')}}/login.css">
+    
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header">
-                <div class="logo"><h1>Speak2Impact Academy</h1></div>
-                <div class="login-action">
-                    <a href="{{route('login')}}""><button class="start-learning">Login</button></a>
-                </div>
-            </div>
-
-        </div>
-    </header>
-    <div class="signup-area">
-            <h1>Sign up</h1>
+    <div class="container  mt-4">
+                <nav class="navbar">
+                    <div class="logo"><h1>Speak2Impact Academy</h1></div>
+                    <div class="login-action">
+                    <a href="{{route('login')}}"><button class="start-learning">Login</button></a>                </div>
+                </nav>
+    </div>
+ 
+    <div class="container">
+   <div class="row">
+   <div class="h-100 d-flex align-items-center justify-content-center mt-5 mb-login">
+   <div class="login-area">
+            <h1>Sign Up</h1>
             <span>Get started by filling up details below</span>
-            <div class="signup-option">
-                <button type="button">   <a href="{{ url('login/google') }}"> <img src="{{url('images/')}}/google.svg" alt="" />  Log in with Google </a></button>
+            <div class="login-option">
+                <button type="button"> <img src="{{url('images/')}}/google.svg" alt="" />  Log in with Google </button>
                 <button><img src="{{url('images/')}}/fb.svg" alt=""> Log in with Facebook</button>
+                {{-- <button><img src="{{url('images/')}}/fb.svg" alt=""> Log in with Facebook</button> --}}
             </div>
-            <x-auth-validation-errors class="mb-4" :errors="$errors" />
             <form method="POST" action="{{ route('register') }}">
             @csrf
-            <div class="signup-field">
-            <label for="exampleInputEmail1" class="form-label">First Name</label>
-            <input type="text" class="form-control f-img" name="first_name" required="required" placeholder="Enter First name">
-            <img src="{{url('images/')}}/person.svg" alt="">
-             </div>
-             <div class="signup-field">
+             <div class="row">
+                <div class="col-lg-6">
+                <div class="signup-field">
+                <label for="exampleInputEmail1" class="form-label">First Name</label>
+                <input type="text" class="form-control f-img" name="last_name" required="required" placeholder="Enter last name">
+                <img src="{{url('images/')}}/person.svg" alt="">
+                 </div>
+                </div>
+                <div class="col-lg-6">
+                <div class="signup-field">
                 <label for="exampleInputEmail1" class="form-label">Last Name</label>
                 <input type="text" class="form-control f-img" name="last_name" required="required" placeholder="Enter last name">
                 <img src="{{url('images/')}}/person.svg" alt="">
                  </div>
-                 <div class="signup-field">
+            </div>        
+            </div>
+
+            <div class="row">
+        <div class="col-lg-6">
+            <div class="signup-field">
                     <label for="exampleInputEmail1" class="form-label">Phone Number</label>
                     <input type="text" class="form-control f-img" name="phone_number" required="required" placeholder="Enter phone number">
                     <img src="{{url('images/')}}/call.svg" alt="">
                      </div>
-                 <div class="signup-field">
+            </div>
+            <div class="col-lg-6">
+            <div class="signup-field">
                     <label for="exampleInputEmail1" class="form-label">Email id</label>
                     <input type="email" class="form-control" name="email" required="required" placeholder="Enter email id">
                     <img src="{{url('images/')}}//mail.svg" alt="">
                      </div>
-             <div class="signup-field">
+            </div>
+        </div>
+
+            <div class="row">
+        <div class="col-lg-6">
+            <div class="signup-field">
                 <label for="exampleInputEmail1" class="form-label">Password</label>
                 <input type="password" class="form-control" name="password" required="required" placeholder="Enter password">
                  </div>
+            </div>
+                 <div class="col-lg-6">
                  <div class="signup-field">
                     <label for="exampleInputEmail1" class="form-label">Confirm Password</label>
                     <input type="password" class="form-control" name="password_confirmation" required="required" placeholder="Confirm Password">
                      </div>
-                     <div class="signup-field">
+                 </div>
+               
+            <div class="col-lg-6">
+            <div class="signup-field">
                         <label for="exampleInputEmail1" class="form-label">City</label>
                         <input type="text" class="form-control f-img" name="city" placeholder="City">
                         <img src="{{url('images/')}}/location_on.svg" alt="">
                          </div>
-            <button type="submit" class="signup-m">Register</button>
+            </div>
+        </div>
+            <button type="submit" class="login-m">Sign up</button>
           </form>
     </div>
-
+</div>
+   </div>
+</div>
 
     <footer>
         <div class="container">
@@ -84,9 +112,10 @@
                  <a href="#">Login</a>
              </div>
          </div>
-         <div class="social-icon">
-             <a href="#"><img src="{{url('images/')}}/icons8-instagram.svg" alt=""></a>
-             <a href="#"><img src="{{url('images/')}}/icons8-facebook.svg" alt=""></a>
+         <div class="social-icon mt-3">
+             <a href="#"><img src="{{url('images/')}}/Instagram.svg" alt=""></a>
+             <a href="#"><img src="{{url('images/')}}/facebook.svg" alt=""></a>
+             <a href="#"><img src="{{url('images/')}}/Vector.svg" alt=""></a>
          </div>
          </div>
         </div>

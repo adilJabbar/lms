@@ -3,11 +3,11 @@
 h1,h2,h3 {
     font-family: 'Space Grotesk', sans-serif;
 }
-.container {
+/* .container {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-}
+} */
 
 .header {
     display: flex;
@@ -57,10 +57,10 @@ footer {
     align-items: center;
 }
 
-.footer-link {
+/* .footer-link {
     display: flex;
     margin-left: 10px;
-}
+} */
 
 .footer-link a {
     color: #FFFFC8;
@@ -74,12 +74,12 @@ footer {
 
 /* =============   Sign up CSS   =========== */
 
-.signup-area {
+/* .signup-area {
     width: 100%;
     max-width: 650px;
     margin: 0 auto;
     padding: 60px 20px;
-}
+} */
 
 .signup-area h1 {
     font-size: 72px;
@@ -176,9 +176,9 @@ button.signup-m {
     justify-content: space-between;
 }
 
-.signup-field {
+/* .signup-field {
     width: calc(50% - 16px);
-}
+} */
 
 input.f-img {
     padding-left: 48px;
