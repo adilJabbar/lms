@@ -29,6 +29,16 @@
    <div class="h-100 d-flex align-items-center justify-content-center mt-5 mb-login">
    <div class="login-area">
             <h1>Sign Up</h1>
+ @if (Session::has('error'))
+                    <div class="alert alert-error text-center">
+                        <p>{{ Session::get('error') }}</p>
+                    </div>
+                    @elseif(Session::has('success'))
+                    <div class="alert alert-success text-center">
+                        <p>{{ Session::get('success') }}</p>
+                    </div>
+
+                    @endif
             <span>Get started by filling up details below</span>
             <div class="login-option">
                 <button type="button"> <img src="{{url('images/')}}/google.svg" alt="" />  Log in with Google </button>
@@ -41,7 +51,7 @@
                 <div class="col-lg-6">
                 <div class="signup-field">
                 <label for="exampleInputEmail1" class="form-label">First Name</label>
-                <input type="text" class="form-control f-img" name="last_name" required="required" placeholder="Enter last name">
+                <input type="text" class="form-control f-img" name="first_name" required="required" placeholder="Enter last name">
                 <img src="{{url('images/')}}/person.svg" alt="">
                  </div>
                 </div>

@@ -24,6 +24,17 @@
    <div class="h-100 d-flex align-items-center justify-content-center mt-5 mb-login">
    <div class="login-area">
             <h1>Log In</h1>
+ @if (Session::has('error'))
+                    <div class="alert alert-error text-center">
+                        <p>{{ Session::get('error') }}</p>
+                    </div>
+                    @elseif(Session::has('success'))
+                    <div class="alert alert-success text-center">
+                        <p>{{ Session::get('success') }}</p>
+                    </div>
+
+                    @endif
+
             <span>Get started by filling up details below</span>
             <div class="login-option">
                 <button type="button"> <img src="{{url('images/')}}/google.svg" alt="" />  Log in with Google </button>

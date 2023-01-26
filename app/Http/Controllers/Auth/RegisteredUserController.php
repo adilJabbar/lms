@@ -10,16 +10,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use DB;
 
-class RegisteredUserController extends Controller
-{
+class RegisteredUserController extends Controller {
+
     /**
      * Display the registration view.
      *
      * @return \Illuminate\View\View
      */
-    public function create()
-    {
+    public function create() {
+
         return view('auth.register');
     }
 
@@ -31,32 +32,35 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request)
-    {
-     
+    public function store(Request $request) {
+        DB::beginTransaction();
         $request->validate([
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
             'city' => ['required', 'string', 'max:255'],
-            'phone_number'=>['required', 'string', 'max:255'],
+            'phone_number' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
         // dd($request->all());
         $user = User::create([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'phone_number' => $request->phone_number,
-            'city' => $request->city,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'is_active'=>'1'
+                    'first_name' => $request->first_name,
+                    'last_name' => $request->last_name,
+                    'phone_number' => $request->phone_number,
+                    'city' => $request->city,
+                    'email' => $request->email,
+                    'password' => Hash::make($request->password),
+                    'is_active' => '1'
         ]);
+        if ($user) {
+            event(new Registered($user));
 
-        event(new Registered($user));
-
-        Auth::login($user);
-        
-        return redirect(RouteServiceProvider::HOME);
+            Auth::login($user);
+            DB::commit();
+            return redirect(RouteServiceProvider::HOME);
+        }
+        DB::rollback();
+        return redirect()->back()->with('Error occurred! please try again');
     }
+
 }

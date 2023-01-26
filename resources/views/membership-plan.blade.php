@@ -94,7 +94,9 @@ $(document).ready(function () {
                     </div>
                     @if(auth()->check())
                     <div class="login-action">
-                        {{auth()->user()->first_name}}
+                        <!--{{auth()->user()->first_name}}-->
+                        <a href="{{ route('logout') }}"><button class="login">Logout</button></a>
+
                     </div>
                     @else
                     <div class="login-action">
