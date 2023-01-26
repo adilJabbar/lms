@@ -376,6 +376,7 @@ ul.checks li img {
     margin: 0 auto;
     display: block;
     border-radius: 12px;
+    cursor:pointer;
 }
 
 
@@ -526,6 +527,7 @@ img.h-patteren {
     .fun-facts video{
         width: 370px;
         height: auto;
+        cursor:pointer;
     }
     .h-patteren{
         display: none;
@@ -620,6 +622,7 @@ img.h-patteren {
     }
     .fun-facts video{
         width: 600px;
+        cursor:pointer;
     }
     .footer-link{
         display: grid;
