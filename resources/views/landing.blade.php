@@ -177,12 +177,12 @@
                                 </div>
                                 <h3 class="price">£1200 per year</h3>
                                 <p class="saave">(Save 30% on annually)</p>
-                                <p class="heading"><span><img src="http://127.0.0.1:8000/images/check.png"></span>  Access to all courses</p>
-                                <p class="heading"><span><img src="http://127.0.0.1:8000/images/check.png"></span>  40 mins of 1-to-1 with a coach per month</p>
-                                <p class="heading"><span><img src="http://127.0.0.1:8000/images/check.png"></span>  30% discount on further 1-to-1 coaching sessions</p>
-                                <p class="heading"><span><img src="http://127.0.0.1:8000/images/check.png"></span>  Coach feedback on 2 videos on Yoodli per month</p>
-                                <p class="heading"><span><img src="http://127.0.0.1:8000/images/check.png"></span>  Access to webinars and other pre-recorded content <span><img src="http://127.0.0.1:8000/images/free-white.png"></span></p>
-                                <p class="heading"><span><img src="http://127.0.0.1:8000/images/check.png"></span>  Access to Yoodli <span><img src="http://127.0.0.1:8000/images/free-white.png"></span></p>
+                                <p class="heading"><span><img src="{{url('images/check.png')}}"></span>  Access to all courses</p>
+                                <p class="heading"><span><img src="{{url('images/check.png')}}"></span>  40 mins of 1-to-1 with a coach per month</p>
+                                <p class="heading"><span><img src="{{url('images/check.png')}}"></span>  30% discount on further 1-to-1 coaching sessions</p>
+                                <p class="heading"><span><img src="{{url('images/check.png')}}"></span>  Coach feedback on 2 videos on Yoodli per month</p>
+                                <p class="heading"><span><img src="{{url('images/check.png')}}"></span>  Access to webinars and other pre-recorded content <span><img src="{{url('127.0.0.1:8000/images/free-white.png')}}"></span></p>
+                                <p class="heading"><span><img src="{{url('images/check.png')}}"></span>  Access to Yoodli <span><img src="{{url('images/free-white.png')}}"></span></p>
                                 <button class="start-membership">Start membership</button>
                             </div>
                         </div>
@@ -193,12 +193,12 @@
                             </div>
                     <h3 class="price">£150.00/month</h3>
                     <p class="saave2">(Save 10% on Monthly)</p>
-                    <p class="heading2"><span><img src="http://127.0.0.1:8000/images/check_black.png"></span>  Access to all courses</p>
-                    <p class="heading2"><span><img src="http://127.0.0.1:8000/images/check_black.png"></span>  40 mins of 1-to-1 with a coach per month</p>
-                    <p class="heading2"><span><img src="http://127.0.0.1:8000/images/check_black.png"></span>  30% discount on further 1-to-1 coaching sessions</p>
-                    <p class="heading2"><span><img src="http://127.0.0.1:8000/images/check_black.png"></span>  Coach feedback on 2 videos on Yoodli per month</p>
-                    <p class="heading2"><span><img src="http://127.0.0.1:8000/images/check_black.png"></span>  Access to webinars and other pre-recorded content <span><img src="http://127.0.0.1:8000/images/free-white.png"></span></p>
-                    <p class="heading2"><span><img src="http://127.0.0.1:8000/images/check_black.png"></span>  Access to Yoodli <span><img src="http://127.0.0.1:8000/images/free-white.png"></span></p>
+                    <p class="heading2"><span><img src="{{url('images/check_black.png')}}"></span>  Access to all courses</p>
+                    <p class="heading2"><span><img src="{{url('images/check_black.png')}}"></span>  40 mins of 1-to-1 with a coach per month</p>
+                    <p class="heading2"><span><img src="{{url('images/check_black.png')}}"></span>  30% discount on further 1-to-1 coaching sessions</p>
+                    <p class="heading2"><span><img src="{{url('images/check_black.png')}}"></span>  Coach feedback on 2 videos on Yoodli per month</p>
+                    <p class="heading2"><span><img src="{{url('images/check_black.png')}}"></span>  Access to webinars and other pre-recorded content <span><img src="{{url('images/free-white.png')}}"></span></p>
+                    <p class="heading2"><span><img src="{{url('images/check_black.png')}}"></span>  Access to Yoodli <span><img src="{{url('images/free-white.png')}}"></span></p>
                     <button class="start-membership" style="background-color:  #1C1C1C; color: #fff;">Start membership</button>
                             </div>
                         </div>
