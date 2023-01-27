@@ -48,7 +48,7 @@ class HomeController extends Controller {
         return view('home', compact('courses'));
     }
 
-    public function courseLesson($id, $lesson_id = '') {
+    public function courseLesson($id, $lesson_id = '',Request $request) {
         $course = Course::find($id);
 
         $user_id = '1';
@@ -70,9 +70,9 @@ class HomeController extends Controller {
         $data['userdocuments'] = $coursecurriculum['userdocuments'];
         $data['userresources'] = $coursecurriculum['userresources'];
         $segments = request()->segments();
-        $last  = end($segments);
-   
-    
+        $last  = request()->segment(2);
+        
+
         if (isset($data['lecturesquiz'][$last]) && !empty($data['lecturesquiz'])) {
             $intro = DB::table('course_videos')->where('id', $data['lecturesquiz'][$last][0]->media)->get()->toArray();
             $data['quiz_description'] = $data['lecturesquiz'][$last][0]->description;
