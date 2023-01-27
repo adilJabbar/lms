@@ -9,6 +9,10 @@
         <!-- css link  -->
         <link rel="stylesheet" href="{{url('css/landing.css')}}">
         <link rel="stylesheet" href="{{url('css/owl.carousel.css')}}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
         <!-- Add the slick-theme.css if you want default styling -->
@@ -18,7 +22,7 @@
             <div class="container">
                 <div class="header">
                     <div class="logo">
-                        <h1>Speak2Impact Academy</h1>   
+                    <img src="{{url('logo/logo.jpg')}}" height="70px" width="200px" class="css-class" alt="alt text">
                         <!-- <h1>Speak2Impact Academy</h1> -->
 
                     </div>
@@ -28,12 +32,41 @@
                         @else
                         <a href="{{url('login')}}"><button class="login mx-4">Login</button></a>
                         @endif
-                        <a href="{{route('membershipPlans')}}"><button class="start-learning">Start Learning</button></a>   
+                        @if (Auth::check() && (isset(Auth::user()->email_verified_at) && !empty(Auth::user()->email_verified_at) ))
+                        <a href="{{route('membershipPlans')}}"><button class="start-learning">Start Learning</button></a> 
+                        @else
+                        <button data-toggle="modal" data-target="#exampleModal" class="start-learning">Start Learning</button> 
+                        @endif
+
+                        
                         {{-- <button class="start-learning">start learning</button> --}}
                     </div>
                 </div>
 
             </div>
+
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Verify your email</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                You have recieved a email for verification after you registered you can start learning. 
+                </div>
+               
+                </div>
+            </div>
+        </div>
+
+
+
+
+
             @if (Session::has('error'))
             <div class="alert alert-error text-center">
                 <p>{{ Session::get('error') }}</p>
@@ -59,7 +92,21 @@
                         <li>✦ Free webinars</li>
                         <li>✦ Schedule meeting with a Coach</li>
                     </ul>
-                    <button>start learning<img src="./images/ar.svg" alt=""></button>
+                 
+                @if (Auth::check() && (isset(Auth::user()->email_verified_at) && !empty(Auth::user()->email_verified_at) ))
+                <button>
+                <a href="{{route('membershipPlans')}}">start learning </a>
+                <img src="./images/ar.svg" alt=""></button>
+
+               
+                @else
+                <button data-toggle="modal" data-target="#exampleModal">        
+                start learning 
+                <img src="./images/ar.svg" alt=""></button>
+                @endif
+                    
+                    
+                    
                 </div>
             </div>
         </div>
@@ -202,7 +249,7 @@
                                      style="margin-right: 1%;">Access to webinars and other pre-recorded content <span><img src="{{url('images/')}}/free-white.png"></p>
                     <p class="heading2      "><img src="./images/check.svg" alt=""
                                                    style="margin-right: 1%;">Access to Yoodli <span><img src="{{url('images/')}}/free-white.png"></p>
-                            <button class="start-membershiIp" style="background-color:  #1C1C1C; color: #fff;">Sign
+                            <button class="start-membershiIp" style="background-color:  #1C1C1C; color: #fff;"><a href="{{route('home')}}" >Sign
                                 for Free</button>
                             </div>
                             <footer>

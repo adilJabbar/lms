@@ -13,7 +13,7 @@
 <body>
             <div class="container">
                 <nav class="navbar">
-                <div class="logo"><h1>Speak2Impact Academy</h1></div>
+                <div class="logo">  <img src="{{url('logo/logo.jpg')}}" height="70px" width="200px" class="css-class" alt="alt text"></div>
                 <div class="login-action">
                 <a href="{{route('register')}}"><button class="start-learning">Sign Up</button></a>
                 </div>
@@ -37,8 +37,8 @@
 
             <span>Get started by filling up details below</span>
             <div class="login-option">
-                <button type="button"> <img src="{{url('images/')}}/google.svg" alt="" />  Log in with Google </button>
-                <button><img src="{{url('images/')}}/fb.svg" alt=""> Log in with Facebook</button>
+             <button type="button">   <img src="{{url('images/')}}/google.svg" alt="" /> <a href="{{url('login/google')}}" >  Log in with Google </a> </button>
+                <button><img src="{{url('images/')}}/fb.svg" alt=""> <a href="{{url('login/facebook')}}" > Log in with Facebook </a></button>
                 {{-- <button><img src="{{url('images/')}}/fb.svg" alt=""> Log in with Facebook</button> --}}
             </div>
             <form method="POST" action="{{ route('Signin') }}">
@@ -84,3 +84,25 @@
      </footer>
  </body>
  </html>
+
+ <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '3200592253586677',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{api-version}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>

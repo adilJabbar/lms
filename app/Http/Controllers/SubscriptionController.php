@@ -47,7 +47,9 @@ class SubscriptionController extends Controller {
         $data['subscription_id'] = Crypt::decrypt($subscription_id);
         $subscription = \App\Models\Subscription::getSubscription($data['subscription_id']);
         $data['price'] = !empty($subscription['price']) ? $subscription['price'] : null;
-        return view('payment-details', compact('data'));
+        $subscription  = $subscription;
+        
+        return view('payment-details', compact('data','subscription'));
     }
 
     //stripe own page payment
@@ -158,6 +160,8 @@ class SubscriptionController extends Controller {
 
     public static function createPaymentIntentMethod($data = []) {
         $key = Stripe\Stripe::setApiKey(config('paths.secret_key'));
+        $discount = $data['subscription']['discount_percentage']/100*$data['subscription']['price'];
+        $data['subscription']['price'] =  $data['subscription']['price']-$discount;
 //        $stripe = new \Stripe\StripeClient(config('paths.secret_key'));
         $intent = Stripe\PaymentIntent::create([
                     "amount" => $data['subscription']['price'] * 100,
@@ -268,7 +272,9 @@ class SubscriptionController extends Controller {
         $payer->setPaymentMethod('paypal');
 
         $item_1 = new \PayPal\Api\Item();
-
+        // dd($data['subscription']);
+        $discount = $data['subscription']['discount_percentage']/100*$data['subscription']['price'];
+        $data['subscription']['price'] = $data['subscription']['price']-$discount;
         $item_1->setName($data['subscription']['plans'])
                 ->setCurrency('USD')
                 ->setQuantity(1)

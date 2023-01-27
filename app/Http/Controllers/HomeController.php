@@ -69,15 +69,19 @@ class HomeController extends Controller {
         $data['userpresentation'] = $coursecurriculum['userpresentation'];
         $data['userdocuments'] = $coursecurriculum['userdocuments'];
         $data['userresources'] = $coursecurriculum['userresources'];
-
-        if (isset($data['lecturesquiz'][1][0])) {
-            $intro = DB::table('course_videos')->where('id', $data['lecturesquiz'][1][0]->media)->get()->toArray();
-            $data['quiz_description'] = $data['lecturesquiz'][1][0]->description;
+        $segments = request()->segments();
+        $last  = end($segments);
+   
+    
+        if (isset($data['lecturesquiz'][$last]) && !empty($data['lecturesquiz'])) {
+            $intro = DB::table('course_videos')->where('id', $data['lecturesquiz'][$last][0]->media)->get()->toArray();
+            $data['quiz_description'] = $data['lecturesquiz'][$last][0]->description;
             $data['first_video'] = $intro[0];
             $data['subscriptionPlanMonthly'] = Subscription::where('plans', 'monthly')->first();
             $data['subscriptionPlanAnually'] = Subscription::Where('plans', 'yearly')->first();
             $data['subscriptionPlans'] = array();
             $data['access'] = 'true';
+            
             if (!empty($lesson_id)) {
                 $lection_quiz = DB::table('curriculum_lectures_quiz')->where('lecture_quiz_id', $lesson_id)->first();
                 $data['quiz_description'] = $lection_quiz->description;

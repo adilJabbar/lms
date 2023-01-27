@@ -97,9 +97,12 @@
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
          @php 
-         
+        if(isset($quiz_description))
+        {
          echo $quiz_description;
-
+        }else{
+        echo "No description";
+        }
          @endphp
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
@@ -126,7 +129,7 @@
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-body">
+        <div class="modal-body" style="margin-left: 3%">
           <div class="membership-plan-pop">
             <i class="fa fa-lock"></i>
             <h3>Get full access</h3>
@@ -138,8 +141,8 @@
               </div>
               Annually
             </div>
-            <h3><span id="plan-price" > ${{$subscriptionPlanMonthly->price}}.00 </span></h3>
-            <h6>Annual membership<span>$<?php echo number_format($subscriptionPlanAnually->price/12,2) ?>/month</span></h6>
+            <h3><span id="plan-price" > @if(isset($subscriptionPlanMonthly->price)) ${{$subscriptionPlanMonthly->price}}.00 @else $0.00 @endif </span></h3>
+            <h6>Annual membership<span>$<?php  echo isset($subscriptionPlanAnually->price) ? number_format($subscriptionPlanAnually->price/12,2):'0' ?>/month</span></h6>
             <a href="{{route('membershipPlans')}}"> <button class="start-membership">Start membership</button></a>
             <a href="#">Sign up for free</a>
           </div>
@@ -156,17 +159,17 @@
    $("#flexSwitchCheckDefault").click(function(){
     $("#display").toggle();
     if($(this).text() == "Show"){
-        $price = '<?php echo $subscriptionPlanMonthly->price; ?>';
+        $price = '<?php  echo isset($subscriptionPlanMonthly)? $subscriptionPlanMonthly->price : '0'; ?>';
         $('#plan-price').html('$'+$price+'.00');
        $(this).text("Hide");
     }else{
-        $price = '<?php echo $subscriptionPlanAnually->price; ?>';
+        $price = '<?php echo isset($subscriptionPlanAnually)? $subscriptionPlanAnually->price : '0'; ?>';
         $('#plan-price').html('$'+$price+'.00');
        $(this).text("Show");
     }
 });
 
-var access = "<?= $access; ?>";
+var access = "<?php echo isset($access)?$access:'false'; ?>";
 
   if(access == 'false')
   {
