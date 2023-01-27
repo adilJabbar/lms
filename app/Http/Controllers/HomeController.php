@@ -76,7 +76,7 @@ class HomeController extends Controller {
         if (isset($data['lecturesquiz'][$last]) && !empty($data['lecturesquiz'])) {
             $intro = DB::table('course_videos')->where('id', $data['lecturesquiz'][$last][0]->media)->get()->toArray();
             $data['quiz_description'] = $data['lecturesquiz'][$last][0]->description;
-            $data['first_video'] = $intro[0];
+            $data['first_video'] =  isset($intro[0]) ? $intro[0] : array();
             $data['subscriptionPlanMonthly'] = Subscription::where('plans', 'monthly')->first();
             $data['subscriptionPlanAnually'] = Subscription::Where('plans', 'yearly')->first();
             $data['subscriptionPlans'] = array();
