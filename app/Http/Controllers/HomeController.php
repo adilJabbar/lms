@@ -48,7 +48,7 @@ class HomeController extends Controller {
         return view('home', compact('courses'));
     }
 
-    public function courseLesson($id, $lesson_id = '',Request $request) {
+    public function courseLesson($id, $lesson_id = '') {
         $course = Course::find($id);
 
         $user_id = '1';
