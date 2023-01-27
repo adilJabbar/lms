@@ -21,7 +21,9 @@
     <div class="container mt-4">
           <nav class="navbar">
             
-            <div class="logo"><h1>Speak2Impact Academy</h1></div>
+            <div class="logo">
+            <img src="{{url('logo/logo.jpg')}}" height="70px" width="200px" class="css-class" alt="alt text">
+            </div>
             <div class="login-action">
             @if (Auth::check())
             <a href="{{ route('logout') }}"><button class="login mx-3">Logout</button></a>
