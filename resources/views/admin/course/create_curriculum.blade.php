@@ -1153,6 +1153,7 @@ $(document).ready(function(){
           
           tinyMCE.execCommand('mceAddControl', false, 'textdesc-'+msg);
           tinyMCE.execCommand('mceAddControl', false, 'lecturedesc-'+msg);
+          location.reload(true);
         }
       });
     } else {
@@ -1203,6 +1204,7 @@ $(document).ready(function(){
             
             tinyMCE.execCommand('mceAddControl', false, 'quizquestion-'+msg);
             tinyMCE.execCommand('mceAddControl', false, 'lectureeditdesc-'+msg);
+            location.reload(true);
           }
         });
       } else {
@@ -1300,6 +1302,7 @@ $(document).ready(function(){
       success: function (msg)
       {
         $('#resources'+lid+'_'+rid).remove();
+        location.reload(true);
       }
     });
   });
@@ -1482,6 +1485,7 @@ $(document).ready(function(){
           $('#lecture_add_content'+lid).find('.closeheader .closecontents').hide();
           $('#lecture_add_content'+lid).find('.closeheader span.closetext').text('');
           $('#lecture_add_content'+lid).find('.closeheader').hide();
+          location.reload(true);
         }
       });
     } else {
@@ -1507,6 +1511,7 @@ $(document).ready(function(){
       {
         $('.lecture-'+lid).find('.su_course_lecture_label').removeClass('su_orange_curr_block');
         $('.lecture-'+lid).find('.su_course_lecture_label').addClass('su_green_curr_block');
+        location.reload(true);
       }
     });
   });
@@ -1529,6 +1534,7 @@ $(document).ready(function(){
       {
         $('.lecture-'+lid).find('.su_course_lecture_label').removeClass('su_green_curr_block');
         $('.lecture-'+lid).find('.su_course_lecture_label').addClass('su_orange_curr_block');
+        location.reload(true);
       }
     });
   });
@@ -1551,6 +1557,7 @@ $(document).ready(function(){
       {
         $('.quiz-'+lid).find('.su_course_quiz_label').removeClass('su_lgray_curr_block');
         $('.quiz-'+lid).find('.su_course_quiz_label').addClass('su_green_curr_block');
+        location.reload(true);
       }
     });
   });
@@ -1573,6 +1580,7 @@ $(document).ready(function(){
       {
         $('.quiz-'+lid).find('.su_course_quiz_label').removeClass('su_green_curr_block');
         $('.quiz-'+lid).find('.su_course_quiz_label').addClass('su_lgray_curr_block');
+        location.reload(true);
       }
     });
   });
@@ -2002,6 +2010,7 @@ $(document).ready(function(){
           } else {
             $("#videoresponse"+lid).append('<div class="lecture_main_content_first_block1"><div class="lc_details imagetype-'+type+'"><div class="lecture_title"><p>'+return_data.file_title+'</p><p>'+return_data.duration+'</p></div><div class="lecture_buttons"><div class="lecture_edit_content" id="lecture_edit_content'+lid+'"> <input type="button" name="lecture_edit_content" class="btn btn-default editlectcontent" value="{!! Lang::get("curriculum.Edit_Content") !!}" data-blockid="'+lid+'" data-alt="'+type+'"> <input type="button" name="lecture_resource_content" class="btn btn-info addresource" value="{!! Lang::get("curriculum.Add_Resource") !!}" data-blockid="'+lid+'" data-alt="resource"> <input type="button" name="lecture_publish_content" class="btn btn-warning publishcontent" value="{!! Lang::get("curriculum.Publish")!!}" data-blockid="'+lid+'"></div></div></div></div>');
           }
+          location.reload(true);
         }else{
 
         }
@@ -2030,6 +2039,7 @@ $(document).ready(function(){
           $("#lecture_add_content"+lid).find('.closecontents').show();
           $('#resourceblock'+lid).show();
           $('#resourceblock'+lid).find('.resourcefiles').append('<div id="resources'+lid+'_'+lib+'"><i class="fa fa-download"></i> '+file_data+' <div class="goright resdelete" data-lid="'+lid+'" data-rid="'+lib+'"><i class="goright fa fa-trash-o"></i></div></div>');
+          location.reload(true);
         }else{
 
         }
@@ -2073,6 +2083,7 @@ $(document).ready(function(){
             $('#resourceblock'+lid).find('.resourcefiles').append('<div id="resources'+lid+'_'+return_data.file_id+'"><i class="fa fa-external-link"></i> '+return_data.file_title +' <div class="goright resdelete" data-lid="'+lid+'" data-rid="'+return_data.file_id+'"><i class="goright fa fa-trash-o"></i></div></div>');
             $('#exres_title'+lid).val("");
             $('#exres_link'+lid).val("");
+            location.reload(true);
           }else{
             
           }
@@ -2396,6 +2407,7 @@ function deletesection(id) {
         x++;
       });
       updatesorting();
+      location.reload(true);
       //$('.su_course_add_section_content .col.col-lg-3 span').text($('.su_course_curriculam li.parentli').length+1);
     }
   });
@@ -2424,6 +2436,7 @@ function updatesection(id) {
         $('.section-'+id).css('opacity','1');
         $('.section-'+id+' label.slqtitle').text(section);
         $('.section-'+id).removeClass('editon');
+        location.reload(true);
       }
     });
   } else {
@@ -2455,6 +2468,7 @@ function deletelecture(id,sid) {
         lq++;
       });
       updatesorting();
+      location.reload(true);
       //$('.su_course_add_lecture_content .col.col-lg-3 span').text($('.su_course_curriculam li.childli').length+1);
     }
   });
@@ -2484,6 +2498,7 @@ function deletequiz(id,sid) {
         lq++;
       });
       updatesorting();
+      location.reload(true);
       //$('.su_course_add_quiz_content .col.col-lg-3 span').text($('.su_course_curriculam li.childli').length+1);
     }
   });
@@ -2513,6 +2528,7 @@ function updatelecture(id,sid) {
         $('.lecture-'+id).css('opacity','1');
         $('.lecture-'+id+' label.slqtitle').text(lecture);
         $('.lecture-'+id).removeClass('editon');
+        location.reload(true);
       }
     });
   } else {
@@ -2592,6 +2608,7 @@ function updatesorting() {
     type: "POST",
     url: $('[name="coursecurriculumsort"]').val(),
     data:{sectiondata: updatesection,_token:$('[name="_token"]').val(),type:'section'},
+    
   });
   
   // update the lecture position to db
@@ -2637,6 +2654,7 @@ $('body').on('click','.cclickable',function(){
               var storage_path = "{{ url('course/'.$course_id.'/') }}";
               var vi = '<source src="'+storage_path+'/'+result+'.mp4" type="video/mp4" id="videosource">';
             $('.video_p_'+id).html(vi);
+            location.reload(true);
           }
       });
   }

@@ -14,9 +14,15 @@ class InstructionLevelSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        for ($i = 1; $i < 5; $i++) {
-            $data[$i]['level'] = $i;
-        }
+       $instructionLevel =  InstructionLevel::truncate();
+    //    $instructionLevel->delete();
+        // for ($i = 1; $i < 5; $i++) {
+            $data[1]['level'] = 'beginer';
+            $data[2]['level'] = 'intermediate';
+            $data[3]['level'] = 'advanced';
+        
+        // }
+
         InstructionLevel::insert($data);
     }
 

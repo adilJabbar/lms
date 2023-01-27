@@ -336,6 +336,28 @@ class CourseController extends Controller {
         return view('admin.course.create_info', compact('course', 'categories', 'instruction_levels'));
     }
 
+    public function instructorCourseDelete($course_id = '') {
+        $paginate_count = 10;
+
+        // dd(\Auth::user());
+        $instructor_id = \Auth::user()->id;
+        $categories = Category::where('is_active', 1)->get();
+        $instruction_levels = InstructionLevel::get();
+        if ($course_id) {
+            $course = Course::find($course_id)->delete();
+        } else {
+            $course = $this->getColumnTable('courses');
+        }
+        $courses = DB::table('courses')
+        ->select('courses.*', 'categories.name as category_name')
+        ->leftJoin('categories', 'categories.id', '=', 'courses.category_id')
+        ->where('courses.instructor_id', $instructor_id)
+        ->paginate($paginate_count);
+
+
+        return view('admin.course.list', compact('courses'));
+    }
+
     public function instructorCourseImage($course_id = '', Request $request) {
         $course = Course::find($course_id);
         return view('admin.course.create_image', compact('course'));

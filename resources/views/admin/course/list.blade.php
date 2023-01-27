@@ -92,11 +92,12 @@ Subscription Listing
                                                       <span class="badge badge-danger">Inactive</span>
                                                       @endif
                                                     </td>
+                                                  
                                                     <td>
-                                                        <a href="{{route('subscription.edit',['id'=>$course->id])}}" type="button" class="btn btn-bg-gradient-x-purple-red" style="float: right" title="Edit Subscription">
+                                                        <a href="{{url('admin/instructor-course-info',['id'=>$course->id])}}" type="button" class="btn btn-bg-gradient-x-purple-red" style="float: right" title="Edit Subscription">
                                                             <i class="fa fa-pencil"></i> Edit
                                                         </a>
-                                                        <a href="#" type="button" class="btn btn-bg-gradient-x-purple-blue" style="float: right" title="Delete Subscription">
+                                                        <a href="{{url('admin/instructor-course-delete',['id'=>$course->id])}}" type="button" class="btn btn-bg-gradient-x-purple-blue" style="float: right" title="Delete Subscription">
                                                             <i class="fa fa-remove"></i> Delete
                                                         </a>
                                                     </td>

@@ -66,6 +66,9 @@ Route::prefix('admin')->group(static function () {
         // Route::get('instructor-course-info/{course_id}', 'Admin\CourseController@instructorCourseInfo')->name('instructor.course.info.edit');
         Route::get('/instructor-course-info/{course_id}', [\App\Http\Controllers\Admin\CourseController::class, 'instructorCourseInfo'])->name('instructor.course.info.edit');
 
+
+        Route::get('/instructor-course-delete/{course_id}', [\App\Http\Controllers\Admin\CourseController::class, 'instructorCourseDelete']);
+
         // Route::post('instructor-course-info-save', 'Admin\CourseController@instructorCourseInfoSave')->name('instructor.course.info.save');
         Route::post('/instructor-course-info-save', [\App\Http\Controllers\Admin\CourseController::class, 'instructorCourseInfoSave'])->name('instructor.course.info.save');
 
