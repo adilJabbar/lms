@@ -181,7 +181,7 @@
                                 <p class="heading"><span><img src="{{url('images/check.png')}}"></span>  40 mins of 1-to-1 with a coach per month</p>
                                 <p class="heading"><span><img src="{{url('images/check.png')}}"></span>  30% discount on further 1-to-1 coaching sessions</p>
                                 <p class="heading"><span><img src="{{url('images/check.png')}}"></span>  Coach feedback on 2 videos on Yoodli per month</p>
-                                <p class="heading"><span><img src="{{url('images/check.png')}}"></span>  Access to webinars and other pre-recorded content <span><img src="{{url('127.0.0.1:8000/images/free-white.png')}}"></span></p>
+                                <p class="heading"><span><img src="{{url('images/check.png')}}"></span>  Access to webinars and other pre-recorded content <span><img src="{{url('images/free-white.png')}}"></span></p>
                                 <p class="heading"><span><img src="{{url('images/check.png')}}"></span>  Access to Yoodli <span><img src="{{url('images/free-white.png')}}"></span></p>
                                 <button class="start-membership">Start membership</button>
                             </div>
