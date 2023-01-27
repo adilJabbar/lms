@@ -48,6 +48,7 @@ class RegisteredUserController extends Controller {
                     'last_name' => $request->last_name,
                     'phone_number' => $request->phone_number,
                     'city' => $request->city,
+                    'email_verify_at' => date('Y-m-d H:i:s'),
                     'email' => $request->email,
                     'password' => Hash::make($request->password),
                     'is_active' => '1'
