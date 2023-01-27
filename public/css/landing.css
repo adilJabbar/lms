@@ -564,6 +564,12 @@ img.h-patteren {
         display: grid;
         grid-gap:10px;
     }
+    .membership1{
+        padding:40px !important;
+    }
+    .membership2{
+        padding:40px !important;
+    }
     /* .h-patteren{
         width: 100%;
     }
