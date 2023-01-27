@@ -18,66 +18,27 @@
         <!-- Add the slick-theme.css if you want default styling -->
     </head>
     <body>
-        <header>
-            <div class="container">
-                <div class="header">
-                    <div class="logo">
-                    <img src="{{url('logo/logo.jpg')}}" height="70px" width="200px" class="css-class" alt="alt text">
-                        <!-- <h1>Speak2Impact Academy</h1> -->
-
-                    </div>
-                    <div class="login-action">
-                        @if (Auth::check())
-                        <a href="{{ route('logout') }}"><button class="login">Logout</button></a>
-                        @else
-                        <a href="{{url('login')}}"><button class="login mx-4">Login</button></a>
-                        @endif
-                        @if (Auth::check() && (isset(Auth::user()->email_verified_at) && !empty(Auth::user()->email_verified_at) ))
-                        <a href="{{route('membershipPlans')}}"><button class="start-learning">Start Learning</button></a> 
-                        @else
-                        <button data-toggle="modal" data-target="#exampleModal" class="start-learning">Start Learning</button> 
-                        @endif
-
-                        
-                        {{-- <button class="start-learning">start learning</button> --}}
-                    </div>
-                </div>
-
+    <div class="container mt-4">
+          <nav class="navbar">
+            
+            <div class="logo"><h1>Speak2Impact Academy</h1></div>
+            <div class="login-action">
+            @if (Auth::check())
+            <a href="{{ route('logout') }}"><button class="login mx-3">Logout</button></a>
+            @else
+            <a href="{{url('login')}}"><button class="login mx-3">Login</button></a>
+            @endif
+            <a href="{{route('membershipPlans')}}"><button class="start-learning">Start Learning</button></a> 
             </div>
-
-
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Verify your email</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                You have recieved a email for verification after you registered you can start learning. 
-                </div>
-               
-                </div>
-            </div>
-        </div>
-
-
-
-
-
+            </nav>
             @if (Session::has('error'))
             <div class="alert alert-error text-center">
                 <p>{{ Session::get('error') }}</p>
             </div>
-            @elseif(Session::has('success'))
-            <div class="alert alert-success text-center">
-                <p>{{ Session::get('success') }}</p>
-            </div>
 
             @endif
         </header>
+            </div>
 
         <div class="hero">
             <div class="container">
@@ -202,56 +163,61 @@
             </div>
         </div>
 
-        <section class="membership">
-
-            <h1 style="display: flex; justify-content: center; color: #1C1C1C; font-weight: 500; font-size: 35px;"> Membership Plans</h1>
-            <div class="container">
-                <div class="row">
-                    <div class="h-100 d-flex align-items-center justify-content-center mt-5 mb-5">
-
-                        <div class="membership-plan mx-5" style="border: 1px solid;">
-                            <button class="start-membershipp">Annually membership</button>
-                            <h3 style="margin-top: 15%;">£1200 per year</h3>
-                            <p class="saave">(Save 30% on annually)</p>
-                            <p class="heading"><span><img src="{{url('images/')}}/check.png"></span>  Access to all courses</p>
-                            <p class="heading"><span><img src="{{url('images/')}}/check.png"></span>  40 mins of 1-to-1 with a coach per month</p>
-                            <p class="heading"><span><img src="{{url('images/')}}/check.png"></span>  30% discount on further 1-to-1 coaching sessions</p>
-                            <p class="heading"><span><img src="{{url('images/')}}/check.png"></span>  Coach feedback on 2 videos on Yoodli per month</p>
-                            <p class="heading"><span><img src="{{url('images/')}}/check.png"></span>  Access to webinars and other pre-recorded content <span><img src="{{url('images/')}}/free-black.png"></span></p>
-                            <p class="heading"><span><img src="{{url('images/')}}/check.png"></span>  Access to Yoodli <span><img src="{{url('images/')}}/free-black.png"></span></p>
-                            <button class="start-membership">Start membership</button>
+        <section class="membership ">
+        <h1 class="mt-5 mb-5" style="display: flex; justify-content: center; color: #1C1C1C; font-weight: 500; font-size: 35px;"> Membership Plans</h1>
+        <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-5">
+                            <div class="membership1">
+                                <div class="mem-btn">
+                                <button class="membership-btn">Annually membership</button>
+                                </div>
+                                <h3 class="price">£1200 per year</h3>
+                                <p class="saave">(Save 30% on annually)</p>
+                                <p class="heading"><span><img src="http://127.0.0.1:8000/images/check.png"></span>  Access to all courses</p>
+                                <p class="heading"><span><img src="http://127.0.0.1:8000/images/check.png"></span>  40 mins of 1-to-1 with a coach per month</p>
+                                <p class="heading"><span><img src="http://127.0.0.1:8000/images/check.png"></span>  30% discount on further 1-to-1 coaching sessions</p>
+                                <p class="heading"><span><img src="http://127.0.0.1:8000/images/check.png"></span>  Coach feedback on 2 videos on Yoodli per month</p>
+                                <p class="heading"><span><img src="http://127.0.0.1:8000/images/check.png"></span>  Access to webinars and other pre-recorded content <span><img src="http://127.0.0.1:8000/images/free-white.png"></span></p>
+                                <p class="heading"><span><img src="http://127.0.0.1:8000/images/check.png"></span>  Access to Yoodli <span><img src="http://127.0.0.1:8000/images/free-white.png"></span></p>
+                                <button class="start-membership">Start membership</button>
+                            </div>
                         </div>
-
-                        <div class="membership-plan2" style="border: 1px solid;">
-                            <button class="start-membershipp"
-                                    style="background-color: #1C1C1C; color: #fff;">Monthly membership</button>
-                            <h3 style="margin-top: 15%;">£1200 per year</h3>
-                            <p class="saave2">(Save 30% on annually)</p>
-                            <p class="heading2"><span><img src="{{url('images/')}}/check_black.png"></span>  Access to all courses</p>
-                            <p class="heading2"><span><img src="{{url('images/')}}/check_black.png"></span>  40 mins of 1-to-1 with a coach per month</p>
-                            <p class="heading2"><span><img src="{{url('images/')}}/check_black.png"></span>  30% discount on further 1-to-1 coaching sessions</p>
-                            <p class="heading2"><span><img src="{{url('images/')}}/check_black.png"></span>  Coach feedback on 2 videos on Yoodli per month</p>
-                            <p class="heading2"><span><img src="{{url('images/')}}/check_black.png"></span>  Access to webinars and other pre-recorded content <span><img src="{{url('images/')}}/free-white.png"></span></p>
-                            <p class="heading2"><span><img src="{{url('images/')}}/check_black.png"></span>  Access to Yoodli <span><img src="{{url('images/')}}/free-white.png"></span></p>
-                            <button class="start-membership"
-                                    style="background-color:  #1C1C1C; color: #fff;">Start membership</button>
+                        <div class="col-lg-5">
+                            <div class="membership2">
+                            <div class="mem-btn">
+                            <button class="membership-btn" style="background-color: #1C1C1C; color: #fff;">Monthly membership</button>
+                            </div>
+                    <h3 class="price">£150.00/month</h3>
+                    <p class="saave2">(Save 10% on Monthly)</p>
+                    <p class="heading2"><span><img src="http://127.0.0.1:8000/images/check_black.png"></span>  Access to all courses</p>
+                    <p class="heading2"><span><img src="http://127.0.0.1:8000/images/check_black.png"></span>  40 mins of 1-to-1 with a coach per month</p>
+                    <p class="heading2"><span><img src="http://127.0.0.1:8000/images/check_black.png"></span>  30% discount on further 1-to-1 coaching sessions</p>
+                    <p class="heading2"><span><img src="http://127.0.0.1:8000/images/check_black.png"></span>  Coach feedback on 2 videos on Yoodli per month</p>
+                    <p class="heading2"><span><img src="http://127.0.0.1:8000/images/check_black.png"></span>  Access to webinars and other pre-recorded content <span><img src="http://127.0.0.1:8000/images/free-white.png"></span></p>
+                    <p class="heading2"><span><img src="http://127.0.0.1:8000/images/check_black.png"></span>  Access to Yoodli <span><img src="http://127.0.0.1:8000/images/free-white.png"></span></p>
+                    <button class="start-membership" style="background-color:  #1C1C1C; color: #fff;">Start membership</button>
+                            </div>
                         </div>
-
+                        <div class="col-lg-1"></div>
                     </div>
-                </div>
-            </div>
+                 </div>                            
         </section>
 
-
-        <div class="Sign" style="border: 1px solid;">
-            <h5 style="color: #1C1C1C; font-size:24px; font-weight:500; margin-bottom: 4%; margin-top: 0%;">Sign up for Free</h5>
-            <p class="heading2"><img src="./images/check.svg" alt=""
-                                     style="margin-right: 1%;">Access to webinars and other pre-recorded content <span><img src="{{url('images/')}}/free-white.png"></p>
-                    <p class="heading2      "><img src="./images/check.svg" alt=""
-                                                   style="margin-right: 1%;">Access to Yoodli <span><img src="{{url('images/')}}/free-white.png"></p>
-                            <button class="start-membershiIp" style="background-color:  #1C1C1C; color: #fff;"><a href="{{route('home')}}" >Sign
-                                for Free</button>
+           <div class="container pt-5">
+                    <div class="row">
+                        <div class="align-items-center justify-content-center">
+                        <div class="Sign " style="border: 1px solid;">
+                                <h5 style="color: #1C1C1C; font-size:24px; font-weight:500; margin-bottom: 4%; margin-top: 0%;">Sign up for Free</h5>
+                                <p class="heading2"><img src="./images/check.svg" alt="" style="margin-right: 1%;">Access to webinars and other pre-recorded content <span><img src="{{url('images/')}}/free-white.png"></p>
+                                <button class="start-membershiIp" style="background-color:  #1C1C1C; color: #fff;">Sign for Free</button>
                             </div>
+                        </div>
+                    </div>
+                 </div>
+
+
                             <footer>
                                 <div class="container">
                                     <div class="footer">
@@ -282,7 +248,7 @@ $(document).ready(function () {
         autoplay: true,
         responsive: {
             0: {
-                items: 1
+                items: 2
             },
             600: {
                 items: 3
