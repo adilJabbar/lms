@@ -19,6 +19,10 @@ h3 {
 .css-class{
     object-fit: cover;
 }
+.logo h1{
+font-size: 1.5rem;
+
+}
 h1 {
     font-weight: 500;
     line-height: 36px;
@@ -51,7 +55,7 @@ button.start-learning {
     border:1px solid #000;
     color: #FFFFC8;
     text-transform: capitalize;
-    padding: 16px 40px 16px 40px;
+    padding: 18px 40px 18px 40px;
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.12);
 
 }
@@ -99,7 +103,7 @@ footer {
 .footer-link a {
     color: #FFFFC8;
     text-decoration: none;
-    margin-left: 90px;
+    margin-left: 85px;
     font-size: 16px;
     line-height: 26px;
     font-weight: 500;
@@ -500,6 +504,21 @@ img.h-patteren {
 }
 
 /* Media Query For Mobile */
+@media only screen and (min-width: 280px) and (max-width: 445px) {
+    .login-action{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .login{
+        padding:12px 40px;
+        font-size:1rem;
+    }
+    button.start-learning{
+        font-size:1rem;
+        padding:12px 22px;
+    }
+}
+
 @media only screen and (min-width: 280px) and (max-width: 625px) {
     .reviews{
         display:grid;
