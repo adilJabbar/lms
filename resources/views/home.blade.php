@@ -1,12 +1,14 @@
 @extends('layouts.main')
 @section('content')
-<div class="container-main">
+<div class="container">
+    <div class="name-home">
     <h1>Hi James</h1>
+</div>
 </div>
 
 <!-- ===============   Practice Start   ============== -->
 <div class="daily-goals">
-    <div class="container-main">
+    <div class="container">
         <div class="daily-goal">
             <div class="trophy">
                 <img src="./images/trophy.png" alt="">
@@ -26,8 +28,8 @@
 <!-- ===============   Practice End   ============== -->
 <!-- ===============   Chapter Start   ============== -->
 <div class="chapter-detail" >
-    <div class="container-main">
-        <div class="chapter-detail-content"style="background-color: black; color: white;">
+    <div class="container">
+        <div class="chapter-detail-content"style="background-color: #1C1C1C; color: white;">
             <div class="chapter-header">
                 <h6>Continue learning</h6> 
                 <h1>{{$courses[0]->course_title}}</h1>
@@ -42,7 +44,7 @@
                         $file_name = 'course/' . $courses[0]->id . '/' . $courses[0]->course_videos[0]->video_title . '.' . $courses[0]->course_videos[0]->video_type;
                         // dd($file_name,$courses[0]);
                         ?>
-                        <video width="100%" height="100%" controls preload="auto"><source src="{{ url($file_name)}}" type="video/mp4"></video>
+                        <video width="100%" height="100%" controls poster="{{url('images/')}}/Frame_29.png" preload="auto"><source src="{{ url($file_name)}}" type="video/mp4"></video>
                         {{-- <img src="./images/f1.png" alt="" style="width: 100%;"> --}}
                     </div>
                 </div>
@@ -71,10 +73,11 @@
 </div>
 <!-- ===============   Chapter End   ============== -->
 <div class="upcoming-webinar">
-    <div class="container-main">
+    <div class="container">
+        <div class="webinar-inner">
         <h2 class="head-heding">Newly launched courses</h2>
-        <div class="webinar-cards">
-            @foreach ($courses as $course)
+        <div class="row">
+        @foreach ($courses as $course)
             <?php
             $file_name = '';
             // dd($course->course_videos[0]->video_type);
@@ -83,7 +86,8 @@
                 // $file_name = 'course/'.$course->course_id.'/'.$course->video_title.'.'.$course->video_type;
             }
             ?>
-            <div class="webinar-card">
+         <div class="col-lg-4">
+         <div class="webinar-card">
                 <div class="webinar-heading">{{$course->course_title}}</div>
                 <div class="webinar-description">Susie Ashfield, Instructor</div>
                 <div class="webinar-image">
@@ -93,9 +97,10 @@
                     <button><a href="{{route('course-lesson',[$courses[0]->id])}}" >Start learning</a></button>
                 </div>
             </div>
-            @endforeach
-
-
+            
+         </div>
+         @endforeach
+        </div>
         </div>
     </div>
 </div>
@@ -104,7 +109,7 @@
 
 
 <div class="upcoming-webinar">
-    <div class="container-main">
+    <div class="container">
 
     </div>
     <div class="action oneee">

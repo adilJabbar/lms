@@ -30,7 +30,7 @@
                 <a class="nav-link {{ Request::segment(1) === 'home' ? 'active' : null }}" aria-current="page" href="{{url('home')}}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ Request::segment(1) === 'practise' ? 'active' : null }}" href="#">Course</a>
+                <a class="nav-link {{ Request::segment(1) === 'practise' ? 'active' : null }}" href="#">Courses</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link {{ Request::segment(1) === 'practise' ? 'active' : null }}" href="#">Schedule meeting with Coach</a>
@@ -54,31 +54,26 @@
 
 @yield('body')
 
-  <footer>
-    <div class="container-main">
-      <div class="footer">
-        <div class="footer-top">
-          <div class="footer-logo">
-            <span>Speak2Impact Academy</span>
-          </div>
-          <div class="footer-link">
-            <a href="#">Contact US</a>
-            <a href="#">Speak2impact</a>
-            <a href="#">Sign up</a>
-            <a href="#">Login</a>
-          </div>
-        </div>
-        <div class="social-icon">
-          <a href="#">
-            <img src="./images/icons8-instagram.svg" alt="">
-          </a>
-          <a href="#">
-            <img src="./images/icons8-facebook.svg" alt="">
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
+<footer>
+                                <div class="container">
+                                    <div class="footer">
+                                        <div class="footer-top">
+                                            <div class="footer-logo"><span>Speak2Impact Academy</span></div>
+                                            <div class="footer-link">
+                                                <a href="#">Contact us</a>
+                                                <a href="#">Speak2impact</a>
+                                                <a href="{{route('register')}}">Sign up</a>
+                                                <a href="{{route('login')}}">Login</a>
+                                            </div>
+                                        </div>
+                                        <div class="social-icon mt-3">
+                                            <a href="#"><img src="{{url('images/')}}/Instagram.svg" alt=""></a>
+                                            <a href="#"><img src="{{url('images/')}}/facebook.svg" alt=""></a>
+                                            <a href="#"><img src="{{url('images/')}}/Vector.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

@@ -32,10 +32,10 @@
     </script>
     <body>
         <header class="main-site">
-            <div class="container-main">
+            <div class="container">
                 <div class="main-header">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <img src="{{url('logo/logo.jpg')}}" height="70px" width="200px" class="css-class" alt="alt text">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                    <img src="{{url('logo/logo.jpg')}}" height="80px"  class="css-class" alt="alt text">
                         <!-- <a class="navbar-brand" href="#">Speak2Impact Academy</a> -->
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -46,7 +46,7 @@
                                 <a class="nav-link {{ Request::segment(1) === 'home' ? 'active' : null }}" aria-current="page" href="{{url('home')}}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::segment(1) === 'practise' ? 'active' : null }}" href="#">Course</a>
+                                <a class="nav-link {{ Request::segment(1) === 'practise' ? 'active' : null }}" href="#">Courses</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ Request::segment(1) === 'calendly' ? 'active' : null }}" href="{{url('calendly')}}">Schedule meeting with Coach</a>
