@@ -12,21 +12,21 @@ return new class extends Migration {
      * @return void
      */
     public function up() {
-        Schema::dropIfExists(table('bookings'));
-
-        Schema::create('bookings', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained('users');
-            $table->dateTime('start_time')->nullable();
-            $table->dateTime('end_time')->nullable();
-            $table->string('status')->nullable();
-            $table->string('name')->nullable();
-            $table->string('event_uuid')->nullable();
-            $table->string('invitee_uuid')->nullable();
-            $table->string('booking_uri')->nullable();
-            $table->boolean('is_active')->default(true);
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('bookings')) {
+            Schema::create('bookings', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('user_id')->constrained('users');
+                $table->dateTime('start_time')->nullable();
+                $table->dateTime('end_time')->nullable();
+                $table->string('status')->nullable();
+                $table->string('name')->nullable();
+                $table->string('event_uuid')->nullable();
+                $table->string('invitee_uuid')->nullable();
+                $table->string('booking_uri')->nullable();
+                $table->boolean('is_active')->default(true);
+                $table->timestamps();
+            });
+        }
     }
 
     /**
