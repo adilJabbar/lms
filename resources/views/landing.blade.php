@@ -20,9 +20,8 @@
     <body>
     <div class="container mt-4">
           <nav class="navbar">
-            
             <div class="logo">
-            <img src="{{url('logo/logo.jpg')}}" height="70px" width="200px" class="css-class" alt="alt text">
+            <img src="{{url('logo/logo.jpg')}}" height="100px"  class="css-class" alt="alt text">
             </div>
             <div class="login-action">
             @if (Auth::check())
@@ -42,7 +41,7 @@
 
             @endif
         </header>
-            </div>
+    </div>
 
         <div class="hero">
             <div class="container">
@@ -59,9 +58,9 @@
                     </ul>
                  
                 @if (Auth::check() && (isset(Auth::user()->email_verified_at) && !empty(Auth::user()->email_verified_at) ))
-                <button>
-                <a href="{{route('membershipPlans')}}">start learning </a>
-                <img src="./images/ar.svg" alt=""></button>
+                <a href="{{route('membershipPlans')}}"><button>
+                start learning
+                <img src="./images/ar.svg" alt=""></button> </a>
 
                
                 @else

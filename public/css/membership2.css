@@ -6,11 +6,6 @@ h3 {
     font-family: 'Space Grotesk', sans-serif;
 }
 
-.container {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-}
 
 .header {
     display: flex;
@@ -59,6 +54,7 @@ footer {
 .footer-top {
     display: flex;
     align-items: center;
+    font-family: 'Space Grotesk', sans-serif !important;   
 }
 
 .footer-link {
@@ -75,6 +71,10 @@ footer {
     font-weight: 500;
     font-family: 'Space Grotesk', sans-serif;
 }
+.social-icon {
+    display: flex;
+    gap: 30px;
+}
 
 /* =============   Membership CSS   =========== */
 
@@ -82,7 +82,7 @@ footer {
     width: 100%;
     margin: 0 auto;
     padding: 60px 20px;
-    max-width: 1064px;
+    max-width: 1024px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -99,10 +99,9 @@ footer {
 
 .Sign {
     border-radius: 12px;
-    padding: 60px;
-    max-width: 90%;
-    margin-left: 5%;
-    width: 100%;
+    padding: 40px;
+    margin-bottom: 10%;
+    font-family:  'Space Grotesk', sans-serif;
 }
 
 .membership-plan2 {
@@ -136,27 +135,33 @@ footer {
 }
 
 .saave {
-    color: #fff;
+    color: #FFFFC8;
     text-align: center;
-    font-weight: 200;
+    font-weight: 500;
     margin-bottom: 15%;
+    font-family: 'Inter', sans-serif !important;
 }
 
 .saave2 {
-    color: #1C1C1C;
+    color: #1C1C1C ;
     text-align: center;
-    font-weight: 200;
     margin-bottom: 15%;
+    font-weight: 500;
+    margin-bottom: 15%;
+    font-family: 'Inter', sans-serif !important;
 }
 
 .heading {
     color: rgb(221, 216, 216);
-    font-size: 14px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif !important;
+    padding:0px 5px;
 }
 
 .heading2 {
     color: #1C1C1C;
-    font-size: 14px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
 }
 
 .membership-plan h6 {
@@ -220,6 +225,19 @@ footer {
     width: 42px;
 }
 
+.start-membership {
+    font-size: 18px;
+    line-height: 27px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    background: #FFFFC8;
+    border: 1px solid #ffffc8;
+    border-radius: 6px;
+    padding: 15px 20px;
+    display: block;
+    width: 100%;
+}
+
 button.start-membershipp {
     font-size: 18px;
     line-height: 27px;
@@ -229,7 +247,6 @@ button.start-membershipp {
     border-radius: 6px;
     padding: 15px 20px;
     display: block;
-    width: 70%;
     margin-bottom: 16px;
     margin-left: 15%;
 }
@@ -331,7 +348,12 @@ input.f-img {
 
 .membership-field.m-half {
     width: calc(50% - 16px);
+    font-family: 'Inter' , sans-serif;
 }
+/* 
+.main-paypal{
+    max-width:760px;
+} */
 
 .membership-payment form {
     display: flex;
@@ -351,6 +373,7 @@ button.m-payment {
     padding: 14px 20px;
     border: 1px solid #1C1C1C;
     color: #1C1C1C;
+  
 }
 
 .master-card {
@@ -384,16 +407,19 @@ button.m-payment {
 
 /*form styles*/
 #msform {
-    text-align: center;
+    /* text-align: center; */
     position: relative;
     margin-top: 20px;
+}
+.form-label{
+    font-family: 'Inter' , sans-serif;
 }
 
 #msform fieldset .form-card {
     background: white;
     border: 0 none;
     border-radius: 0px;
-    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2); */
     padding: 20px 40px 30px 40px;
     box-sizing: border-box;
     width: 94%;
@@ -543,6 +569,9 @@ select.list-dt:focus {
     font-family: FontAwesome;
     content: "1";
     margin-left: 0;
+    text-align:center;
+    font-family: 'Inter' , sans-serif;
+    padding-top:3px;
 
 }
 
@@ -550,19 +579,27 @@ select.list-dt:focus {
     font-family: FontAwesome;
     content: "2";
     margin-right: 0;
+    text-align:center;
+    font-family: 'Inter' , sans-serif;
+    padding-top:3px;
 }
-
+.step-1{
+    font-family: 'Inter' , sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+}
 /*ProgressBar before any progress*/
 #progressbar li:before {
-    width: 50px;
-    height: 50px;
+    width: 56px;
+    height: 56px;
     line-height: 45px;
     display: block;
     font-size: 18px;
     color: #ffffff;
-    background: rgb(5, 2, 2);
-    border-radius: 50%;
+    /* background: rgb(5, 2, 2); */
+    /* border-radius: 50%; */
     margin: 0 auto 10px auto;
+    background-image: url('../images/Star_2.png');
     /* padding: 2px; */
 }
 
@@ -581,7 +618,8 @@ select.list-dt:focus {
 /*Color number of the step and the connector before it*/
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: rgb(5, 2, 2);
+    /* background: rgb(5, 2, 2); */
+    background-image: url('../images/Star_1.png');
 }
 
 /*Imaged Radio Buttons*/
@@ -643,4 +681,38 @@ select.list-dt:focus {
     background-image: url('./images/credit_card.svg');
     background-repeat: no-repeat;
     background-position: left center;
+}
+@media only screen and (min-width:280px) and (max-width:768px){
+    .membership-area {
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .footer-link{
+        display: grid;
+        grid-gap:10px;
+    }
+    .membership-plan{
+        margin-top:30px;
+    }
+    .membership-payment{
+        max-width: 100%;
+        margin:0;
+    }
+        /* .main-paypal{
+            max-width:360px;
+        } */
+}
+@media only screen and (min-width:769px) and (max-width:1250px){
+    .membership-area {
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+    .membership-plan, .membership-plan2{
+        padding:20px
+    }
 }
