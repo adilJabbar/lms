@@ -15,13 +15,13 @@ return new class extends Migration {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->timestamps('start_time');
-            $table->timestamps('end_time');
-            $table->string('status');
-            $table->string('name');
-            $table->string('event_uuid');
-            $table->string('invitee_uuid');
-            $table->string('booking_uri');
+            $table->dateTime('start_time')->nullable();
+            $table->dateTime('end_time')->nullable();
+            $table->string('status')->nullable();
+            $table->string('name')->nullable();
+            $table->string('event_uuid')->nullable();
+            $table->string('invitee_uuid')->nullable();
+            $table->string('booking_uri')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
