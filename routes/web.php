@@ -48,4 +48,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::get('webinars', [App\Http\Controllers\WebinarController::class, 'getWebinars'])->name('getWebinars');
 
 Route::get('/deleteWebinar/{id}', [\App\Http\Controllers\Admin\WebinarController::class, 'deleteWebinar'])->name('deleteWebinar');
+Route::post('/createBooking', [\App\Http\Controllers\BookingController::class, 'createBooking'])->name('createBooking');
 
+Route::get('book-slot', [App\Http\Controllers\BookingController::class, 'bookSlot'])->name('bookSlot');

@@ -30,54 +30,54 @@
 
     </head>
     <script>
-        siteUrl = '<?php echo URL::to('/'); ?>/';
+siteUrl = '<?php echo URL::to('/'); ?>/';
     </script>
     <body>
         <header class="main-site">
             <div class="container">
                 <div class="main-header">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                    <img src="{{url('logo/logo.jpg')}}" height="80px"  class="css-class" alt="alt text">
+                        <img src="{{url('logo/logo.jpg')}}" height="80px"  class="css-class" alt="alt text">
                         <!-- <a class="navbar-brand" href="#">Speak2Impact Academy</a> -->
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link {{ Request::segment(1) === 'home' ? 'active' : null }}" aria-current="page" href="{{url('home')}}">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link {{ Request::segment(1) === 'practise' ? 'active' : null }}" href="#">Courses</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link {{ Request::segment(1) === 'calendly' ? 'active' : null }}" href="{{url('calendly')}}">Schedule meeting with Coach</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link {{ Request::segment(1) === 'practise' ? 'active' : null }}"  href="{{url('practise')}}">Practice</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link  {{ Request::segment(1) === 'webinars' ? 'active' : null }}" href="{{url('webinars')}}">Webinars</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ Request::segment(1) === 'home' ? 'active' : null }}" aria-current="page" href="{{url('home')}}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ Request::segment(1) === 'practise' ? 'active' : null }}" href="#">Courses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ Request::segment(1) === 'calendly' ? 'active' : null }}" href="{{url('calendly')}}">Schedule meeting with Coach</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link {{ Request::segment(1) === 'practise' ? 'active' : null }}"  href="{{url('practise')}}">Practice</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link  {{ Request::segment(1) === 'webinars' ? 'active' : null }}" href="{{url('webinars')}}">Webinars</a>
+                                </li>
                             </ul>
                         </div>
 
                         <div class="dropdown">
-  <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button> -->
-  <img data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" id="dropdownMenuButton" src="{{url('images/user1.png')}}" alt="">
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-  <a href="{{ route('logout') }}">logout</a>
-  
-  </div>
-</div>
+                            <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Dropdown button
+                            </button> -->
+                            <img data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" id="dropdownMenuButton" src="{{url('images/user1.png')}}" alt="">
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a href="{{ route('logout') }}">logout</a>
+
+                            </div>
+                        </div>
 
 
-              
-         
-     
-                       
+
+
+
+
                     </nav>
                 </div>
             </div>
