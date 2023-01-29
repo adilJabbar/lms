@@ -49,9 +49,9 @@
   .owl-carousel .owl-item img {
     display: block;
     height:120px;
-  width:120px;
+  width:90px;
 object-fit: contain; 
-margin-left:60px;}
+margin-left:30px;}
   .owl-carousel .owl-nav.disabled,
   .owl-carousel .owl-dots.disabled {
     display: none; }
