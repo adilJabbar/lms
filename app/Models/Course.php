@@ -546,7 +546,7 @@ class Course extends Model
       return \DB::table('curriculum_lectures_quiz')
       ->join('curriculum_sections', 'curriculum_sections.section_id', '=', 'curriculum_lectures_quiz.section_id')
       ->join('courses', 'courses.id', '=', 'curriculum_sections.course_id')
-      ->select('curriculum_lectures_quiz.lecture_quiz_id')
+      ->select('curriculum_lectures_quiz.lecture_quiz_id','curriculum_lectures_quiz.description')
       ->where('courses.id','=', $course_id)
       ->first();
     }
