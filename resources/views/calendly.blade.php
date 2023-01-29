@@ -45,6 +45,8 @@ function scheduleEventFunction(event_url, invitee_url) {
         data: {event_url: event_url, invitee_url: invitee_url},
         url: routeUrl,
         success: function (data) {
+            console.log('flow is here');
+            console.log(data);
             if (data.success) {
                 alert('booking created successfully');
             } else {
@@ -52,6 +54,8 @@ function scheduleEventFunction(event_url, invitee_url) {
             }
         },
         error: function () {
+            console.log('flow is here in error case');
+
             alert('something went wrong while saving this booking');
         }
     });

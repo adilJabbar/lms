@@ -2,8 +2,8 @@
 @section('content')
 <div class="container">
     <div class="name-home">
-    <h1>Hi James</h1>
-</div>
+        <h1>Hi James</h1>
+    </div>
 </div>
 
 <!-- ===============   Practice Start   ============== -->
@@ -13,6 +13,16 @@
             <div class="trophy">
                 <img src="./images/trophy.png" alt="">
             </div>
+            @if (Session::has('error'))
+            <div class="alert alert-error text-center">
+                <p>{{ Session::get('error') }}</p>
+            </div>
+            @elseif(Session::has('success'))
+            <div class="alert alert-success text-center">
+                <p>{{ Session::get('success') }}</p>
+            </div>
+
+            @endif
             <div class="daily-progress">
                 <h3>Daily Goals<span><img src="./images/edit.svg" alt="">Edit Goals</span></h3>
                 <div class="progress">
@@ -75,32 +85,32 @@
 <div class="upcoming-webinar">
     <div class="container">
         <div class="webinar-inner">
-        <h2 class="head-heding">Newly launched courses</h2>
-        <div class="row">
-        @foreach ($courses as $course)
-            <?php
-            $file_name = '';
-            // dd($course->course_videos[0]->video_type);
-            if (isset($course->course_videos[0]) && !empty($course->course_videos)) {
-                $file_name = 'course/' . $course->id . '/' . $course->course_videos[0]->video_title . '.' . $course->course_videos[0]->video_type;
-                // $file_name = 'course/'.$course->course_id.'/'.$course->video_title.'.'.$course->video_type;
-            }
-            ?>
-         <div class="col-lg-4">
-         <div class="webinar-card">
-                <div class="webinar-heading">{{$course->course_title}}</div>
-                <div class="webinar-description">Susie Ashfield, Instructor</div>
-                <div class="webinar-image">
-                    <video width="100%" height="100%" controls preload="auto"><source src="{{ url($file_name)}}" type="video/mp4"></video>
+            <h2 class="head-heding">Newly launched courses</h2>
+            <div class="row">
+                @foreach ($courses as $course)
+                <?php
+                $file_name = '';
+                // dd($course->course_videos[0]->video_type);
+                if (isset($course->course_videos[0]) && !empty($course->course_videos)) {
+                    $file_name = 'course/' . $course->id . '/' . $course->course_videos[0]->video_title . '.' . $course->course_videos[0]->video_type;
+                    // $file_name = 'course/'.$course->course_id.'/'.$course->video_title.'.'.$course->video_type;
+                }
+                ?>
+                <div class="col-lg-4">
+                    <div class="webinar-card">
+                        <div class="webinar-heading">{{$course->course_title}}</div>
+                        <div class="webinar-description">Susie Ashfield, Instructor</div>
+                        <div class="webinar-image">
+                            <video width="100%" height="100%" controls preload="auto"><source src="{{ url($file_name)}}" type="video/mp4"></video>
+                        </div>
+                        <div class="webinar-button">
+                            <button><a href="{{route('course-lesson',[$courses[0]->id])}}" >Start learning</a></button>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="webinar-button">
-                    <button><a href="{{route('course-lesson',[$courses[0]->id])}}" >Start learning</a></button>
-                </div>
+                @endforeach
             </div>
-            
-         </div>
-         @endforeach
-        </div>
         </div>
     </div>
 </div>
