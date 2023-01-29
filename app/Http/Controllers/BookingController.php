@@ -35,7 +35,7 @@ class BookingController extends Controller {
         }
         if (!empty($prepareBooking)) {
             //save Booking
-            $save = \App\Models\Booking::saveBooking($prepareBooking);
+            $save = \App\Models\EventBooking::saveBooking($prepareBooking);
             $updateCount = \App\Models\AvailableBookingCount::decrementCount($prepareBooking['user_id']);
             if (empty($save)) {
                 return ['success' => false, 'message' => 'Error occurred while saving booking data'];
