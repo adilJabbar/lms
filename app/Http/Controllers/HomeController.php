@@ -81,9 +81,11 @@ class HomeController extends Controller {
      
         if(isset($data['lecturesmedia'][$last][$lesson_id][0]))
         {
+          
             $data['lesson_video'] =  '/'.$last.'/'.$data['lecturesmedia'][$last][$lesson_id][0]->video_title.'.'.$data['lecturesmedia'][$last][$lesson_id][0]->video_type;
+           
         }
-        $data['quiz_description']  = isset($lesson->description) & $lesson->description != null?$lesson->description:'';
+        $data['quiz_description']  = isset($lesson->description) && $lesson->description != null ? $lesson->description:'';
         $data['notes'] = DB::table('user_notes')->where('lesson_id', $lesson_id)->first();
 // dd($data['lecturesmedia']);
         if (isset($data['lecturesquiz'][$last]) && !empty($data['lecturesquiz'])) {

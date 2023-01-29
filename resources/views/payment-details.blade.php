@@ -255,8 +255,8 @@ $(document).ready(function () {
                     </div>
                     <div class="social-icon">
                     <a target="_blank" href="https://www.instagram.com/speak2impact/"><img src="{{url('images/')}}/Instagram.svg" alt=""></a>
-                                            <a target="_blank" href="https://www.linkedin.com/in/susannahashfield/"><img src="{{url('images/')}}/facebook.svg" alt=""></a>
-                                            <a target="_blank" href="https://www.tiktok.com/@smashfield89"><img src="{{url('images/')}}/Vector.svg" alt=""></a>
+                    <a target="_blank" href="https://www.linkedin.com/in/susannahashfield/"><img src="{{url('images/')}}/facebook.svg" alt=""></a>
+                    <a target="_blank" href="https://www.tiktok.com/@smashfield89"><img src="{{url('images/')}}/Vector.svg" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -332,5 +332,16 @@ $(document).ready(function () {
                                     }
 
                                 });
+
+    $('.card-number').on('keyup', function(e){
+    var val = $(this).val();
+    var newval = '';
+    val = val.replace(/\s/g, '');
+    for(var i=0; i < val.length; i++) {
+        if(i%4 == 0 && i > 0) newval = newval.concat(' ');
+        newval = newval.concat(val[i]);
+    }
+    $(this).val(newval);
+})  
     </script>
 </html>
