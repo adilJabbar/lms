@@ -35,17 +35,14 @@
                 if(isset($first_video->video_title))
                 {
                     $file_name = 'course/'.$course->id.'/'.$first_video->video_title.'.'.$first_video->video_type;
-                
-               
-                
-  // dd($file_name,$courses[0]);
+
                 ?>
-          <video id="videoId" width="100%" height="100%" controls="" preload="auto"><source src="{{url($file_name)}}" type="video/mp4"></video>
-                    <?php 
-                
+                    <video id="videoId" width="100%" height="100%" controls="" preload="auto"><source src="{{url($file_name)}}" type="video/mp4"></video>
+                <?php 
                 }else{
+                    $file_name = 'course/'.$lesson_video;
                     ?>
-     <video width="100%" height="100%" controls="" preload="auto"><source src="http://127.0.0.1:8000/course/1/raw_1673556794_bandicam-2022-10-29-17-37-27-682-16735567941201.mp4" type="video/mp4"></video>
+                  <video width="100%" height="100%" controls="" preload="auto"><source src="{{url($file_name)}}" type="video/mp4"></video>
                 <?php }
                  ?>
           </div>
@@ -81,7 +78,7 @@
                   </div>
                 </div>
               </div>
-              {{$sectioncount++}}
+              @php $sectioncount++; @endphp
             @endforeach   
             </div>
           </div>

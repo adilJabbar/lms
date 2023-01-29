@@ -41,6 +41,11 @@
                 <button><img src="{{url('images/')}}/fb.svg" alt=""> <a href="{{url('login/facebook')}}" > Log in with Facebook </a></button>
                 {{-- <button><img src="{{url('images/')}}/fb.svg" alt=""> Log in with Facebook</button> --}}
             </div>
+            @if ($errors->has('email'))
+                <span class="invalid-feedback">
+                    <h6>{{ $errors->first('email') }}</h6>
+                </span>
+            @endif
             <form method="POST" action="{{ route('Signin') }}">
                 @csrf
             <div class="login-field">
@@ -75,9 +80,9 @@
              </div>
          </div>
          <div class="social-icon mt-3">
-             <a href="#"><img src="{{url('images/')}}/Instagram.svg" alt=""></a>
-             <a href="#"><img src="{{url('images/')}}/facebook.svg" alt=""></a>
-             <a href="#"><img src="{{url('images/')}}/Vector.svg" alt=""></a>
+         <a target="_blank" href="https://www.instagram.com/speak2impact/"><img src="{{url('images/')}}/Instagram.svg" alt=""></a>
+        <a target="_blank" href="https://www.linkedin.com/in/susannahashfield/"><img src="{{url('images/')}}/facebook.svg" alt=""></a>
+        <a target="_blank" href="https://www.tiktok.com/@smashfield89"><img src="{{url('images/')}}/Vector.svg" alt=""></a>
          </div>
          </div>
         </div>

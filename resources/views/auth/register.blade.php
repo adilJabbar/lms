@@ -45,7 +45,14 @@
                 <button><img src="{{url('images/')}}/fb.svg" alt=""> Log in with Facebook</button>
                 {{-- <button><img src="{{url('images/')}}/fb.svg" alt=""> Log in with Facebook</button> --}}
             </div>
+            @if($errors->any())
+            <span class="invalid-feedback">
+                    <h6 style="float:left"> {{ implode('', $errors->all(':message')) }}</h6>
+            </span>
+               
+            @endif
             <form method="POST" action="{{ route('register') }}">
+          
             @csrf
              <div class="row">
                 <div class="col-lg-6">
@@ -123,9 +130,9 @@
              </div>
          </div>
          <div class="social-icon mt-3">
-             <a href="#"><img src="{{url('images/')}}/Instagram.svg" alt=""></a>
-             <a href="#"><img src="{{url('images/')}}/facebook.svg" alt=""></a>
-             <a href="#"><img src="{{url('images/')}}/Vector.svg" alt=""></a>
+         <a target="_blank" href="https://www.instagram.com/speak2impact/"><img src="{{url('images/')}}/Instagram.svg" alt=""></a>
+        <a target="_blank" href="https://www.linkedin.com/in/susannahashfield/"><img src="{{url('images/')}}/facebook.svg" alt=""></a>
+        <a target="_blank" href="https://www.tiktok.com/@smashfield89"><img src="{{url('images/')}}/Vector.svg" alt=""></a>
          </div>
          </div>
         </div>

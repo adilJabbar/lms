@@ -71,14 +71,20 @@ class HomeController extends Controller {
         $data['userdocuments'] = $coursecurriculum['userdocuments'];
         $data['userresources'] = $coursecurriculum['userresources'];
         $segments = request()->segments();
+     
         $last = request()->segment(2);
         $lesson_id = request()->segment(3);
         if ($lesson_id == null) {
             $lesson = Course::get_lesson_id($last);
             $lesson_id = $lesson->lecture_quiz_id;
         }
+        if(isset($data['lecturesmedia'][$last][$lesson_id][0]))
+        {
+            $data['lesson_video'] =  '/'.$last.'/'.$data['lecturesmedia'][$last][$lesson_id][0]->video_title.'.'.$data['lecturesmedia'][$last][$lesson_id][0]->video_type;
+        }
+       
         $data['notes'] = DB::table('user_notes')->where('lesson_id', $lesson_id)->first();
-
+// dd($data['lecturesmedia']);
         if (isset($data['lecturesquiz'][$last]) && !empty($data['lecturesquiz'])) {
             $intro = DB::table('course_videos')->where('id', $data['lecturesquiz'][$last][0]->media)->get()->toArray();
             $data['quiz_description'] = $data['lecturesquiz'][$last][0]->description;
