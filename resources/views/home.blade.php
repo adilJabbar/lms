@@ -1,5 +1,17 @@
 @extends('layouts.main')
 @section('content')
+<div class="col-12">
+    @if (Session::has('error'))
+    <div class="alert alert-error text-center">
+        <p>{{ Session::get('error') }}</p>
+    </div>
+    @elseif(Session::has('success'))
+    <div class="alert alert-success text-center">
+        <p>{{ Session::get('success') }}</p>
+    </div>
+
+    @endif
+</div>
 <div class="container">
     <div class="name-home">
         <h1>Hi James</h1>
@@ -13,16 +25,6 @@
             <div class="trophy">
                 <img src="./images/trophy.png" alt="">
             </div>
-            @if (Session::has('error'))
-            <div class="alert alert-error text-center">
-                <p>{{ Session::get('error') }}</p>
-            </div>
-            @elseif(Session::has('success'))
-            <div class="alert alert-success text-center">
-                <p>{{ Session::get('success') }}</p>
-            </div>
-
-            @endif
             <div class="daily-progress">
                 <h3>Daily Goals<span><img src="./images/edit.svg" alt="">Edit Goals</span></h3>
                 <div class="progress">

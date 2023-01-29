@@ -2,14 +2,29 @@
 @section('content')
 <!-- Calendly inline widget begin -->
 <div class="col-md-4">
-    <a href="{{route('bookSlot')}}" type="button">Add 20 min extra</a>
+    <a href="#" type="button">Available Booking Count : {{$count}}</a>
 
 </div>
 <meta name="csrf-token" content="{{ csrf_token() }}">
-
+@if($count>0)
 <div class="calendly-inline-widget" data-url="https://calendly.com/susie-speak2impact-/60min" style="min-width:320px;height:630px;"></div>
+@else
+<div class="hero">
+    <div class="container">
+        <div class="hero-top">
+            <div class="col-md-12 hero-heading">
+                <h1>Buy More Bookings</br></h1>  
+                <button class="btn btn-bg-gradient-x-blue-cyan" type="button">
+                    <a href="{{route('bookSlot')}}">Buy Bookings </a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
 
 <script>
 
@@ -45,22 +60,20 @@ function scheduleEventFunction(event_url, invitee_url) {
         data: {event_url: event_url, invitee_url: invitee_url},
         url: routeUrl,
         success: function (data) {
-            console.log('flow is here');
-            console.log(data);
             if (data.success) {
-                alert('booking created successfully');
+                Swal.fire('Booking Created Successfully');
             } else {
-                alert('something went wrong while saving this booking');
+                Swal.fire('Error occurred while saving booking data');
             }
         },
         error: function () {
-            console.log('flow is here in error case');
-
-            alert('something went wrong while saving this booking');
+//            console.log('flow is here in error case');
+            Swal.fire('something went wrong while saving this booking');
         }
     });
 }
 
 </script>
+
 <!-- Calendly inline widget end -->
 @endsection('content')

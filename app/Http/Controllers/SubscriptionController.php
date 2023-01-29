@@ -47,9 +47,9 @@ class SubscriptionController extends Controller {
         $data['subscription_id'] = Crypt::decrypt($subscription_id);
         $subscription = \App\Models\Subscription::getSubscription($data['subscription_id']);
         $data['price'] = !empty($subscription['price']) ? $subscription['price'] : null;
-        $subscription  = $subscription;
-        
-        return view('payment-details', compact('data','subscription'));
+        $subscription = $subscription;
+
+        return view('payment-details', compact('data', 'subscription'));
     }
 
     //stripe own page payment
@@ -133,6 +133,8 @@ class SubscriptionController extends Controller {
             }
             $paymentData = self::preparePaymentData($data);
             $savePayment = \App\Models\Payment::saveData($paymentData);
+            //add booking count
+            $saveCount = \App\Models\AvailableBookingCount::createOrUpdate(['user_id' => $data['request_data']['user_id'], 'booking_count' => 2]);
             if (!$savePayment) {
                 return redirect()->back()->with('Error occurred! please try again');
             }
@@ -160,8 +162,8 @@ class SubscriptionController extends Controller {
 
     public static function createPaymentIntentMethod($data = []) {
         $key = Stripe\Stripe::setApiKey(config('paths.secret_key'));
-        $discount = $data['subscription']['discount_percentage']/100*$data['subscription']['price'];
-        $data['subscription']['price'] =  $data['subscription']['price']-$discount;
+        $discount = $data['subscription']['discount_percentage'] / 100 * $data['subscription']['price'];
+        $data['subscription']['price'] = $data['subscription']['price'] - $discount;
 //        $stripe = new \Stripe\StripeClient(config('paths.secret_key'));
         $intent = Stripe\PaymentIntent::create([
                     "amount" => $data['subscription']['price'] * 100,
@@ -273,8 +275,8 @@ class SubscriptionController extends Controller {
 
         $item_1 = new \PayPal\Api\Item();
         // dd($data['subscription']);
-        $discount = $data['subscription']['discount_percentage']/100*$data['subscription']['price'];
-        $data['subscription']['price'] = $data['subscription']['price']-$discount;
+        $discount = $data['subscription']['discount_percentage'] / 100 * $data['subscription']['price'];
+        $data['subscription']['price'] = $data['subscription']['price'] - $discount;
         $item_1->setName($data['subscription']['plans'])
                 ->setCurrency('USD')
                 ->setQuantity(1)
@@ -367,13 +369,14 @@ class SubscriptionController extends Controller {
 
         if ($result->getState() == 'approved') {
             // update subscription data
-            $payment = \App\Models\Payment::where('payment_method_id', '=', $payment_id)->first();
-            if (empty($payment)) {
+            $getPayment = \App\Models\Payment::where('payment_method_id', '=', $payment_id)->first();
+            if (empty($getPayment)) {
                 \Session::put('error', 'Payment failed !!');
                 return Redirect::route('home');
             }
-            $updatePayment = \App\Models\Payment::where('id', $payment['id'])->update(['is_active' => 1]);
-            $updateSubscription = UserSubscribedPlan::where('subscription_id', $payment['subscription_id'])->update(['is_active' => 1]);
+            $updatePayment = \App\Models\Payment::where('id', $getPayment->id)->update(['is_active' => 1]);
+            $updateSubscription = UserSubscribedPlan::where('subscription_id', $getPayment->subscription_id)->update(['is_active' => 1]);
+            $saveCount = \App\Models\AvailableBookingCount::createOrUpdate(['user_id' => $getPayment->user_id, 'booking_count' => 2]);
             if (!$updatePayment || !$updateSubscription) {
                 DB::rollback();
                 \Session::put('error', 'Payment failed !!');
