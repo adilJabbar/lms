@@ -89,10 +89,12 @@ class WebinarController extends Controller {
     public static function uploadImage($image) {
         $allowedfileExtension = ['jpg', 'jpeg', 'png'];
         $filename = $image->getClientOriginalName();
+        $filename = date('d-m-Y-H-i').'_'.$filename;
         $extension = $image->getClientOriginalExtension();
         $check = in_array($extension, $allowedfileExtension);
+        // dd(public_path('images/'),$filename);
         if ($check) {
-            $image->move(public_path('assets/img'), $filename);
+            $image->move(public_path('images/'), $filename);
 
 //            $filename = $image->store('public/photos');
             return ['success' => true, 'filename' => $filename];
