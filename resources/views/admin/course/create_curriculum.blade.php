@@ -302,7 +302,7 @@ $course_id = $course->id;
                                                              <div class="lecture_title">
                                                                <p>{!! $lecturesmedia[$section->section_id][$lecturequiz->lecture_quiz_id][0]->video_name !!}</p>
                                                                <p>{!! $lecturesmedia[$section->section_id][$lecturequiz->lecture_quiz_id][0]->duration !!}</p>
-                                                               <p><span class="cclickable vid_preview text-default" data-id="{!! $lecturequiz->lecture_quiz_id !!}"><i class="fa fa-play"></i>{!! Lang::get('curriculum.Video_Preview')!!}</span></p>
+                                                               <p><span class="cclickable vid_preview text-default" data-id="{!! $lecturequiz->lecture_quiz_id !!}"><i class="fa fa-play"></i>Preview lesson video</span></p>
                                                              </div>
                                                              <div class="lecture_buttons">
                                                                <div class="lecture_edit_content" id="lecture_edit_content{!! $lecturequiz->lecture_quiz_id !!}">
@@ -2654,7 +2654,7 @@ $('body').on('click','.cclickable',function(){
               var storage_path = "{{ url('course/'.$course_id.'/') }}";
               var vi = '<source src="'+storage_path+'/'+result+'.mp4" type="video/mp4" id="videosource">';
             $('.video_p_'+id).html(vi);
-            location.reload(true);
+            // location.reload(true);
           }
       });
   }

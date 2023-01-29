@@ -71,8 +71,16 @@ class HomeController extends Controller {
         $data['userresources'] = $coursecurriculum['userresources'];
         $segments = request()->segments();
         $last  = request()->segment(2);
+        $lesson_id  = request()->segment(3);
+        if($lesson_id == null)
+        {
+            $lesson =  Course::get_lesson_id($last);
+            $lesson_id = $lesson->lecture_quiz_id;  
+        }
+        $data['notes'] = DB::table('user_notes')->where('lesson_id',$lesson_id)->first();
         
 
+        
         if (isset($data['lecturesquiz'][$last]) && !empty($data['lecturesquiz'])) {
             $intro = DB::table('course_videos')->where('id', $data['lecturesquiz'][$last][0]->media)->get()->toArray();
             $data['quiz_description'] = $data['lecturesquiz'][$last][0]->description;
@@ -105,6 +113,26 @@ class HomeController extends Controller {
 
     public function calendly() {
         return view('calendly');
+    }
+    public function saveLessonNotes()
+    {
+        $notes = $_GET['notes'];
+        $lesson_id = $_GET['lesson_id'];
+        if($lesson_id == 'undefined')
+        {
+            $lesson =  Course::get_lesson_id($_GET['course_id']);
+            $lesson_id = $lesson->lecture_quiz_id;    
+        }
+        $lesson = DB::table('user_notes')->where('lesson_id',$lesson_id)->first();
+        if(isset($lesson->id))
+        {
+            DB::table('user_notes')->where('lesson_id' , $lesson_id)->update(['notes'=>$notes]);
+        }else{
+            DB::table('user_notes')->Insert(['user_id'=>auth()->user()->id,'notes'=>$notes,'lesson_id' => $lesson_id]);
+        }
+    
+        echo json_encode(['success'=>true]);
+        exit;
     }
 
 }

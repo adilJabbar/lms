@@ -40,7 +40,7 @@
                 
   // dd($file_name,$courses[0]);
                 ?>
-          <video width="100%" height="100%" controls="" preload="auto"><source src="{{url($file_name)}}" type="video/mp4"></video>
+          <video id="videoId" width="100%" height="100%" controls="" preload="auto"><source src="{{url($file_name)}}" type="video/mp4"></video>
                     <?php 
                 
                 }else{
@@ -65,7 +65,13 @@
                   <div class="accordion-body">
                    @foreach($lecturesquiz[$section->section_id] as $lecturequiz)
                     <div  class="play-list video-done {{ Request::segment(3) == '' ? 'active-video'.$lecturequiz->lecture_quiz_id : null }}">
-                      <img src="{{url('images/Play button.svg')}}" alt="">
+                     @if($lecturequiz->lecture_quiz_id  == Request::segment(3) )
+                     
+                     <img onclick="play()" class="play" src="{{url('images/Play button.svg')}}" alt="">
+                     @else
+                     <img src="{{url('images/Play button.svg')}}" alt="">
+                     @endif
+                  
                      <a href="{{route('course-lesson-number',[$course->id,$lecturequiz->lecture_quiz_id])}}"> <span>{!! $lecturequiz->title !!}<small style= "float:right"> 2:01 mins</small></span> </a>
                     </div>
                     @php
@@ -83,6 +89,7 @@
     </div>
   </div>
   </div>
+
   <!-- ===============   Chapter End   ============== -->
   <div class="chapter-tabs">
     <div class="container-main">
@@ -106,8 +113,13 @@
          @endphp
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-          <form>
-            <textarea rows="5" cols="33" style="padding: 1; margin: 1; width: 53%; " placeholder="Write something"> 
+        <span id="save_notes"> </span>
+          <form class="text_area">
+            
+            <textarea class="text_area_value" rows="5" cols="33" style="padding: 1; margin: 1; width: 53%; " placeholder="Write something"> 
+           @if(isset($notes->notes))
+           {{$notes->notes}}
+           @endif
             </textarea>
           </form>
         </div>
@@ -176,5 +188,77 @@ var access = "<?php echo isset($access)?$access:'false'; ?>";
     // $('#exampleModal').modal();
     $('#exampleModal').modal({backdrop: 'static', keyboard: false}, 'show');
   }
+
+
+  $(document).ready(function(){
+    var timer;
+    var timeout = 2000; // Timout duration
+    $('.text_area_value').keyup(function(){
+      $('#save_notes').html("<span style='color:gray'> Saving... </span>")
+        if(timer) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(saveData, timeout); 
+ 
+    });
+ 
+    // $('#submit').click(function(){
+        // saveData();
+    // });
+});
+function saveData(){
+  var url = $(location).attr('href');
+  var segments = url.split( '/' );
+  var lesson_id = segments[5];
+  var course_id = segments[4];
+  $.ajax({
+    url:'<?= url('save_lesson_notes'); ?>'+'?lesson_id='+lesson_id+'&notes='+ $('.text_area_value').val()+'&course_id='+course_id,
+    method:'GET',
+    success: function(result)
+    {
+      $('#save_notes').html("<span style='color:green'> Saved </span>");
+      setTimeout(function(){
+      $('#save_notes').html("");
+      }, 3000);
+    }
+
+  })
+
+}
+
+
+    </script>
+
+<script>
+ function play()
+{
+
+      var pause = '<?php echo url('images/pause.svg'); ?>';
+      // alert(pause);
+      $('.play').attr("src", pause);
+   
+      $('.play').addClass('pause');
+      $('.play').attr('onClick','pause()');
+      $('.play').removeClass('play');
+      
+      $("#videoId").trigger('play');
+
+      // $('#play').attr("src", pause);
+};
+function pause()
+{
+  
+      var play = '<?php echo url('images/Play button.svg'); ?>';
+      // alert(pause);
+      $('.pause').attr("src", play);
+   
+      $('.pause').addClass('play');
+      $('.pause').attr('onClick','play()')
+      $('.pause').removeClass('pause');
+      $("#videoId").trigger('pause');
+      ;
+
+      // $('#play').attr("src", pause);
+};
     </script>
 @endsection('body')

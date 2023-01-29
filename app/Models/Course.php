@@ -541,5 +541,13 @@ class Course extends Model
            return \DB::table('course_progress')->insertGetId($dataarray);
          }
     }
-    
+    public static function get_lesson_id($course_id)
+    {
+      return \DB::table('curriculum_lectures_quiz')
+      ->join('curriculum_sections', 'curriculum_sections.section_id', '=', 'curriculum_lectures_quiz.section_id')
+      ->join('courses', 'courses.id', '=', 'curriculum_sections.course_id')
+      ->select('curriculum_lectures_quiz.lecture_quiz_id')
+      ->where('courses.id','=', $course_id)
+      ->first();
+    }
 }

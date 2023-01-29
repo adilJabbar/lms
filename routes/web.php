@@ -31,6 +31,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
     Route::get('course-lesson/{id}', [App\Http\Controllers\HomeController::class, 'courseLesson'])->name('course-lesson');
     Route::get('course-lesson-number/{id}/{lesson_id}', [App\Http\Controllers\HomeController::class, 'courseLesson'])->name('course-lesson-number');
+    Route::get('save_lesson_notes', [App\Http\Controllers\HomeController::class, 'saveLessonNotes']);
+
+   
     Route::get('calendly', [App\Http\Controllers\HomeController::class, 'calendly'])->name('calendly');
     Route::get('calendly', [App\Http\Controllers\HomeController::class, 'calendly'])->name('calendly');
 
