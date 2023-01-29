@@ -138,7 +138,7 @@ $(document).ready(function () {
                                     @if(strtolower($record['plans']) == 'yearly' || strtolower($record['plans']) == 'anually')
                                     <div class="membership-plan" style="border: 1px solid;">
                                         <button class="start-membershipp">{{ucfirst($record['plans'])}} membership</button>
-                                        <h3 style="margin-top: 15%;">£{{$record['price']}} per year</h3>
+                                        <h3 style="margin-top: 15%;">£{{$record['price']}} per @if($record['plans']=='monthly')  Month  @endif @if($record['plans']=='yearly')  Year  @endif</h3>
                                         <p class="saave">(Save {{$record['discount_percentage']}}% on {{$record['plans']}})</p>
                                         @if($record['is_access_cource'] == 1)
                                         <p class="heading"><span><img src="{{url('images/check.png')}}"></span>Access to all courses</p>
@@ -163,7 +163,8 @@ $(document).ready(function () {
                                                 <div class="membership-plan2" style="border: 1px solid #1c1c1c;">
                                                     <button class="start-membershipp"
                                                             style="background-color: #1C1C1C; color: #fff;">{{ucfirst($record['plans'])}} membership</button>
-                                                    <h3 style="margin-top: 15%;">£{{$record['price']}} per year</h3>
+                                                    <h3 style="margin-top: 15%;">£{{$record['price']}} per @if($record['plans']=='monthly')  Month  @endif @if($record['plans']=='yearly')  Year  @endif</h3>
+
                                                     <p class="saave2">(Save {{$record['discount_percentage']}}% on {{$record['plans']}})</p>
                                                     @if($record['is_access_cource'] == 1)
                                                     <p class="heading2"><span><img src="{{url('images/check_black.png')}}"></span> Access to all courses</p>
@@ -204,7 +205,8 @@ $(document).ready(function () {
                                                 <div class="Sign " style="border: 1px solid;">
                                                         <h5 style="color: #1C1C1C; font-size:24px; font-weight:500; margin-bottom: 4%; margin-top: 0%;">Sign up for Free</h5>
                                                         <p class="heading2"><img src="./images/check.svg" alt="" style="margin-right: 1%;">Access to webinars and other pre-recorded content <span><img src="{{url('images/')}}/free-white.png"></p>
-                                                        <button class="start-membershiIp" style="background-color:  #1C1C1C; color: #fff;">Sign for Free</button>
+                                                        <p class="heading2"><img src="./images/check.svg" alt="" style="margin-right: 1%;">Access to Yoodli <span><img src="{{url('images/')}}/free-white.png"></p>
+                                                        <button class="start-membershiIp" style="background-color:  #1C1C1C; color: #fff;"><a style="color: inherit;" href="{{url('home')}}">Sign for Free</a></button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -370,15 +372,17 @@ $(document).ready(function () {
                                             <div class="footer-logo"><span>Speak2Impact Academy</span></div>
                                             <div class="footer-link">
                                                 <a href="#">Contact us</a>
-                                                <a href="#">Speak2impact</a>
+                                                <a href="{{url('/')}}">Speak2impact</a>
+                                                @if(!auth())
                                                 <a href="{{route('register')}}">Sign up</a>
                                                 <a href="{{route('login')}}">Login</a>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="social-icon mt-3">
-                                            <a href="#"><img src="{{url('images/')}}/Instagram.svg" alt=""></a>
-                                            <a href="#"><img src="{{url('images/')}}/facebook.svg" alt=""></a>
-                                            <a href="#"><img src="{{url('images/')}}/Vector.svg" alt=""></a>
+                                            <a target="_blank" href="https://www.instagram.com/speak2impact/"><img src="{{url('images/')}}/Instagram.svg" alt=""></a>
+                                            <a target="_blank" href="https://www.linkedin.com/in/susannahashfield/"><img src="{{url('images/')}}/facebook.svg" alt=""></a>
+                                            <a target="_blank" href="https://www.tiktok.com/@smashfield89"><img src="{{url('images/')}}/Vector.svg" alt=""></a>
                                         </div>
                                     </div>
                                 </div>

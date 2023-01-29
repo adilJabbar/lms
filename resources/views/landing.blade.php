@@ -214,7 +214,13 @@
                         <div class="Sign " style="border: 1px solid;">
                                 <h5 style="color: #1C1C1C; font-size:24px; font-weight:500; margin-bottom: 4%; margin-top: 0%;">Sign up for Free</h5>
                                 <p class="heading2"><img src="./images/check.svg" alt="" style="margin-right: 1%;">Access to webinars and other pre-recorded content <span><img src="{{url('images/')}}/free-white.png"></p>
-                                <button class="start-membershiIp" style="background-color:  #1C1C1C; color: #fff;">Sign for Free</button>
+                                
+                                <p class="heading2"><img src="./images/check.svg" alt="" style="margin-right: 1%;">Access to Yoodli<span><img src="{{url('images/')}}/free-white.png"></p>
+                                @if(!auth())
+                                <button class="start-membershiIp" style="background-color:  #1C1C1C; color: #fff;"><a style="color:inherit;" href="{{route('login')}}">Sign for Free </a></button>
+                                @else
+                                <button class="start-membershiIp" style="background-color:  #1C1C1C; color: #fff;"><a style="color:inherit;" href="{{route('home')}}">Sign for Free </a></button>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -228,9 +234,11 @@
                                             <div class="footer-logo"><span>Speak2Impact Academy</span></div>
                                             <div class="footer-link">
                                                 <a href="#">Contact us</a>
-                                                <a href="#">Speak2impact</a>
+                                                <a href="{{url('/')}}">Speak2impact</a>
+                                                @if(!auth())
                                                 <a href="{{route('register')}}">Sign up</a>
                                                 <a href="{{route('login')}}">Login</a>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="social-icon mt-3">

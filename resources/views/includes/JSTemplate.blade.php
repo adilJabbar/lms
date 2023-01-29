@@ -5,9 +5,11 @@
              <div class="footer-logo"><span>Speak2Impact Academy</span></div>
              <div class="footer-link">
                  <a href="#">Contact US</a>
-                 <a href="#">Speak2impact</a>
+                 <a href="{{url('/')}}">Speak2impact</a>
+                 @if(!auth())
                  <a href="{{route('register')}}">Sign up</a>
                  <a href="{{route('login')}}">Login</a>
+                 @endif
              </div>
          </div>
          <div class="social-icon mt-3">

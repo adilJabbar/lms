@@ -245,14 +245,18 @@ $(document).ready(function () {
                         <div class="footer-logo"><span>Speak2Impact Academy</span></div>
                         <div class="footer-link">
                             <a href="#">Contact US</a>
-                            <a href="#">Speak2impact</a>
+                            <a href="{{url('/')}}">Speak2impact</a>
+                            @if(!auth())
+
                             <a href="#">Sign up</a>
                             <a href="#">Login</a>
+                            @endif
                         </div>
                     </div>
                     <div class="social-icon">
-                        <a href="#"><img src="{{asset('/images/icons8-instagram.svg')}}" alt=""></a>
-                        <a href="#"><img src="{{asset('/images/icons8-facebook.svg')}}" alt=""></a>
+                    <a target="_blank" href="https://www.instagram.com/speak2impact/"><img src="{{url('images/')}}/Instagram.svg" alt=""></a>
+                                            <a target="_blank" href="https://www.linkedin.com/in/susannahashfield/"><img src="{{url('images/')}}/facebook.svg" alt=""></a>
+                                            <a target="_blank" href="https://www.tiktok.com/@smashfield89"><img src="{{url('images/')}}/Vector.svg" alt=""></a>
                     </div>
                 </div>
             </div>

@@ -48,7 +48,7 @@ siteUrl = '<?php echo URL::to('/'); ?>/';
                                     <a class="nav-link {{ Request::segment(1) === 'home' ? 'active' : null }}" aria-current="page" href="{{url('home')}}">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link {{ Request::segment(1) === 'practise' ? 'active' : null }}" href="#">Courses</a>
+                                    <a class="nav-link {{ Request::segment(1) === 'courses' ? 'active' : null }}" href="{{url('home')}}">Courses</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link {{ Request::segment(1) === 'calendly' ? 'active' : null }}" href="{{url('calendly')}}">Schedule meeting with Coach</a>
