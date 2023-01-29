@@ -151,7 +151,7 @@ Edit Webinar Detail
                                                         @endif
                                                         <input step="any"
                                                                name="image"
-                                                               type="file" class="form-control" required>
+                                                               type="file" class="form-control" >
 
                                                     </div>
                                                 </div>
