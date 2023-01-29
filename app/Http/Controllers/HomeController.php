@@ -104,6 +104,12 @@ class HomeController extends Controller {
                 }
             }
         }
+        $userSubscriptionPlan = UserSubscribedPlan::where('user_id', auth()->user()->id)->first();
+        if (isset($userSubscriptionPlan->id)) {
+            $data['access'] = 'true';
+        } else {
+            $data['access'] = 'false';
+        }
 
         //    dd($data);
         return view('lesson', $data);

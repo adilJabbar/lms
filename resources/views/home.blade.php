@@ -14,7 +14,7 @@
 </div>
 <div class="container">
     <div class="name-home">
-        <h1>Hi James</h1>
+        <h1>Hi {{auth()->user()->first_name}},</h1>
     </div>
 </div>
 
