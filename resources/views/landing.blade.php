@@ -27,10 +27,12 @@
             <div class="login-action">
             @if (Auth::check())
             <a href="{{ route('logout') }}"><button class="login mx-3">Logout</button></a>
+            <a href="{{route('membershipPlans')}}"><button class="start-learning">Start Learning</button></a>
             @else
             <a href="{{url('login')}}"><button class="login mx-3">Login</button></a>
+            <a href="{{route('register')}}"><button class="start-learning">Sign up</button></a>
             @endif
-            <a href="{{route('membershipPlans')}}"><button class="start-learning">Start Learning</button></a> 
+             
             </div>
             </nav>
             @if (Session::has('error'))
